@@ -1,0 +1,20 @@
+
+
+/** @type {import('next').NextConfig} */
+
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  env: {
+    API_ENDPOINT: process.env.API_ENDPOINT,
+    DOMAIN_SERVICE: process.env.DOMAIN_SERVICE,
+    PORT_API_REST: process.env.PORT_API_REST
+  },
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+  }
+};
+export default nextConfig;
+
