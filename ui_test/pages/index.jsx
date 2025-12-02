@@ -8,7 +8,8 @@ import * as Yup from 'yup';
 import generateService from '../services/generateService';
 import DataGrid from '../components/common/DataGrid';
 import { Client } from '@stomp/stompjs';
-
+import swal from 'sweetalert2/dist/sweetalert2.min.js';
+import ModalForm from '../components/common/ModalForm';
 
 const Index = () => {
 
@@ -28,30 +29,54 @@ const Index = () => {
         catch (error) {
         }
     }
-    const componentDidMount = async () => {
-        const client = new Client();
+    const deleteItem = async (e, id, nombre) => {
+        try {
+            swal.fire({
+                title: t('common:alertConfirmTitle'),
+                text: t('common:alertConfirmText'),
+                icon: "warning",
+                buttons:
+                {
+                    cancel: { text: `${t('common:btnCancel')}`, visible: true },
+                    confirm: { text: `${t('common:btnOk')}`, visible: true }
+                }
+            }).then(async (confirm) => {
+                if (confirm.isConfirmed) {
+                    console.log(nombre)
+                    console.log(id)
+                    await generateService.Delete({ "pId": id, "pActualizadoPor": nombre });
+                    reloadData();
+                }
+            });
 
-        client.configure({
-            brokerURL: `ws://192.168.0.38:8086/test_websocket`,
-            onConnect: () => {
-                console.log('onConnect');
-
-                client.subscribe('/topic/getSaldos', (data) => {
-                    console.log('Raw frame:', JSON.parse(data.body));
-                    setServiceData(JSON.parse(data.body).presult);
-
-                });
-            },
-
-            debug: (str) => {
-                console.log(new Date(), str);
-            }
-        });
-
-        client.activate();
-
+        }
+        catch (error) {
+        }
     }
-
+    /* const componentDidMount = async () => {
+         const client = new Client();
+ 
+         client.configure({
+             brokerURL: `ws://192.168.0.38:8086/test_websocket`,
+             onConnect: () => {
+                 console.log('onConnect');
+ 
+                 client.subscribe('/topic/getSaldos', (data) => {
+                     console.log('Raw frame:', JSON.parse(data.body));
+                     setServiceData(JSON.parse(data.body).presult);
+ 
+                 });
+             },
+ 
+             debug: (str) => {
+                 console.log(new Date(), str);
+             }
+         });
+ 
+         client.activate();
+ 
+     }
+ */
     const fetchServices = async (data) => {
         return Promise.all([
             getApiService(data),
@@ -59,22 +84,26 @@ const Index = () => {
             return { data };
         });
     }
+
     const onSubmit = async (data) => {
-        console.log("data: ",data)
+        console.log("data: ", data)
         const response = await generateService.saveApiService(data);
-        console.log("response: ",response)
+        console.log("response: ", response)
+        await reloadData()
     }
+
     const reloadData = async () => {
-       // let data = await fetchServices({ "pvSecuencia": "123" })
-
-       // console.log("----------------------------")
-      // console.log("data: ", data.data)
-        
-        
-       // setServiceData(datOut)
-      //  await componentDidMount()
+        let result = await fetchServices({})
+        console.log("----------------------------")
+        console.log("result: ", result)
+        result.data.result1.forEach(function (item) {
+            item.activo = item.activo ? "si" : "no"
+            item.Update = <ModalForm item={item} reloadData={reloadData}></ModalForm>
+            item.Delete = <Button onClick={(e) => deleteItem(e, item.id, item.nombre)} variant="danger" size="sm" >{t('common:btnDelete')}</Button>
+        });
+        setServiceData(result.data.result1)
+        //  await componentDidMount()
     }
-
 
     useEffect(() => {
         reloadData();
@@ -90,18 +119,77 @@ const Index = () => {
                         <Col>
                             <h3>{t('index:title')}</h3>
                         </Col>
-
                     </Row>
                     <Row>
-                        <Col>
-                            <Form.Group>
-                                <Form.Label htmlFor="descripcion">
-                                 descripcion
-                                </Form.Label>
-                                <Form.Control name="descripcion"  {...register("descripcion")} type="text" >
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="pNombre">Nombre</Form.Label>
+                                    <Form.Control
+                                        name="pNombre"
+                                        {...register("pNombre")}
+                                        type="text"
+                                        placeholder="Ingrese el nombre"
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="pEmail">Email</Form.Label>
+                                    <Form.Control
+                                        name="pEmail"
+                                        {...register("pEmail")}
+                                        type="email"
+                                        placeholder="Ingrese el correo"
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="pTelefono">Teléfono</Form.Label>
+                                    <Form.Control
+                                        name="pTelefono"
+                                        {...register("pTelefono")}
+                                        type="text"
+                                        placeholder="Ingrese el teléfono"
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="pDireccion">Dirección</Form.Label>
+                                    <Form.Control
+                                        name="pDireccion"
+                                        {...register("pDireccion")}
+                                        type="text"
+                                        placeholder="Ingrese la dirección"
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label htmlFor="pCreadoPor">Creado por</Form.Label>
+                                    <Form.Control
+                                        name="pCreadoPor"
+                                        {...register("pCreadoPor")}
+                                        type="text"
+                                        placeholder="Usuario creador"
+                                    />
+                                </Form.Group>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Row>
+                    <br></br>
+                    <Row>
                         <Col>
                             <Button className="common-button-color" type="submit" disabled={formState.isSubmitting} onClick={handleSubmit(onSubmit)}>
                                 send

@@ -8,7 +8,7 @@ export default function Layout({ children }) {
 
   return (
     <AppContext.Provider  value={{ }}>
-      <div style={{ paddingTop: '4rem' }}>
+      <div>
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>

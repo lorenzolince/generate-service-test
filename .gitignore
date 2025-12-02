@@ -1,6 +1,6 @@
-mairaDB/mariadb_data/**
-mysqldata/mysqldata/**
-postgreSQL/data/**
+mariadb_data
+mysqldata
+data
 # Compiled class file
 *.class
 

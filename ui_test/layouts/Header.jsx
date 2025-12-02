@@ -16,13 +16,13 @@ const Header = () => {
     reloadData();
   }, []);
   return (
-    <div className="header-Sidebar">
-      <ul className="header-list">
-        <li className="navbar-item">
-          <Navbar className="header-Navbar" fixed="top" collapseOnSelect expand="md" bg="black" variant="dark">
+    <div>
+      <ul >
+        <li>
+          <Navbar  fixed="top" collapseOnSelect expand="md" bg="black" variant="dark">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <div className="nav-container">
+              <div>
                 <Nav>
                   <Link href="/"><h1 className="nav-link header-nav-color" role="button">test</h1></Link>
                 </Nav>
@@ -32,6 +32,7 @@ const Header = () => {
           </Navbar>
         </li>
       </ul>
+      <br></br>
     </div>
   );
 }
