@@ -1,6 +1,13 @@
 {
     "title": "Prueba Formulario",
-    "name":"Nombre del proyecto",
-    "titleAlertDevops":"Seleccione"
-  
+    "name": "Nombre",
+    "titleAlertDevops": "Seleccione",
+    "send": "Enviar",
+    "cellPhone": "Teléfono Móvil",
+    "email": "Correo Electrónico",
+    "address": "Dirección",
+    "alerTitleSuccess": "Éxito",
+    "alerTextSuccess": "Datos guardados exitosamente",
+    "alertErrorTitle": "Error",
+    "alertErrorText": "Ocurrió un error al guardar los datos"
 }

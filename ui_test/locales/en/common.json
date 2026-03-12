@@ -45,5 +45,11 @@
     "alerttTextDoc": "Internal error download zip",
     "alertSummitTitle": "Download File",
     "alertSummitText": "Are you sure you want to execute this action?",
-    "isLoading": "Loading..."
+    "isLoading": "Loading...",
+    "alertSourceJsonTitle": "Invalid file type",
+    "alertSourceJsonTxt": "The file must be a JSON",
+    "alertImportDataConfirmTitle": "Import data",
+    "alertImportDataConfirmText": "Are you sure you want to import this data?",
+    "alertErrorTitle": "Error",
+    "alertErrorText": "An error occurred while processing your request" 
 }

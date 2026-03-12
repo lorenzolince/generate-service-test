@@ -1,8 +1,8 @@
 services:
-  oracle-db:
-    image: oracle-db
-    container_name: oracle-db
-    hostname: oracle-db  
+  db-oracle:
+    image: db-oracle
+    container_name: db-oracle
+    hostname: db-oracle  
     ports:
      - "1521:1521"
     shm_size: 2g

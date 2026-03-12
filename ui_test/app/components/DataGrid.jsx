@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Form, Row, Col, Table, Pagination } from "react-bootstrap";
 import { useReactTable, getCoreRowModel, getPaginationRowModel, getFilteredRowModel } from '@tanstack/react-table';

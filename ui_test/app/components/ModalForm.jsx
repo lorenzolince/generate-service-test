@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+"use client";
+
+import React, { useEffect, useState,useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import swal from 'sweetalert2/dist/sweetalert2.min.js';
 
-import generateService from '../../services/generateService';
 const modalSchema = Yup.object().shape({});
 
-const ModalForm = ({ item, reloadData }) => {
+
+const ModalForm = ({ item, reloadData, updateApi }) => {
     const { t, lang } = useTranslation();
     const [error, setError] = useState(false);
-
+    const buttonRef = useRef();
     const { register, handleSubmit, reset, setValue, formState, formState: { errors } } = useForm({
         resolver: yupResolver(modalSchema)
     });
@@ -25,62 +28,50 @@ const ModalForm = ({ item, reloadData }) => {
         console.log("---- item ----:", item);
         for (var field in item) {
             if (item.hasOwnProperty(field)) {
-                if (field === "id") {
-                    setValue("pId", item[field]);
-                }
-                if (field === "nombre") {
-                    setValue("pNombre", item[field]);
-                }
-                if (field === "telefono") {
-                    setValue("pTelefono", item[field]);
-                }
-                if (field === "direccion") {
-                    setValue("pDireccion", item[field]);
-                }
+                setValue(field, item[field]);
             }
-
         }
-    }
-
-    const saveModalForm = async (dataIn) => {
-        try {
-            const response = await generateService.Update(dataIn);
-            return response
-        }
-        catch (error) {
-        }
-    }
-    const fetchsaveModalForm = async (dataIn) => {
-        return Promise.all([
-            saveModalForm(dataIn)
-        ]).then(([data]) => {
-            return { data };
-        });
     }
     const [show, setShow] = useState(false);
     const handleClose = () => {
         setShow(false);
+         buttonRef.current?.focus();
+
     }
     const openModal = (e) => {
         setShow(true);
     }
     const onSubmit = async (data) => {
         console.log(data)
-        const response = await fetchsaveModalForm(data);
+        const response = await updateApi(data);
         console.log("--------------- response ----------------", response)
-        reloadData()
+        if (response === 200) {
+            swal.fire({
+                title: t('index:alerTitleSuccess'),
+                text: t('index:alerTextSuccess'),
+                icon: "success"
+            });
+        } else {
+            swal.fire({
+                title: t('common:alertErrorTitle'),
+                text: t('common:alertErrorText'),
+                icon: "error"
+            });
+        }
         handleClose()
+        reloadData()
+
     }
     return (<div>
         <Container>
             <Row>
                 <Col></Col>
                 <Col md="auto">
-                    <Button onClick={(e) => openModal(e)} variant="success" size="sm" >{t('common:btnEdit')}</Button>
+                    <Button ref={buttonRef} onClick={(e) => openModal(e)} variant="success" size="sm" >{t('common:btnEdit')}</Button>
                 </Col>
             </Row>
         </Container>
-        <Modal show={show} onEnter={() => setModalSchema(item)} onHide={() => setShow(false)} dialogClassName="modal-90w" size="lg" aria-labelledby="example-custom-modal-styling-title" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal show={show} onEnter={() => setModalSchema(item)} onHide={() => setShow(false)} dialogClassName="modal-90w" size="lg" aria-labelledby="example-custom-modal-styling-title" aria-labelledby="contained-modal-title-vcenter" centered enforceFocus={false}>
             <Modal.Header closeButton>
                 <Modal.Title id="example-custom-modal-styling-title">
                     {t('datasourceOra:titleModal')}
@@ -89,29 +80,33 @@ const ModalForm = ({ item, reloadData }) => {
             <Modal.Body>
                 <Form>
                     <Form.Group>
-                        <Form.Control name="id" defaultValue={0} hidden {...register("id")} type="text">
-                        </Form.Control>
+                        <Form.Control
+                            type="hidden"
+                            {...register("id")}
+                        />
                     </Form.Group>
                     <Row>
                         <Col>
                             <Form.Group>
-                                <Form.Label htmlFor="pNombre">Nombre</Form.Label>
+                                <Form.Label htmlFor="name">{t('index:name')}</Form.Label>
                                 <Form.Control
-                                    name="pNombre"
-                                    {...register("pNombre")}
+                                    name="name"
+                                    {...register("name")}
                                     type="text"
                                     placeholder="Ingrese el nombre"
+                                    autoFocus
                                 />
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group>
-                                <Form.Label htmlFor="pTelefono">Teléfono</Form.Label>
+                                <Form.Label htmlFor="email">{t('index:email')}</Form.Label>
                                 <Form.Control
-                                    name="pTelefono"
-                                    {...register("pTelefono")}
-                                    type="text"
-                                    placeholder="Ingrese el teléfono"
+                                    name="email"
+                                    {...register("email")}
+                                    type="email"
+                                    placeholder="Ingrese el correo"
+                                    autoFocus
                                 />
                             </Form.Group>
                         </Col>
@@ -120,23 +115,25 @@ const ModalForm = ({ item, reloadData }) => {
 
                         <Col>
                             <Form.Group>
-                                <Form.Label htmlFor="pDireccion">Dirección</Form.Label>
+                                <Form.Label htmlFor="cellPhone">{t('index:cellPhone')}</Form.Label>
                                 <Form.Control
-                                    name="pDireccion"
-                                    {...register("pDireccion")}
+                                    name="cellPhone"
+                                    {...register("cellPhone")}
                                     type="text"
-                                    placeholder="Ingrese la dirección"
+                                    placeholder="Ingrese el teléfono"
+                                    autoFocus
                                 />
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group>
-                                <Form.Label htmlFor="pActualizadoPor">Actualizado por</Form.Label>
+                                <Form.Label htmlFor="address">{t('index:address')}</Form.Label>
                                 <Form.Control
-                                    name="pActualizadoPor"
-                                    {...register("pActualizadoPor")}
+                                    name="address"
+                                    {...register("address")}
                                     type="text"
-                                    placeholder="Usuario actualizado"
+                                    placeholder="Ingrese la dirección"
+                                    autoFocus
                                 />
                             </Form.Group>
                         </Col>
@@ -148,7 +145,7 @@ const ModalForm = ({ item, reloadData }) => {
                     {t('common:btnCancel')}
                 </Button>
                 {/* onClick={handleClose} */}
-                <Button variant="primary" type="submit" disabled={formState.isSubmitting} onClick={handleSubmit(onSubmit)}>
+                <Button ref={buttonRef}  variant="primary" type="submit" disabled={formState.isSubmitting} onClick={handleSubmit(onSubmit)}>
                     {t('common:btnUpdate')}
                 </Button>
             </Modal.Footer>

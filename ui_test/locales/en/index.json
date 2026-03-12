@@ -1,6 +1,14 @@
 {
     "title": "Test Form",
-    "name":"Name Projet",
-    "titleAlertDevops":"Select"
+    "name":"Name",
+    "titleAlertDevops":"Select",
+    "send":"Send",
+    "cellPhone":"Cell Phone",
+    "email":"Email",
+    "address":"Address",
+    "alerTitleSuccess":"Success",
+    "alerTextSuccess":"Data saved successfully" ,
+    "alertErrorTitle":"Error",
+    "alertErrorText":"An error occurred while saving the data"  
     
 }
