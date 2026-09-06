@@ -5,7 +5,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   env: {
     API_ENDPOINT: process.env.API_ENDPOINT,
     DOMAIN_SERVICE: process.env.DOMAIN_SERVICE,

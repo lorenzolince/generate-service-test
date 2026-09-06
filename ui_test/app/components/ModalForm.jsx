@@ -45,7 +45,7 @@ const ModalForm = ({ item, reloadData, updateApi }) => {
         console.log(data)
         const response = await updateApi(data);
         console.log("--------------- response ----------------", response)
-        if (response === 200) {
+        if (response === 200 || response === 202) {
             swal.fire({
                 title: t('index:alerTitleSuccess'),
                 text: t('index:alerTextSuccess'),
@@ -59,7 +59,7 @@ const ModalForm = ({ item, reloadData, updateApi }) => {
             });
         }
         handleClose()
-        reloadData()
+       await reloadData()
 
     }
     return (<div>

@@ -1,0 +1,319 @@
+{
+  "title": "SQL Server",
+  "explorerTitle": "Explorador SQL Server",
+  "explorerSubtitle": "Ejecuta procedimientos, funciones escalares, table-valued functions y queries generadas desde Generate Service.",
+  "personasTitle": "Personas SQL Server",
+  "personasSubtitle": "CRUD basado en gsSpGetPersonas, gsSpInsertPersona, gsSpUpdatePersona y gsSpDeletePersona.",
+  "addPersona": "Agregar persona",
+  "updatePersona": "Actualizar persona",
+  "request": "Request",
+  "response": "Response",
+  "emptyRequest": "Este endpoint no requiere cuerpo de entrada.",
+  "emptyResponse": "El endpoint no devolvió contenido.",
+  "emptyResult": "Sin datos para mostrar.",
+  "executeToSeeResponse": "Ejecuta el endpoint para ver la respuesta.",
+  "invalidJson": "JSON inválido",
+  "searchEndpoint": "Buscar endpoint",
+  "categoryTabs": "Categorías SQL Server",
+  "noEndpointSelected": "Selecciona un endpoint.",
+  "downloadBlob": "Descargar",
+  "rowActions": "Acciones de fila",
+  "category": {
+    "support": "Soporte SQL Server",
+    "procedure": "Procedimientos",
+    "scalarFunction": "Funciones escalares",
+    "tableFunction": "Table-valued functions",
+    "query": "Queries"
+  },
+  "actions": "Acciones",
+  "row": "Fila",
+  "value": "Valor",
+  "idPersona": "Id persona",
+  "personaId": "Id persona",
+  "idPersonaBase": "Id persona base",
+  "referenciaId": "Id referencia",
+  "activoReferencia": "Activo referencia",
+  "nombre": "Nombre",
+  "apellido": "Apellido",
+  "edad": "Edad",
+  "email": "Correo electrónico",
+  "fechaNacimiento": "Fecha nacimiento",
+  "fechaRegistro": "Fecha registro",
+  "fechaAlta": "Fecha alta",
+  "activo": "Activo",
+  "estado": "Estado",
+  "correo": "Correo",
+  "nombreCompleto": "Nombre completo",
+  "resultado": "Resultado",
+  "totalPersonas": "Total personas",
+  "edadPromedio": "Edad promedio",
+  "edadMinima": "Edad mínima",
+  "edadMaxima": "Edad máxima",
+  "personasJson": "Personas",
+  "pIdPersona": "Id persona",
+  "pNombre": "Nombre",
+  "pApellido": "Apellido",
+  "pEdad": "Edad",
+  "pEmail": "Correo electrónico",
+  "pFechaNacimiento": "Fecha nacimiento",
+  "pActivo": "Activo",
+  "pPersona": "Persona JSON",
+  "pPersonas": "Personas",
+  "pValor": "Valor",
+  "pInsertados": "Insertados",
+  "gsSpGetPersona1": "Persona",
+  "gsSpGetPersonas1": "Personas",
+  "gsSpInsertPersona1": "Id generado",
+  "gsSpUpdatePersona1": "Resultado actualización",
+  "gsSpDeletePersona1": "Resultado eliminación",
+  "gsSpMultiResultPersona1": "Personas filtradas",
+  "gsSpMultiResultPersona2": "Estadísticas",
+  "gsFnPersonaActivaOut": "Activo",
+  "gsFnPersonaEdadOut": "Edad",
+  "gsFnPersonaFechaRegistroOut": "Fecha registro",
+  "gsFnPersonaFechaNacimientoOut": "Fecha nacimiento",
+  "gsFnGetPersonaJsonOut": "Persona JSON",
+  "gsFnGetPersonasJsonOut": "Personas JSON",
+  "gsIfPersonasByEstado1": "Personas por estado",
+  "gsIfPersonasByEdad1": "Personas por edad",
+  "gsIfPersonasByJson1": "Personas desde JSON",
+  "gsQPersonaByIdquery": "Persona",
+  "gsQPersonasByNombrequery": "Personas por nombre",
+  "gsQPersonasByActivoquery": "Personas por estado",
+  "gsQPersonasSelfJoinActivoquery": "Personas self join",
+  "gsQPersonasActivasWithquery": "Personas filtradas",
+  "gsQPersonasStatsWithquery": "Estadísticas",
+  "gsQPersonasByJsonquery": "Personas desde JSON",
+  "gsQPersonasForJsonquery": "Personas JSON",
+  "tabs": {
+    "execute": "Ejecutar",
+    "description": "Descripción",
+    "contract": "Contrato",
+    "source": "T-SQL / Query"
+  },
+  "guideTitle": "Guía del endpoint",
+  "contractTitle": "Contrato API",
+  "sourceTitle": "T-SQL / Query",
+  "httpMethod": "Método HTTP",
+  "restPath": "Ruta REST",
+  "sourceName": "Nombre técnico",
+  "sourceType": "Tipo fuente",
+  "responseKind": "Tipo respuesta",
+  "capabilitiesLabel": "Capacidades",
+  "requestFields": "Campos de entrada",
+  "responseFields": "Campos de salida",
+  "noRequestFields": "Sin campos de entrada.",
+  "noResponseFields": "Sin campos declarados.",
+  "emptyCapabilities": "Sin capacidades declaradas.",
+  "sourceDefinition": "Definición fuente",
+  "noSourceDefinition": "No hay definición fuente registrada.",
+  "notApplicable": "N/A",
+  "sourceTypes": {
+    "procedure": "Procedimiento",
+    "scalarFunction": "Función escalar",
+    "tableFunction": "Table-valued function",
+    "query": "Query"
+  },
+  "fieldKinds": {
+    "scalar": "Escalar",
+    "object": "Objeto",
+    "array": "Array",
+    "blob": "Blob",
+    "json": "JSON dinámico"
+  },
+  "responseKinds": {
+    "object": "Objeto",
+    "boolean": "Booleano",
+    "scalar": "Escalar",
+    "array": "Array"
+  },
+  "capabilities": {
+    "procedure": "Procedure",
+    "scalarFunction": "Función escalar",
+    "tableFunction": "Table-valued function",
+    "query": "Query",
+    "select": "SELECT",
+    "post": "POST",
+    "insert": "INSERT",
+    "identity": "SCOPE_IDENTITY",
+    "update": "UPDATE",
+    "rowCount": "@@ROWCOUNT",
+    "delete": "DELETE",
+    "tableValuedParameter": "Table-valued parameter",
+    "outputParameters": "Parámetros OUTPUT",
+    "customJsonAlias": "Tipo dbo.JSON",
+    "forJson": "FOR JSON PATH",
+    "dynamicJson": "JSON dinámico",
+    "openJson": "OPENJSON",
+    "multiResultSet": "Múltiples result sets",
+    "aggregate": "Agregación",
+    "bitBoolean": "BIT boolean",
+    "numeric": "Numérico",
+    "dateTime": "Fecha y hora",
+    "date": "Fecha",
+    "aliasMapping": "Aliases snake_case",
+    "namedParameters": "Parámetros nombrados",
+    "join": "JOIN",
+    "cte": "WITH / CTE"
+  },
+  "operationDescriptions": {
+    "default": "Este caso demuestra cómo Generate Service publica una operación SQL Server como endpoint REST respetando el contrato definido en la base de datos.",
+    "gsSpGetPersona": "Este caso demuestra que Generate Service puede exponer un procedimiento de consulta por id y convertir su result set en una respuesta REST tipada.",
+    "gsSpGetPersonas": "Este caso demuestra que Generate Service puede publicar un procedimiento sin entrada y devolver un listado completo de registros como colección REST.",
+    "gsSpInsertPersona": "Este caso demuestra que Generate Service puede recibir parámetros escalares, ejecutar una inserción en SQL Server y devolver el identificador generado.",
+    "gsSpUpdatePersona": "Este caso demuestra que Generate Service puede exponer una actualización parametrizada y comunicar al consumidor si la operación modificó datos.",
+    "gsSpDeletePersona": "Este caso demuestra que Generate Service puede publicar una eliminación por id y devolver un resultado claro sobre la ejecución.",
+    "gsSpInsertPersonas": "Este caso demuestra que Generate Service puede recibir datos tabulares desde REST mediante un table-valued parameter y procesar inserciones masivas.",
+    "gsSpGetPersonaOut": "Este caso demuestra que Generate Service puede mapear parámetros OUTPUT escalares y devolverlos como campos estructurados en REST.",
+    "gsSpTestOut": "Este caso demuestra que Generate Service puede publicar valores generados por SQL Server mediante parámetros OUTPUT.",
+    "gsSpGetPersonaJson": "Este caso demuestra que Generate Service puede exponer JSON dinámico generado por SQL Server y entregarlo al cliente como JSON natural.",
+    "gsSpGetPersonasJson": "Este caso demuestra que Generate Service puede devolver arreglos JSON generados en SQL Server como respuestas REST consumibles sin texto escapado.",
+    "gsSpInsertPersonaJson": "Este caso demuestra que Generate Service puede recibir JSON natural, permitir que SQL Server lo procese con OPENJSON y devolver el id creado.",
+    "gsSpInsertPersonasJson": "Este caso demuestra que Generate Service puede recibir un arreglo JSON natural, convertirlo en filas dentro de SQL Server y devolver el total insertado.",
+    "gsSpMultiResultPersona": "Este caso demuestra que Generate Service puede exponer procedimientos con múltiples result sets, devolviendo detalle y estadísticas en una sola llamada REST.",
+    "gsFnPersonaActiva": "Este caso demuestra que Generate Service puede publicar una función escalar BIT y presentarla al consumidor REST como valor booleano.",
+    "gsFnPersonaEdad": "Este caso demuestra que Generate Service puede exponer una función escalar numérica y devolver el valor calculado como respuesta REST simple.",
+    "gsFnPersonaFechaRegistro": "Este caso demuestra que Generate Service puede publicar una función escalar DATETIME y conservar su valor temporal en el contrato REST.",
+    "gsFnPersonaFechaNacimiento": "Este caso demuestra que Generate Service puede exponer una función escalar DATE y devolver una fecha de negocio desde SQL Server.",
+    "gsFnGetPersonaJson": "Este caso demuestra que Generate Service puede publicar una función escalar que retorna JSON dinámico para una entidad específica.",
+    "gsFnGetPersonasJson": "Este caso demuestra que Generate Service puede exponer una función escalar sin entrada que retorna un arreglo JSON generado por SQL Server.",
+    "gsIfPersonasByEstado": "Este caso demuestra que Generate Service puede publicar una inline table-valued function y devolver filas filtradas por estado como lista REST.",
+    "gsIfPersonasByEdad": "Este caso demuestra que Generate Service puede exponer una table-valued function con alias de columnas y proyectarlos en un contrato REST legible.",
+    "gsIfPersonasByJson": "Este caso demuestra que Generate Service puede recibir JSON dinámico, usarlo como criterio de búsqueda en SQL Server y devolver las filas relacionadas.",
+    "gsQPersonaById": "Este caso demuestra que Generate Service puede publicar una consulta SELECT parametrizada para recuperar una entidad por identificador.",
+    "gsQPersonasByNombre": "Este caso demuestra que Generate Service puede exponer búsquedas parametrizadas con coincidencia parcial de texto.",
+    "gsQPersonasByActivo": "Este caso demuestra que Generate Service puede publicar consultas filtradas por valores booleanos de SQL Server y devolver columnas con alias claros.",
+    "gsQPersonasSelfJoinActivo": "Este caso demuestra que Generate Service puede exponer consultas con self join para relacionar registros bajo una misma condición de negocio.",
+    "gsQPersonasActivasWith": "Este caso demuestra que Generate Service puede publicar consultas basadas en WITH/CTE y entregar el resultado filtrado como REST.",
+    "gsQPersonasStatsWith": "Este caso demuestra que Generate Service puede exponer consultas analíticas con CTE, agregaciones y valores numéricos calculados.",
+    "gsQPersonasByJson": "Este caso demuestra que Generate Service puede recibir un arreglo JSON en una query, convertirlo en filas con OPENJSON y usarlo como filtro relacional.",
+    "gsQPersonasForJson": "Este caso demuestra que Generate Service puede publicar consultas que retornan JSON generado por SQL Server y entregarlo como JSON natural en REST.",
+    "gsQInsertPersona": "Este caso demuestra que Generate Service puede convertir una query INSERT parametrizada en un endpoint REST de escritura con confirmación booleana.",
+    "gsQInsertPersonaSelect": "Este caso demuestra que Generate Service puede exponer un INSERT SELECT parametrizado para crear registros a partir de datos existentes.",
+    "gsQUpdatePersona": "Este caso demuestra que Generate Service puede publicar una query UPDATE parametrizada y devolver una confirmación REST de la operación.",
+    "gsQDeletePersona": "Este caso demuestra que Generate Service puede publicar una query DELETE parametrizada y devolver una confirmación REST de la operación."
+  },
+  "support": {
+    "kicker": "Documentación Generate Service",
+    "title": "Soporte SQL Server",
+    "subtitle": "Guía de procedimientos, funciones, table-valued functions, queries y JSON dinámico publicados por Generate Service para SQL Server.",
+    "jsonTitle": "JSON dinámico con dbo.JSON",
+    "jsonSubtitle": "SQL Server no tiene un tipo JSON nativo. Generate Service recomienda crear un alias dbo.JSON sobre NVARCHAR(MAX) para representar JSON de forma explícita.",
+    "jsonRawNote": "Cuando Java detecta dbo.JSON lo trata como JSON dinámico: los DTOs usan String con @RawJson en entrada y @JsonRawValue en salida. Por eso el navegador recibe objetos o arrays JSON naturales, sin comillas escapadas, y sin exigir un contrato DTO fijo.",
+    "capabilitiesTitle": "Capacidades soportadas",
+    "capabilitiesSubtitle": "El catálogo SQL Server cubre procedimientos con entrada IN, salida OUTPUT, result sets, funciones escalares, inline table-valued functions, table-valued parameters, queries SELECT/DML y JSON dinámico.",
+    "typeMappingTitle": "Tipos SQL Server soportados por Generate Service",
+    "typeMappingSubtitle": "Esta tabla documenta solo los tipos SQL Server usados o confirmados para esta suite y su contrato Generate Service.",
+    "sqlType": "Tipo SQL Server",
+    "contractType": "Tipo Java",
+    "simpleListType": "Tipo en listas",
+    "restShape": "Forma REST",
+    "typeMappingNote": "NCHAR y NVARCHAR se documentan como String en el contrato generado. TINYINT existe en SQL Server como numérico 0..255; para Java se documenta como int en primitivo e Integer en DTO/listas. Tipos SQL Server fuera de esta tabla, como SMALLINT, TIME, DATETIMEOFFSET, UNIQUEIDENTIFIER o XML, quedan fuera del alcance documentado hasta tener soporte confirmado en el contrato generado. En SQL Server, OUTPUT se trata solo como salida; el contrato se separa en entrada IN, salida OUTPUT y result sets.",
+    "rulesTitle": "Reglas de generación e integridad",
+    "rulesSubtitle": "Estas reglas aplican al microservicio generado y ayudan a mantener estable el contrato publicado para el cliente.",
+    "jsonWorkflow": {
+      "customAlias": {
+        "title": "Alias recomendado dbo.JSON",
+        "description": "Este bloque es custom y recomendado por Generate Service. El usuario lo crea para indicar que ese NVARCHAR(MAX) representa JSON."
+      },
+      "openJson": {
+        "title": "Entrada con OPENJSON",
+        "description": "OPENJSON transforma el JSON de entrada en filas y columnas tipadas dentro de SQL Server, ideal para insertar o filtrar datos desde un arreglo u objeto dinámico."
+      },
+      "forJson": {
+        "title": "Salida con FOR JSON PATH",
+        "description": "FOR JSON PATH construye el documento JSON de salida desde un SELECT; WITHOUT_ARRAY_WRAPPER se usa cuando se quiere un solo objeto."
+      },
+      "javaRaw": {
+        "title": "Java lo expone sin escapar",
+        "description": "Generate Service mantiene el JSON como String internamente, pero lo serializa/deserializa con anotaciones raw para que el browser vea JSON real."
+      }
+    },
+    "capabilities": {
+      "procedures": {
+        "title": "Procedures",
+        "description": "Soporta procedimientos con parámetros de entrada, parámetros OUTPUT tratados solo como salida, result sets y operaciones DML."
+      },
+      "scalarFunctions": {
+        "title": "Funciones escalares",
+        "description": "Expone funciones RETURNS BIT, INT, DATE, DATETIME o dbo.JSON como endpoints POST."
+      },
+      "tableFunctions": {
+        "title": "Table-valued functions",
+        "description": "Publica inline table-valued functions como respuestas array, conservando aliases para formar DTOs."
+      },
+      "tableValuedParameters": {
+        "title": "Table-valued parameters",
+        "description": "Permite enviar arrays de objetos REST hacia tipos SQL Server AS TABLE READONLY."
+      },
+      "queries": {
+        "title": "Queries",
+        "description": "Soporta SELECT parametrizado con :name, JOIN, WITH/CTE y aliases de columna."
+      },
+      "dmlQueries": {
+        "title": "Queries DML",
+        "description": "INSERT, UPDATE y DELETE se exponen como endpoints POST y devuelven confirmación booleana desde el servicio generado."
+      },
+      "multiResultSets": {
+        "title": "Múltiples result sets",
+        "description": "Un procedimiento puede devolver más de un SELECT y cada result set se mapea a una lista distinta en el response DTO."
+      },
+      "dynamicJson": {
+        "title": "JSON dinámico",
+        "description": "dbo.JSON permite entrada y salida JSON sin contrato fijo, útil para objetos o arreglos variables."
+      }
+    },
+    "ruleGroups": {
+      "naming": {
+        "title": "Nombres y exposición REST",
+        "rules": {
+          "snakeCase": "En SQL Server se recomienda usar snake_case para parámetros de query, aliases SQL y nombres T-SQL generados.",
+          "camelCase": "Generate Service transforma nombres SQL Server a camelCase para Java y para el contrato REST.",
+          "endpointNames": "Los nombres T-SQL y queries pasan a ser nombres de métodos y endpoints REST generados.",
+          "envOverride": "La URL base por motor se configura desde .env con API_ENDPOINT_SQLSERVER; si no existe, la UI usa http://localhost:8083 por defecto. Las rutas REST del backend también pueden modificarse por variables de entorno.",
+          "jsonProperty": "Los nombres de variables expuestas en JSON pueden ajustarse con la anotación Jackson @JsonProperty."
+        }
+      },
+      "methods": {
+        "title": "Métodos REST",
+        "rules": {
+          "postOnly": "Todos los endpoints generados en este servicio SQL Server son POST.",
+          "apiBase": "El controller generado usa base /api, por eso la ruta final es /api/{operation}.",
+          "outputAsSalida": "En SQL Server, OUTPUT es solo salida: no se envía como entrada y no se documenta como entrada-salida.",
+          "baseEndpoint": "La URL base por motor se configura desde .env con API_ENDPOINT_SQLSERVER; si no existe, la UI usa http://localhost:8083 por defecto.",
+          "envOverride": "Las rutas REST pueden cambiarse con variables API_REST_ENDPOINT_* del backend generado.",
+          "serverSideFetch": "La UI ejecuta los endpoints mediante server actions, no desde fetch directo del cliente."
+        }
+      },
+      "json": {
+        "title": "Reglas JSON",
+        "rules": {
+          "customAlias": "Crea dbo.JSON con el alias recomendado para representar JSON sobre NVARCHAR(MAX).",
+          "dynamicContract": "dbo.JSON no genera un DTO rígido; representa JSON dinámico.",
+          "openJson": "Usa OPENJSON para leer objetos/arreglos y proyectarlos a columnas SQL Server.",
+          "forJson": "Usa FOR JSON PATH para construir respuestas JSON desde SELECT.",
+          "unescapedBrowser": "Java expone el JSON sin escapar gracias a @RawJson y @JsonRawValue."
+        }
+      },
+      "integrity": {
+        "title": "Integridad del API generado",
+        "rules": {
+          "repositoryIntegrity": "Una vez generado el microservicio, Generate Service valida la integridad de los repositories generados.",
+          "licenseValidation": "La API generada incluye validaciones locales de integridad y licencia mediante un token seguro emitido por Generate Service. Estas validaciones se ejecutan dentro de la propia API generada y no requieren llamadas a servicios externos de licenciamiento.",
+          "signedMetadata": "No se deben modificar @Callable, @SpParameter, tipos, entradas, salidas, nombre T-SQL ni query firmada.",
+          "regenerateOnSourceChange": "Si cambia la fuente de datos, procedure, function, table-valued function, query, parámetros o tipos, se debe regenerar el microservicio.",
+          "oneEndpointPerSource": "Cada objeto T-SQL o query que se quiera consumir debe generarse como su propia fuente estable de API."
+        }
+      },
+      "customization": {
+        "title": "Personalización permitida",
+        "rules": {
+          "controllers": "Se puede agregar lógica en controllers para validar, adaptar o enriquecer la entrada y salida.",
+          "services": "Se puede agregar lógica de negocio en services antes o después de invocar la fuente generada.",
+          "businessLogic": "Se puede recalcular, componer o transformar la respuesta sin cambiar la metadata firmada.",
+          "sourceLock": "La fuente de datos generada queda protegida: repositories, firma, parámetros, query y T-SQL no se modifican manualmente."
+        }
+      }
+    }
+  }
+}

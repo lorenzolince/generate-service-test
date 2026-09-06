@@ -1,6 +1,8 @@
 services:
   sql-server:
     image: sql-server
+    build:
+      context: .
     container_name: sql-server
     hostname: sql-server
     ports:

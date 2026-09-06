@@ -5,22 +5,22 @@ import { Form, Row, Col, Table, Pagination } from "react-bootstrap";
 import { useReactTable, getCoreRowModel, getPaginationRowModel, getFilteredRowModel } from '@tanstack/react-table';
 import { useTranslation } from 'react-i18next';
 
-const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, onChangeQueue, queue , size = "sm" }) => {
-    if (!data || Object.keys(data).length === 0) return null;
-
+const DataGrid = ({ data = [], schemaColumns = "common", hiddenColumns = [], pagination, filtering, onChangeQueue, queue, size = "sm" }) => {
     const { t } = useTranslation();
+    const rows = Array.isArray(data) ? data : [];
     
-    // Estado de paginación y filtrado
     const [paginationState, setPaginationState] = useState({
         pageIndex: 0,
-        pageSize: pagination ? 10 : (data.length + 1) * 100
+        pageSize: pagination ? 10 : Math.max((rows.length + 1) * 100, 100)
     });
 
     const [globalFilter, setGlobalFilter] = useState("");
 
+    if (!rows.length) return null;
+
     const getColumns = (data) => {
         return Object.keys(data[0]).map(elem => ({
-            header: <div className='form-check'>{t(`${schemaColumns}:${elem}`)}</div>,
+            header: <div className='form-check'>{t(`${schemaColumns}:${elem}`, { defaultValue: humanize(elem) })}</div>,
             accessorKey: elem,
         }));
     };
@@ -41,7 +41,7 @@ const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, o
     });
 
     return (
-        <div>
+        <div className="data-grid-wrapper">
             <Row hidden={!filtering}>
                 <Col>
                     <Form.Group>
@@ -69,7 +69,7 @@ const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, o
                             {row.getVisibleCells().map(cell => (
                                 <td className='common-table-td' key={cell.id}>
                                     {
-                                        cell.renderValue()
+                                        formatCellValue(cell.renderValue())
                                     }
                                 </td>
                             ))}
@@ -80,9 +80,9 @@ const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, o
             <Row hidden={!pagination}>
                 <Col></Col>
                 <Col md="auto">
-                    <Form.Label size="sm">Página:</Form.Label>{' '}
-                    <Form.Label size="sm"><strong>{paginationState.pageIndex + 1} De {table.getPageCount()}</strong></Form.Label>{' '}
-                    <Form.Label htmlFor="irA" size="sm">| Ir a:</Form.Label>{' '}
+                    <Form.Label size="sm">{t('common:page')}:</Form.Label>{' '}
+                    <Form.Label size="sm"><strong>{paginationState.pageIndex + 1} {t('common:of')} {table.getPageCount()}</strong></Form.Label>{' '}
+                    <Form.Label htmlFor="irA" size="sm">| {t('common:goTo')}:</Form.Label>{' '}
                 </Col>
                 <Col md="auto">
                     <Form.Control name="irA" size="sm" type="number" min="1" max={table.getPageCount()} defaultValue={paginationState.pageIndex + 1}
@@ -94,7 +94,7 @@ const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, o
                        className='common-table-pagination.selectPage' onChange={e => setPaginationState(prev => ({ ...prev, pageSize: Number(e.target.value) }))}>
                         {[10, 20, 30, 40, 50].map(pageSize => (
                             <option key={pageSize} value={pageSize}>
-                                Ver {pageSize}
+                                {t('common:view')} {pageSize}
                             </option>
                         ))}
                     </Form.Control>
@@ -111,5 +111,16 @@ const DataGrid = ({ data, schemaColumns, hiddenColumns, pagination, filtering, o
         </div>
     );
 };
+
+const formatCellValue = (value) => {
+    if (React.isValidElement(value)) return value;
+    if (value === null || value === undefined) return "";
+    if (typeof value === "boolean") return value ? "true" : "false";
+    if (Array.isArray(value)) return JSON.stringify(value);
+    if (typeof value === "object") return JSON.stringify(value);
+    return value;
+};
+
+const humanize = (value) => String(value).replace(/([A-Z])/g, " $1").replace(/^./, (letter) => letter.toUpperCase());
 
 export default DataGrid;

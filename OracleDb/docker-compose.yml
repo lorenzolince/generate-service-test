@@ -1,6 +1,8 @@
 services:
   db-oracle:
     image: db-oracle
+    build:
+      context: .
     container_name: db-oracle
     hostname: db-oracle  
     ports:

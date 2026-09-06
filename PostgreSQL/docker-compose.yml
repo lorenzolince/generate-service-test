@@ -1,7 +1,7 @@
 services:
   postgres:
-    image: postgres:latest
-    container_name: postgres
+    image: postgres:17
+    container_name: postgrestest
     environment:
       POSTGRES_USER: sa
       POSTGRES_PASSWORD: 123456!
@@ -10,4 +10,5 @@ services:
       - "5432:5432"
     volumes:
       - ./data:/var/lib/postgresql/data
+      - ./generate_service_postgresql_test_suite.sql:/docker-entrypoint-initdb.d/01-generate_service_postgresql_test_suite.sql:ro
 

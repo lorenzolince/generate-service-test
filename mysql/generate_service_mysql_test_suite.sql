@@ -1,0 +1,1353 @@
+CREATE DATABASE IF NOT EXISTS generate_service_test;
+
+USE generate_service_test;
+
+
+-- =========================================================
+-- 1. PERSONAS
+-- =========================================================
+
+CREATE TABLE GS_PERSONA (
+    ID_PERSONA       INT PRIMARY KEY AUTO_INCREMENT,
+    NOMBRE           VARCHAR(100) NOT NULL,
+    APELLIDO         VARCHAR(100) NOT NULL,
+    EDAD             INT,
+    EMAIL            VARCHAR(150),
+    FECHA_NACIMIENTO DATE,
+    ACTIVO           BOOLEAN NOT NULL DEFAULT TRUE,
+    FECHA_REGISTRO   DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- =========================================================
+-- PERSONAS
+-- =========================================================
+
+INSERT INTO GS_PERSONA
+(
+    NOMBRE,
+    APELLIDO,
+    EDAD,
+    EMAIL,
+    FECHA_NACIMIENTO,
+    ACTIVO
+)
+VALUES
+(
+    'Andres',
+    'Moreno',
+    51,
+    'andres.moreno@test.com',
+    '1975-03-15',
+    TRUE
+);
+
+INSERT INTO GS_PERSONA
+(
+    NOMBRE,
+    APELLIDO,
+    EDAD,
+    EMAIL,
+    FECHA_NACIMIENTO,
+    ACTIVO
+)
+VALUES
+(
+    'Maria',
+    'Gomez',
+    35,
+    'maria@test.com',
+    '1991-07-20',
+    TRUE
+);
+
+INSERT INTO GS_PERSONA
+(
+    NOMBRE,
+    APELLIDO,
+    EDAD,
+    EMAIL,
+    FECHA_NACIMIENTO,
+    ACTIVO
+)
+VALUES
+(
+    'Carlos',
+    'Rodriguez',
+    42,
+    NULL,
+    NULL,
+    TRUE
+);
+
+INSERT INTO GS_PERSONA
+(
+    NOMBRE,
+    APELLIDO,
+    EDAD,
+    EMAIL,
+    FECHA_NACIMIENTO,
+    ACTIVO
+)
+VALUES
+(
+    'Ana',
+    'Martinez',
+    28,
+    'ana@test.com',
+    '1998-01-10',
+    FALSE
+);
+
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONA(
+    IN P_ID_PERSONA INT
+)
+BEGIN
+
+    SELECT
+        ID_PERSONA,
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO,
+        FECHA_REGISTRO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONAS_BY_ESTADO(
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    SELECT
+        ID_PERSONA       AS persona_id,
+        NOMBRE           AS nombre_completo,
+        APELLIDO         AS apellido_completo,
+        EDAD             AS edad_actual,
+        EMAIL            AS correo,
+        FECHA_NACIMIENTO AS nacimiento,
+        ACTIVO           AS estado,
+        FECHA_REGISTRO   AS fecha_alta
+    FROM GS_PERSONA
+    WHERE ACTIVO = P_ACTIVO
+    ORDER BY ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_PERSONA(
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        P_NOMBRE,
+        P_APELLIDO,
+        P_EDAD,
+        P_EMAIL,
+        P_FECHA_NACIMIENTO,
+        P_ACTIVO
+    );
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_UPDATE_PERSONA(
+    IN P_ID_PERSONA INT,
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    UPDATE GS_PERSONA
+    SET
+        NOMBRE = P_NOMBRE,
+        APELLIDO = P_APELLIDO,
+        EDAD = P_EDAD,
+        EMAIL = P_EMAIL,
+        FECHA_NACIMIENTO = P_FECHA_NACIMIENTO,
+        ACTIVO = P_ACTIVO
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_DELETE_PERSONA(
+    P_ID_PERSONA INT
+)
+RETURNS INT
+MODIFIES SQL DATA
+BEGIN
+
+    DECLARE V_FILAS_AFECTADAS INT DEFAULT 0;
+
+    DELETE FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    SET V_FILAS_AFECTADAS = ROW_COUNT();
+
+    RETURN V_FILAS_AFECTADAS;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_SELECT_PERSONA(
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    DECLARE V_ID_PERSONA INT;
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        P_NOMBRE,
+        P_APELLIDO,
+        P_EDAD,
+        P_EMAIL,
+        P_FECHA_NACIMIENTO,
+        P_ACTIVO
+    );
+
+    SET V_ID_PERSONA = LAST_INSERT_ID();
+
+    SELECT
+        ID_PERSONA AS persona_id,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad,
+        EMAIL AS email,
+        FECHA_NACIMIENTO AS fecha_nacimiento,
+        ACTIVO AS activo,
+        FECHA_REGISTRO AS fecha_registro
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = V_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_UPDATE_SELECT_PERSONA(
+    IN P_ID_PERSONA INT,
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    UPDATE GS_PERSONA
+    SET
+        NOMBRE = P_NOMBRE,
+        APELLIDO = P_APELLIDO,
+        EDAD = P_EDAD,
+        EMAIL = P_EMAIL,
+        FECHA_NACIMIENTO = P_FECHA_NACIMIENTO,
+        ACTIVO = P_ACTIVO
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    SELECT
+        ID_PERSONA AS persona_id,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad,
+        EMAIL AS email,
+        FECHA_NACIMIENTO AS fecha_nacimiento,
+        ACTIVO AS activo,
+        FECHA_REGISTRO AS fecha_registro
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_MULTI_RESULT_PERSONA(
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    -- RESULT SET 1
+    SELECT
+        ID_PERSONA AS persona_id,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad
+    FROM GS_PERSONA
+    WHERE ACTIVO = P_ACTIVO
+    ORDER BY ID_PERSONA;
+
+
+    -- RESULT SET 2
+    SELECT
+        COUNT(*) AS total_personas,
+        COALESCE(AVG(EDAD), 0) AS edad_promedio,
+        COALESCE(MIN(EDAD), 0) AS edad_minima,
+        COALESCE(MAX(EDAD), 0) AS edad_maxima
+    FROM GS_PERSONA
+    WHERE ACTIVO = P_ACTIVO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_MULTI_OPERATION_PERSONA(
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN
+)
+BEGIN
+
+    DECLARE V_ID_PERSONA INT;
+
+    -- 1. INSERT
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        P_NOMBRE,
+        P_APELLIDO,
+        P_EDAD,
+        P_EMAIL,
+        P_FECHA_NACIMIENTO,
+        P_ACTIVO
+    );
+
+    SET V_ID_PERSONA = LAST_INSERT_ID();
+
+
+    -- 2. UPDATE
+    UPDATE GS_PERSONA
+    SET
+        NOMBRE = CONCAT(NOMBRE, ' UPDATED'),
+        EDAD = EDAD + 1
+    WHERE ID_PERSONA = V_ID_PERSONA;
+
+
+    -- 3. SELECT
+    SELECT
+        ID_PERSONA AS persona_id,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad,
+        EMAIL AS email,
+        FECHA_NACIMIENTO AS fecha_nacimiento,
+        ACTIVO AS activo,
+        FECHA_REGISTRO AS fecha_registro
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = V_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_PERSONA_JSON(
+    IN P_PERSONA JSON
+)
+BEGIN
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.nombre')),
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.apellido')),
+        CAST(JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.edad')) AS UNSIGNED),
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.email')),
+        STR_TO_DATE(
+            JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.fechaNacimiento')),
+            '%Y-%m-%d'
+        ),
+        CASE LOWER(JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.activo')))
+            WHEN 'true' THEN TRUE
+            WHEN '1' THEN TRUE
+            ELSE FALSE
+        END
+    );
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_PERSONAS_JSON_ARRAY(
+    IN P_PERSONAS JSON
+)
+BEGIN
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    SELECT
+        JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.nombre')),
+        JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.apellido')),
+        CAST(JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.edad')) AS UNSIGNED),
+        JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.email')),
+        STR_TO_DATE(
+            JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.fechaNacimiento')),
+            '%Y-%m-%d'
+        ),
+        CASE LOWER(JSON_UNQUOTE(JSON_EXTRACT(PERSONA, '$.activo')))
+            WHEN 'true' THEN TRUE
+            WHEN '1' THEN TRUE
+            ELSE FALSE
+        END
+    FROM JSON_TABLE(
+        P_PERSONAS,
+        '$[*]' COLUMNS (
+            PERSONA JSON PATH '$'
+        )
+    ) AS T;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONA_JSON(
+    IN P_ID_PERSONA INT,
+    OUT P_PERSONA JSON
+)
+BEGIN
+
+    SELECT JSON_OBJECT(
+        'idPersona', ID_PERSONA,
+        'nombre', NOMBRE,
+        'apellido', APELLIDO,
+        'edad', EDAD,
+        'email', EMAIL,
+        'fechaNacimiento', FECHA_NACIMIENTO,
+        'activo', ACTIVO,
+        'fechaRegistro', FECHA_REGISTRO
+    )
+    INTO P_PERSONA
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONAS_JSON_ARRAY(
+    IN P_ACTIVO BOOLEAN,
+    OUT P_PERSONAS JSON
+)
+BEGIN
+
+    SELECT JSON_ARRAYAGG(
+        JSON_OBJECT(
+            'idPersona', ID_PERSONA,
+            'nombre', NOMBRE,
+            'apellido', APELLIDO,
+            'edad', EDAD,
+            'email', EMAIL,
+            'fechaNacimiento', FECHA_NACIMIENTO,
+            'activo', ACTIVO,
+            'fechaRegistro', FECHA_REGISTRO
+        )
+    )
+    INTO P_PERSONAS
+    FROM GS_PERSONA
+    WHERE ACTIVO = P_ACTIVO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_JSON_RESULTSET(
+    IN P_PERSONA JSON
+)
+BEGIN
+
+    SELECT
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.nombre')) AS name,
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.apellido')) AS last_name,
+        CAST(JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.edad')) AS UNSIGNED) AS age,
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.email')) AS email,
+        STR_TO_DATE(
+            JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.fechaNacimiento')),
+            '%Y-%m-%d'
+        ) AS birthday;
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.nombre')),
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.apellido')),
+        CAST(JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.edad')) AS UNSIGNED),
+        JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.email')),
+        STR_TO_DATE(
+            JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.fechaNacimiento')),
+            '%Y-%m-%d'
+        ),
+        CASE LOWER(JSON_UNQUOTE(JSON_EXTRACT(P_PERSONA, '$.activo')))
+            WHEN 'true' THEN TRUE
+            WHEN '1' THEN TRUE
+            ELSE FALSE
+        END
+    );
+
+    SELECT
+        ID_PERSONA AS id_persona,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad,
+        EMAIL AS email,
+        FECHA_NACIMIENTO AS fecha_nacimiento,
+        ACTIVO AS activo,
+        FECHA_REGISTRO AS fecha_registro
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = LAST_INSERT_ID();
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION fn_persona_json(
+    P_ID INT
+)
+RETURNS JSON
+DETERMINISTIC
+BEGIN
+    DECLARE v_nombre VARCHAR(100);
+    DECLARE v_apellido VARCHAR(100);
+
+    SELECT nombre, APELLIDO
+      INTO v_nombre, v_apellido
+      FROM GS_PERSONA
+     WHERE ID_PERSONA = P_ID;
+
+    RETURN JSON_OBJECT(
+        'id', P_ID,
+        'nombre', v_nombre,
+        'apellido', v_apellido
+    );
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_INSERT_PERSONAS_JSON(
+    P_PERSONAS JSON
+)
+RETURNS INT
+MODIFIES SQL DATA
+BEGIN
+
+    DECLARE V_INDEX INT DEFAULT 0;
+    DECLARE V_TOTAL INT DEFAULT 0;
+
+    DECLARE V_NOMBRE VARCHAR(100);
+    DECLARE V_APELLIDO VARCHAR(100);
+    DECLARE V_EDAD INT;
+    DECLARE V_EMAIL VARCHAR(150);
+    DECLARE V_FECHA_NACIMIENTO DATE;
+    DECLARE V_ACTIVO BOOLEAN;
+
+    SET V_TOTAL = JSON_LENGTH(P_PERSONAS);
+
+    WHILE V_INDEX < V_TOTAL DO
+
+        SET V_NOMBRE = JSON_UNQUOTE(
+            JSON_EXTRACT(
+                P_PERSONAS,
+                CONCAT('$[', V_INDEX, '].nombre')
+            )
+        );
+
+        SET V_APELLIDO = JSON_UNQUOTE(
+            JSON_EXTRACT(
+                P_PERSONAS,
+                CONCAT('$[', V_INDEX, '].apellido')
+            )
+        );
+
+        SET V_EDAD = JSON_EXTRACT(
+            P_PERSONAS,
+            CONCAT('$[', V_INDEX, '].edad')
+        );
+
+        SET V_EMAIL = JSON_UNQUOTE(
+            JSON_EXTRACT(
+                P_PERSONAS,
+                CONCAT('$[', V_INDEX, '].email')
+            )
+        );
+
+        SET V_FECHA_NACIMIENTO = JSON_UNQUOTE(
+            JSON_EXTRACT(
+                P_PERSONAS,
+                CONCAT('$[', V_INDEX, '].fechaNacimiento')
+            )
+        );
+
+        SET V_ACTIVO = CASE LOWER(JSON_UNQUOTE(JSON_EXTRACT(
+            P_PERSONAS,
+            CONCAT('$[', V_INDEX, '].activo')
+        )))
+            WHEN 'true' THEN TRUE
+            WHEN '1' THEN TRUE
+            ELSE FALSE
+        END;
+
+        INSERT INTO GS_PERSONA (
+            NOMBRE,
+            APELLIDO,
+            EDAD,
+            EMAIL,
+            FECHA_NACIMIENTO,
+            ACTIVO
+        )
+        VALUES (
+            V_NOMBRE,
+            V_APELLIDO,
+            V_EDAD,
+            V_EMAIL,
+            V_FECHA_NACIMIENTO,
+            V_ACTIVO
+        );
+
+        SET V_INDEX = V_INDEX + 1;
+
+    END WHILE;
+
+    RETURN LAST_INSERT_ID();
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_UPDATE_PERSONA(
+    P_ID_PERSONA INT,
+    P_NOMBRE VARCHAR(100),
+    P_APELLIDO VARCHAR(100),
+    P_EDAD INT,
+    P_EMAIL VARCHAR(150),
+    P_FECHA_NACIMIENTO DATE,
+    P_ACTIVO BOOLEAN
+)
+RETURNS BOOLEAN
+MODIFIES SQL DATA
+BEGIN
+
+    UPDATE GS_PERSONA
+       SET NOMBRE = P_NOMBRE,
+           APELLIDO = P_APELLIDO,
+           EDAD = P_EDAD,
+           EMAIL = P_EMAIL,
+           FECHA_NACIMIENTO = P_FECHA_NACIMIENTO,
+           ACTIVO = P_ACTIVO
+     WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN ROW_COUNT() > 0;
+
+END$$
+
+DELIMITER ;
+
+
+-- =========================================================
+-- ESCENARIOS ADICIONALES MYSQL
+-- =========================================================
+
+CREATE TABLE GS_MYSQL_TIPOS_EXTRA (
+    ID_EXTRA         INT PRIMARY KEY AUTO_INCREMENT,
+    ID_PERSONA       INT NOT NULL,
+    SALARIO          DECIMAL(12,2) NULL,
+    BIO              TEXT NULL,
+    ULTIMO_ACCESO    TIMESTAMP NULL DEFAULT NULL,
+    HORA_CONTACTO    TIME NULL,
+    FOTO             VARBINARY(255) NULL,
+    PERFIL_JSON      JSON NULL
+);
+
+INSERT INTO GS_MYSQL_TIPOS_EXTRA
+(
+    ID_PERSONA,
+    SALARIO,
+    BIO,
+    ULTIMO_ACCESO,
+    HORA_CONTACTO,
+    FOTO,
+    PERFIL_JSON
+)
+VALUES
+(
+    1,
+    3200.75,
+    'Arquitecto de software con experiencia en integraciones.',
+    '2026-09-01 08:15:30',
+    '09:30:00',
+    UNHEX('4C4F52454E5A4F'),
+    JSON_OBJECT(
+        'nivel', 'senior',
+        'habilidades', JSON_ARRAY('java', 'sql', 'apis')
+    )
+);
+
+INSERT INTO GS_MYSQL_TIPOS_EXTRA
+(
+    ID_PERSONA,
+    SALARIO,
+    BIO,
+    ULTIMO_ACCESO,
+    HORA_CONTACTO,
+    FOTO,
+    PERFIL_JSON
+)
+VALUES
+(
+    2,
+    2450.50,
+    'Especialista en pruebas funcionales y automatizacion.',
+    '2026-09-01 10:45:12',
+    '11:00:00',
+    UNHEX('4D41524941'),
+    JSON_OBJECT(
+        'nivel', 'mid',
+        'habilidades', JSON_ARRAY('qa', 'mysql', 'postman')
+    )
+);
+
+INSERT INTO GS_MYSQL_TIPOS_EXTRA
+(
+    ID_PERSONA,
+    SALARIO,
+    BIO,
+    ULTIMO_ACCESO,
+    HORA_CONTACTO,
+    FOTO,
+    PERFIL_JSON
+)
+VALUES
+(
+    3,
+    4100.00,
+    'Consultor de datos con foco en reportes operativos.',
+    '2026-09-02 07:05:44',
+    '14:15:00',
+    UNHEX('4341524C4F53'),
+    JSON_OBJECT(
+        'nivel', 'senior',
+        'habilidades', JSON_ARRAY('data', 'etl', 'sql')
+    )
+);
+
+INSERT INTO GS_MYSQL_TIPOS_EXTRA
+(
+    ID_PERSONA,
+    SALARIO,
+    BIO,
+    ULTIMO_ACCESO,
+    HORA_CONTACTO,
+    FOTO,
+    PERFIL_JSON
+)
+VALUES
+(
+    4,
+    1800.25,
+    'Analista de soporte con experiencia en atencion al cliente.',
+    '2026-08-31 16:20:00',
+    '16:45:00',
+    UNHEX('414E41'),
+    JSON_OBJECT(
+        'nivel', 'junior',
+        'habilidades', JSON_ARRAY('soporte', 'crm', 'documentacion')
+    )
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_ALL_PERSONAS()
+BEGIN
+
+    SELECT
+        ID_PERSONA,
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO,
+        FECHA_REGISTRO
+    FROM GS_PERSONA
+    ORDER BY ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_COUNT_PERSONAS_OUT(
+    OUT P_TOTAL INT
+)
+BEGIN
+
+    SELECT COUNT(*)
+    INTO P_TOTAL
+    FROM GS_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONA_RESUMEN_OUT(
+    IN P_ID_PERSONA INT,
+    OUT P_NOMBRE_COMPLETO VARCHAR(250),
+    OUT P_EDAD INT,
+    OUT P_ACTIVO BOOLEAN,
+    OUT P_FECHA_REGISTRO DATETIME
+)
+BEGIN
+
+    SELECT
+        CONCAT(NOMBRE, ' ', APELLIDO),
+        EDAD,
+        ACTIVO,
+        FECHA_REGISTRO
+    INTO
+        P_NOMBRE_COMPLETO,
+        P_EDAD,
+        P_ACTIVO,
+        P_FECHA_REGISTRO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_MYSQL_TIPOS_EXTRA_OUT(
+    IN P_ID_PERSONA INT,
+    OUT P_SALARIO DECIMAL(12,2),
+    OUT P_BIO TEXT,
+    OUT P_ULTIMO_ACCESO TIMESTAMP,
+    OUT P_HORA_CONTACTO TIME,
+    OUT P_FOTO VARBINARY(255),
+    OUT P_PERFIL_JSON JSON
+)
+BEGIN
+
+    SELECT
+        SALARIO,
+        BIO,
+        ULTIMO_ACCESO,
+        HORA_CONTACTO,
+        FOTO,
+        PERFIL_JSON
+    INTO
+        P_SALARIO,
+        P_BIO,
+        P_ULTIMO_ACCESO,
+        P_HORA_CONTACTO,
+        P_FOTO,
+        P_PERFIL_JSON
+    FROM GS_MYSQL_TIPOS_EXTRA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INCREMENTAR_EDAD_INOUT(
+    INOUT P_EDAD INT
+)
+BEGIN
+
+    SET P_EDAD = COALESCE(P_EDAD, 0) + 1;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_NORMALIZAR_EMAIL_INOUT(
+    INOUT P_EMAIL VARCHAR(150)
+)
+BEGIN
+
+    SET P_EMAIL = LOWER(TRIM(P_EMAIL));
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_PERSONA_OUT_ID(
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN,
+    OUT P_ID_PERSONA INT
+)
+BEGIN
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        P_NOMBRE,
+        P_APELLIDO,
+        P_EDAD,
+        P_EMAIL,
+        P_FECHA_NACIMIENTO,
+        P_ACTIVO
+    );
+
+    SET P_ID_PERSONA = LAST_INSERT_ID();
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_UPDATE_PERSONA_OUT_COUNT(
+    IN P_ID_PERSONA INT,
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN,
+    OUT P_FILAS_AFECTADAS INT
+)
+BEGIN
+
+    UPDATE GS_PERSONA
+    SET
+        NOMBRE = P_NOMBRE,
+        APELLIDO = P_APELLIDO,
+        EDAD = P_EDAD,
+        EMAIL = P_EMAIL,
+        FECHA_NACIMIENTO = P_FECHA_NACIMIENTO,
+        ACTIVO = P_ACTIVO
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    SET P_FILAS_AFECTADAS = ROW_COUNT();
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_INSERT_PERSONA_OUT_RESULTSET(
+    IN P_NOMBRE VARCHAR(100),
+    IN P_APELLIDO VARCHAR(100),
+    IN P_EDAD INT,
+    IN P_EMAIL VARCHAR(150),
+    IN P_FECHA_NACIMIENTO DATE,
+    IN P_ACTIVO BOOLEAN,
+    OUT P_ID_PERSONA INT
+)
+BEGIN
+
+    INSERT INTO GS_PERSONA (
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO
+    )
+    VALUES (
+        P_NOMBRE,
+        P_APELLIDO,
+        P_EDAD,
+        P_EMAIL,
+        P_FECHA_NACIMIENTO,
+        P_ACTIVO
+    );
+
+    SET P_ID_PERSONA = LAST_INSERT_ID();
+
+    SELECT
+        ID_PERSONA AS persona_id,
+        NOMBRE AS nombre,
+        APELLIDO AS apellido,
+        EDAD AS edad,
+        EMAIL AS email,
+        FECHA_NACIMIENTO AS fecha_nacimiento,
+        ACTIVO AS activo,
+        FECHA_REGISTRO AS fecha_registro
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_GET_PERSONA_REQUIRED(
+    IN P_ID_PERSONA INT
+)
+BEGIN
+
+    DECLARE V_EXISTE INT DEFAULT 0;
+
+    SELECT COUNT(*)
+    INTO V_EXISTE
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    IF V_EXISTE = 0 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Persona no encontrada';
+    END IF;
+
+    SELECT
+        ID_PERSONA,
+        NOMBRE,
+        APELLIDO,
+        EDAD,
+        EMAIL,
+        FECHA_NACIMIENTO,
+        ACTIVO,
+        FECHA_REGISTRO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_PERSONA_NOMBRE(
+    P_ID_PERSONA INT
+)
+RETURNS VARCHAR(250)
+READS SQL DATA
+BEGIN
+
+    DECLARE V_NOMBRE_COMPLETO VARCHAR(250);
+
+    SELECT CONCAT(NOMBRE, ' ', APELLIDO)
+    INTO V_NOMBRE_COMPLETO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_NOMBRE_COMPLETO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_PERSONA_FECHA_NACIMIENTO(
+    P_ID_PERSONA INT
+)
+RETURNS DATE
+READS SQL DATA
+BEGIN
+
+    DECLARE V_FECHA_NACIMIENTO DATE;
+
+    SELECT FECHA_NACIMIENTO
+    INTO V_FECHA_NACIMIENTO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_FECHA_NACIMIENTO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_PERSONA_FECHA_REGISTRO(
+    P_ID_PERSONA INT
+)
+RETURNS DATETIME
+READS SQL DATA
+BEGIN
+
+    DECLARE V_FECHA_REGISTRO DATETIME;
+
+    SELECT FECHA_REGISTRO
+    INTO V_FECHA_REGISTRO
+    FROM GS_PERSONA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_FECHA_REGISTRO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_MYSQL_TIPOS_EXTRA_SALARIO(
+    P_ID_PERSONA INT
+)
+RETURNS DECIMAL(12,2)
+READS SQL DATA
+BEGIN
+
+    DECLARE V_SALARIO DECIMAL(12,2);
+
+    SELECT SALARIO
+    INTO V_SALARIO
+    FROM GS_MYSQL_TIPOS_EXTRA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_SALARIO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_MYSQL_TIPOS_EXTRA_HORA_CONTACTO(
+    P_ID_PERSONA INT
+)
+RETURNS TIME
+READS SQL DATA
+BEGIN
+
+    DECLARE V_HORA_CONTACTO TIME;
+
+    SELECT HORA_CONTACTO
+    INTO V_HORA_CONTACTO
+    FROM GS_MYSQL_TIPOS_EXTRA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_HORA_CONTACTO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_GET_MYSQL_TIPOS_EXTRA_BIO(
+    P_ID_PERSONA INT
+)
+RETURNS TEXT
+READS SQL DATA
+BEGIN
+
+    DECLARE V_BIO TEXT;
+
+    SELECT BIO
+    INTO V_BIO
+    FROM GS_MYSQL_TIPOS_EXTRA
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    RETURN V_BIO;
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE GS_SP_UPDATE_MYSQL_TIPOS_EXTRA(
+    IN P_ID_PERSONA INT,
+    IN P_SALARIO DECIMAL(12,2),
+    IN P_BIO TEXT,
+    IN P_ULTIMO_ACCESO TIMESTAMP,
+    IN P_HORA_CONTACTO TIME,
+    IN P_FOTO VARBINARY(255),
+    IN P_PERFIL_JSON JSON,
+    OUT P_FILAS_AFECTADAS INT
+)
+BEGIN
+
+    UPDATE GS_MYSQL_TIPOS_EXTRA
+    SET
+        SALARIO = P_SALARIO,
+        BIO = P_BIO,
+        ULTIMO_ACCESO = P_ULTIMO_ACCESO,
+        HORA_CONTACTO = P_HORA_CONTACTO,
+        FOTO = P_FOTO,
+        PERFIL_JSON = P_PERFIL_JSON
+    WHERE ID_PERSONA = P_ID_PERSONA;
+
+    SET P_FILAS_AFECTADAS = ROW_COUNT();
+
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE FUNCTION GS_FN_COUNT_PERSONAS()
+RETURNS INT
+READS SQL DATA
+BEGIN
+
+    DECLARE V_TOTAL INT DEFAULT 0;
+
+    SELECT COUNT(*)
+    INTO V_TOTAL
+    FROM GS_PERSONA;
+
+    RETURN V_TOTAL;
+
+END$$
+
+DELIMITER ;
+
+
+-- =========================================================
+-- RAW QUERIES MYSQL PARA GENERATE SERVICE
+-- =========================================================
+-- Copiar la linea SQL en el generador. Los parametros usan sintaxis :name.
+
+-- GS_Q_PERSONA_BY_ID
+-- SELECT ID_PERSONA, NOMBRE, APELLIDO, EDAD, EMAIL, FECHA_NACIMIENTO, ACTIVO, FECHA_REGISTRO FROM GS_PERSONA WHERE ID_PERSONA = :id_persona;
+
+-- GS_Q_MYSQL_TIPOS_EXTRA_BY_PERSONA
+-- SELECT ID_EXTRA, ID_PERSONA, SALARIO, BIO, ULTIMO_ACCESO, HORA_CONTACTO, FOTO, PERFIL_JSON FROM GS_MYSQL_TIPOS_EXTRA WHERE ID_PERSONA = :id_persona;
+
+-- GS_Q_PERSONAS_BY_NOMBRE
+-- SELECT ID_PERSONA, NOMBRE, APELLIDO, EDAD, EMAIL, FECHA_NACIMIENTO, ACTIVO, FECHA_REGISTRO FROM GS_PERSONA WHERE NOMBRE LIKE CONCAT('%', :nombre, '%') ORDER BY ID_PERSONA;
+
+-- GS_Q_PERSONAS_BY_ACTIVO
+-- SELECT ID_PERSONA AS persona_id, NOMBRE AS nombre, APELLIDO AS apellido, EDAD AS edad, EMAIL AS email, ACTIVO AS activo FROM GS_PERSONA WHERE ACTIVO = :activo ORDER BY ID_PERSONA;
+
+-- GS_Q_PERSONAS_SELF_JOIN_ACTIVO
+-- SELECT P.ID_PERSONA AS persona_id, P.NOMBRE AS nombre, P.APELLIDO AS apellido, R.ID_PERSONA AS referencia_id, R.ACTIVO AS activo_referencia FROM GS_PERSONA P JOIN GS_PERSONA R ON R.ACTIVO = P.ACTIVO WHERE R.ID_PERSONA = :id_persona_referencia ORDER BY P.ID_PERSONA;
+
+-- GS_Q_PERSONAS_ACTIVAS_WITH
+-- WITH PERSONAS_FILTRADAS AS (SELECT ID_PERSONA, NOMBRE, APELLIDO, ACTIVO FROM GS_PERSONA WHERE ACTIVO = :activo) SELECT ID_PERSONA, NOMBRE, APELLIDO, ACTIVO FROM PERSONAS_FILTRADAS ORDER BY ID_PERSONA;
+
+-- GS_Q_PERSONAS_STATS_EXTRA_WITH
+-- WITH PERSONAS_FILTRADAS AS (SELECT P.ID_PERSONA, P.EDAD, E.SALARIO FROM GS_PERSONA P LEFT JOIN GS_MYSQL_TIPOS_EXTRA E ON E.ID_PERSONA = P.ID_PERSONA WHERE P.ACTIVO = :activo) SELECT COUNT(*) AS total_personas, COALESCE(AVG(EDAD), 0) AS edad_promedio, COALESCE(SUM(SALARIO), 0) AS salario_total FROM PERSONAS_FILTRADAS;
+
+-- GS_Q_MYSQL_TIPOS_EXTRA_BY_PERFIL_JSON
+-- SELECT P.ID_PERSONA, P.NOMBRE, P.APELLIDO, JSON_UNQUOTE(JSON_EXTRACT(E.PERFIL_JSON, '$.nivel')) AS nivel, E.PERFIL_JSON FROM GS_PERSONA P JOIN GS_MYSQL_TIPOS_EXTRA E ON E.ID_PERSONA = P.ID_PERSONA WHERE JSON_UNQUOTE(JSON_EXTRACT(E.PERFIL_JSON, '$.nivel')) = :nivel ORDER BY P.ID_PERSONA;
+
+-- GS_Q_INSERT_PERSONA
+-- INSERT INTO GS_PERSONA (NOMBRE, APELLIDO, EDAD, EMAIL, FECHA_NACIMIENTO, ACTIVO) VALUES (:nombre, :apellido, :edad, :email, :fecha_nacimiento, :activo);
+
+-- GS_Q_INSERT_PERSONA_SELECT
+-- INSERT INTO GS_PERSONA (NOMBRE, APELLIDO, EDAD, EMAIL, FECHA_NACIMIENTO, ACTIVO) SELECT :nombre, P.APELLIDO, P.EDAD, :email, P.FECHA_NACIMIENTO, :activo FROM GS_PERSONA P WHERE P.ID_PERSONA = :id_persona_base;
+
+-- GS_Q_UPDATE_PERSONA
+-- UPDATE GS_PERSONA SET NOMBRE = :nombre, APELLIDO = :apellido, EDAD = :edad, EMAIL = :email, FECHA_NACIMIENTO = :fecha_nacimiento, ACTIVO = :activo WHERE ID_PERSONA = :id_persona;
+
+-- GS_Q_UPDATE_MYSQL_TIPOS_EXTRA
+-- UPDATE GS_MYSQL_TIPOS_EXTRA SET SALARIO = :salario, BIO = :bio, ULTIMO_ACCESO = :ultimo_acceso, HORA_CONTACTO = :hora_contacto, FOTO = :foto, PERFIL_JSON = :perfil_json WHERE ID_PERSONA = :id_persona;
+
+-- GS_Q_DELETE_PERSONA
+-- DELETE FROM GS_PERSONA WHERE ID_PERSONA = :id_persona;

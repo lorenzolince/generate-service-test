@@ -9,15 +9,15 @@ const SAVE_MULTIPLE = `${API_ENDPOINT}/api/insertMultipleClient`;
 const DELETE = `${API_ENDPOINT}/api/deleteClient`;
 const UPDATE = `${API_ENDPOINT}/api/updateClient`;
 
-export async function getAllApi(data) {
+export async function getAllApi() {
     const headers = { "Content-Type": "application/json" };
     const response = await fetch(`${GET_ALL}`, {
         method: "POST",
         headers,
-        body: JSON.stringify(data)
+        body: null
     });
     const json = await response.json();
-    return json.result1; 
+    return json.getAllClientOut; 
 }
 
 
@@ -32,7 +32,7 @@ export async function getApi(id) {
         body: JSON.stringify(data)
     })
     const json = await response.json();
-    return json.result1[0]; 
+    return json.pClient; 
 }
 export async function getApiByName(name) {
     const data = { "name": name }
@@ -45,7 +45,7 @@ export async function getApiByName(name) {
         body: JSON.stringify(data)
     })
     const json = await response.json();
-    return json.getClientByNamequery;
+    return json.getClientByNameQuery;
 }
 export async function saveApi(data) {
         const dataSave = {

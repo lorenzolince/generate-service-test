@@ -1,0 +1,360 @@
+{
+  "title": "Postgres",
+  "explorerTitle": "Explorador Postgres",
+  "explorerSubtitle": "Ejecuta procedimientos, funciones y queries generadas desde Generate Service para PostgreSQL.",
+  "personasTitle": "Personas Postgres",
+  "personasSubtitle": "CRUD basado en gsSpGetPersonas, gsSpInsertPersona, gsSpUpdatePersona y gsSpDeletePersona.",
+  "addPersona": "Agregar persona",
+  "updatePersona": "Actualizar persona",
+  "request": "Request",
+  "response": "Response",
+  "emptyRequest": "Este endpoint no requiere cuerpo de entrada.",
+  "emptyResponse": "El endpoint no devolvió contenido.",
+  "emptyResult": "Sin datos para mostrar.",
+  "executeToSeeResponse": "Ejecuta el endpoint para ver la respuesta.",
+  "invalidJson": "JSON inválido",
+  "searchEndpoint": "Buscar endpoint",
+  "categoryTabs": "Categorías Postgres",
+  "noEndpointSelected": "Selecciona un endpoint.",
+  "downloadBlob": "Descargar",
+  "rowActions": "Acciones de fila",
+  "category": {
+    "support": "Soporte Postgres",
+    "procedure": "Procedimientos",
+    "function": "Funciones",
+    "setReturningFunction": "Funciones SETOF/TABLE",
+    "query": "Queries SQL"
+  },
+  "actions": "Acciones",
+  "row": "Fila",
+  "value": "Valor",
+  "idPersona": "Id persona",
+  "nombre": "Nombre",
+  "apellido": "Apellido",
+  "edad": "Edad",
+  "email": "Correo electrónico",
+  "fechaNacimiento": "Fecha nacimiento",
+  "fechaRegistro": "Fecha registro",
+  "activo": "Activo",
+  "pais": "País",
+  "ciudad": "Ciudad",
+  "telefono": "Teléfono",
+  "direccion": "Dirección",
+  "hijos": "Hijos",
+  "datos": "Datos JSONB",
+  "total": "Total",
+  "activos": "Activos",
+  "inactivos": "Inactivos",
+  "actualizado": "Actualizado",
+  "accion": "Acción",
+  "personaId": "Id persona",
+  "referenciaId": "Id referencia",
+  "activoReferencia": "Activo referencia",
+  "totalPersonas": "Total personas",
+  "edadPromedio": "Edad promedio",
+  "edadMinima": "Edad mínima",
+  "edadMaxima": "Edad máxima",
+  "totalHijos": "Total hijos",
+  "personasJson": "Personas JSON",
+  "personasJsonb": "Personas JSONB",
+  "idPersonaReferencia": "Id persona referencia",
+  "idPersonaBase": "Id persona base",
+  "pIdPersona": "Id persona",
+  "pPersona": "Persona",
+  "pPersonas": "Personas",
+  "pInsertados": "Insertados",
+  "pActualizado": "Actualizado",
+  "pEliminado": "Eliminado",
+  "pTotal": "Total",
+  "pActivos": "Activos",
+  "pInactivos": "Inactivos",
+  "pTieneInactivos": "Tiene inactivos",
+  "pActivo": "Activo",
+  "pCursor": "Cursor",
+  "pCursorActivos": "Cursor activos",
+  "pCursorInactivos": "Cursor inactivos",
+  "pTotalProcesados": "Total procesados",
+  "pEdad": "Edad",
+  "pIds": "Ids",
+  "pNombre": "Nombre",
+  "pApellido": "Apellido",
+  "gsFnGetPersonaRow": "Persona row",
+  "gsFnGetPersonaObj": "Persona objeto",
+  "gsFnGetPersonaJsonObj": "Persona JSON objeto",
+  "gsFnSavePersonaJsonObj": "Guardado JSON objeto",
+  "gsFnBuscarPersona": "Persona",
+  "gsFnErrorControlado": "Error controlado",
+  "gsFnGetPersonasTableOut": "Personas TABLE",
+  "gsFnGetPersonasSetof": "Personas SETOF",
+  "gsFnGetPersonasNombresSetof": "Nombres",
+  "gsFnGetPersonasJsonSetof": "Personas JSON",
+  "gsFnGetPersonasJsonbSetof": "Personas JSONB",
+  "gsFnGetPersonasPorEstado": "Personas por estado",
+  "gsFnGetPersonasPorIds": "Personas por ids",
+  "gsFnGetPersonaNullableOut": "Persona nullable",
+  "tabs": {
+    "execute": "Ejecutar",
+    "description": "Descripción",
+    "contract": "Contrato",
+    "source": "Fuente SQL"
+  },
+  "guideTitle": "Guía del endpoint",
+  "contractTitle": "Contrato API",
+  "sourceTitle": "Fuente SQL",
+  "httpMethod": "Método HTTP",
+  "restPath": "Ruta REST",
+  "sourceName": "Nombre técnico",
+  "sourceType": "Tipo fuente",
+  "responseKind": "Tipo respuesta",
+  "capabilitiesLabel": "Capacidades",
+  "requestFields": "Campos de entrada",
+  "responseFields": "Campos de salida",
+  "noRequestFields": "Sin campos de entrada.",
+  "noResponseFields": "Sin campos declarados.",
+  "emptyCapabilities": "Sin capacidades declaradas.",
+  "sourceDefinition": "Definición fuente",
+  "noSourceDefinition": "No hay definición fuente registrada.",
+  "notApplicable": "N/A",
+  "sourceTypes": {
+    "procedure": "Procedimiento",
+    "function": "Función",
+    "setReturningFunction": "Función SETOF/TABLE",
+    "query": "Query SQL"
+  },
+  "fieldKinds": {
+    "scalar": "Escalar",
+    "object": "Objeto",
+    "array": "Array",
+    "blob": "Blob",
+    "json": "JSON dinámico"
+  },
+  "responseKinds": {
+    "object": "Objeto",
+    "boolean": "Booleano",
+    "scalar": "Escalar",
+    "array": "Array"
+  },
+  "capabilities": {
+    "procedure": "Procedure",
+    "function": "Función",
+    "setReturningFunction": "SETOF/TABLE",
+    "query": "Query SQL",
+    "select": "SELECT",
+    "join": "JOIN",
+    "with": "WITH/CTE",
+    "post": "POST",
+    "inParameters": "Parámetros IN",
+    "outputParameters": "Parámetros OUT",
+    "inOutParameters": "Parámetros INOUT",
+    "compositeType": "Tipo compuesto",
+    "arrayType": "Array PostgreSQL",
+    "refcursor": "REFCURSOR",
+    "multipleCursors": "Múltiples cursores",
+    "json": "JSON nativo",
+    "jsonb": "JSONB nativo",
+    "naturalJson": "JSON natural REST",
+    "insert": "INSERT",
+    "update": "UPDATE",
+    "delete": "DELETE",
+    "aggregate": "Agregación",
+    "errorPath": "Error controlado",
+    "voidReturn": "RETURNS VOID",
+    "transactionRollback": "Rollback transaccional",
+    "nullable": "Valores NULL",
+    "defaultParameter": "Parámetro DEFAULT"
+  },
+  "operationDescriptions": {
+    "default": "Este caso demuestra cómo Generate Service publica una operación PostgreSQL como endpoint REST respetando la firma definida en base de datos.",
+    "gsSpGetPersona": "Este caso demuestra que Generate Service puede exponer un procedimiento con parámetro de entrada y salida compuesta, permitiendo consultar una persona por id y devolverla como objeto REST.",
+    "gsSpGetPersonas": "Este caso demuestra que Generate Service puede transformar un arreglo de tipos compuestos PostgreSQL en una lista REST de objetos de negocio.",
+    "gsSpInsertPersona": "Este caso demuestra que Generate Service puede recibir un objeto compuesto desde REST, ejecutar una inserción en PostgreSQL y devolver el id generado por la base de datos.",
+    "gsSpInsertPersonas": "Este caso demuestra que Generate Service puede recibir una colección de objetos compuestos, procesar una carga masiva en PostgreSQL y devolver el total insertado.",
+    "gsSpUpdatePersona": "Este caso demuestra que Generate Service puede publicar una actualización basada en un objeto compuesto y devolver al consumidor un indicador claro de resultado.",
+    "gsSpDeletePersona": "Este caso demuestra que Generate Service puede exponer una eliminación parametrizada y comunicar al consumidor si la operación tuvo efecto.",
+    "gsSpSavePersonaJsonbInout": "Este caso demuestra que Generate Service puede manejar JSONB natural como parámetro INOUT, permitiendo insertar o actualizar datos y devolver el JSON final sin escapar en REST.",
+    "gsSpResumenPersonas": "Este caso demuestra que Generate Service puede publicar cálculos agregados definidos en PL/pgSQL y devolver varios valores de salida en una respuesta REST estructurada.",
+    "gsSpGetPersonaDetalle": "Este caso demuestra que Generate Service puede exponer un objeto compuesto con datos relacionados, entregando una persona con dirección e hijos en una sola respuesta REST.",
+    "gsSpGetPersonasDetalle": "Este caso demuestra que Generate Service puede devolver colecciones de objetos compuestos anidados, publicando estructuras jerárquicas de PostgreSQL como listas REST.",
+    "gsSpGetPersonasCursorOut": "Este caso demuestra que Generate Service puede consumir un procedimiento con REFCURSOR de salida y entregarlo al cliente como una lista de filas filtradas.",
+    "gsSpGetPersonasCursorInout": "Este caso demuestra que Generate Service puede trabajar con un REFCURSOR INOUT, recibiendo datos de entrada y devolviendo al cliente un cursor filtrado como lista REST.",
+    "gsSpResumenPersonasOut": "Este caso demuestra que Generate Service puede mapear múltiples parámetros OUT, combinando totales numéricos y banderas booleanas en una sola respuesta REST.",
+    "gsSpInsertarPersonasCursor": "Este caso demuestra que Generate Service puede recibir un cursor con registros de negocio, procesarlos en PostgreSQL y devolver el total de filas atendidas.",
+    "gsSpGetPersonasEstadoCursor": "Este caso demuestra que Generate Service puede exponer un procedimiento con múltiples cursores de salida, separando resultados activos e inactivos en la respuesta REST.",
+    "gsSpGetPersonaJson": "Este caso demuestra que Generate Service puede devolver JSON nativo de PostgreSQL como JSON natural en REST, sin convertirlo en texto escapado.",
+    "gsSpInsertPersonaJson": "Este caso demuestra que Generate Service puede recibir JSON natural desde REST, permitir que PostgreSQL extraiga sus propiedades y devolver el id generado.",
+    "gsSpUpdatePersonaJson": "Este caso demuestra que Generate Service puede actualizar registros usando JSON natural como contrato flexible de entrada y devolver el resultado de la operación.",
+    "gsSpSavePersonaJsonInout": "Este caso demuestra que Generate Service puede manejar JSON natural como parámetro INOUT, resolviendo inserción o actualización y devolviendo el documento resultante.",
+    "gsSpGetPersonaJsonb": "Este caso demuestra que Generate Service puede exponer JSONB de PostgreSQL como JSON natural en REST, conservando una respuesta consumible por clientes web.",
+    "gsSpInsertPersonaJsonb": "Este caso demuestra que Generate Service puede recibir JSONB natural desde REST, insertarlo mediante lógica PL/pgSQL y devolver el identificador creado.",
+    "gsSpUpdatePersonaJsonb": "Este caso demuestra que Generate Service puede actualizar datos usando JSONB natural como entrada y devolver una confirmación booleana al consumidor.",
+    "gsSpIncrementarEdad": "Este caso demuestra que Generate Service puede exponer parámetros INOUT escalares, enviando un valor inicial y devolviendo el valor modificado por PostgreSQL.",
+    "gsFnGetPersonasTable": "Este caso demuestra que Generate Service puede publicar una función RETURNS TABLE como endpoint REST, entregando filas tipadas filtradas por estado.",
+    "gsFnGetPersonasSetof": "Este caso demuestra que Generate Service puede transformar una función RETURNS SETOF en una lista REST de registros PostgreSQL.",
+    "gsFnGetPersonaRow": "Este caso demuestra que Generate Service puede exponer una función que retorna una fila de tabla y convertirla en un objeto REST.",
+    "gsFnGetPersonaObj": "Este caso demuestra que Generate Service puede publicar una función que retorna un tipo compuesto PostgreSQL como objeto de respuesta REST.",
+    "gsFnGetPersonasNombresSetof": "Este caso demuestra que Generate Service puede devolver resultados escalares SETOF como una lista simple consumible desde REST.",
+    "gsFnGetPersonasJsonSetof": "Este caso demuestra que Generate Service puede exponer SETOF JSON como una lista de documentos JSON naturales, sin strings escapados.",
+    "gsFnGetPersonasJsonbSetof": "Este caso demuestra que Generate Service puede exponer SETOF JSONB como una lista REST de documentos JSON naturales.",
+    "gsFnGetPersonaJsonObj": "Este caso demuestra que Generate Service puede combinar tipos compuestos y campos JSONB, entregando datos estructurados con contenido JSON flexible.",
+    "gsFnSavePersonaJsonObj": "Este caso demuestra que Generate Service puede recibir un tipo compuesto con datos JSONB, ejecutar una inserción o actualización y devolver el resultado del proceso.",
+    "gsFnResumenPersonas": "Este caso demuestra que Generate Service puede publicar una función con parámetros OUT y devolver un resumen agregado como respuesta REST.",
+    "gsFnGetPersonasPorEstado": "Este caso demuestra que Generate Service puede exponer funciones con filtros y valores por defecto definidos en PostgreSQL, publicándolos como contrato REST.",
+    "gsFnBuscarPersona": "Este caso demuestra que Generate Service puede publicar una función de búsqueda por identificador y devolver la fila encontrada como objeto REST.",
+    "gsFnGetPersonasPorIds": "Este caso demuestra que Generate Service puede recibir arreglos PostgreSQL desde REST como listas y usarlos para devolver registros relacionados.",
+    "gsFnGetPersonaNullable": "Este caso demuestra que Generate Service puede representar columnas nullable en una respuesta REST, conservando valores NULL definidos por la función.",
+    "gsFnTouchPersonaVoid": "Este caso demuestra que Generate Service puede exponer una función RETURNS VOID para ejecutar una acción sin datos de salida y responder con una confirmación REST.",
+    "gsFnInsertPersonaThenError": "Este caso demuestra que Generate Service maneja la transaccionalidad cuando una función inserta datos y luego falla, revirtiendo la operación y propagando el error al consumidor.",
+    "gsFnErrorControlado": "Este caso demuestra que Generate Service propaga correctamente una excepción controlada definida en PL/pgSQL, permitiendo reflejar reglas de negocio de base de datos en la API.",
+    "gsFnIncrementarEdadInout": "Este caso demuestra que Generate Service puede exponer una función con parámetro INOUT escalar, recibiendo un valor y devolviendo el resultado modificado.",
+    "gsFnResumenInout": "Este caso demuestra que Generate Service puede mapear múltiples parámetros INOUT y devolver los valores recalculados por la función PostgreSQL.",
+    "gsFnResumenMixto": "Este caso demuestra que Generate Service puede combinar parámetros INOUT y OUT en una misma función, generando un contrato REST de entrada y salida coherente.",
+    "gsQPersonaById": "Este caso demuestra que Generate Service puede publicar una consulta SQL parametrizada como endpoint REST, permitiendo al cliente recuperar una persona por identificador sin crear una función o procedimiento.",
+    "gsQPersonasByNombre": "Este caso demuestra una búsqueda flexible por texto usando ILIKE. El cliente envía un fragmento de nombre y Generate Service devuelve las filas tipadas que coinciden.",
+    "gsQPersonasByActivo": "Este caso demuestra un filtro booleano directo. El cliente puede consultar personas activas o inactivas y recibir una lista REST con columnas seleccionadas.",
+    "gsQPersonasSelfJoinActivo": "Este caso demuestra que una query con self join también se genera como endpoint REST, útil para comparar registros de la misma tabla bajo una regla compartida.",
+    "gsQPersonasActivasWith": "Este caso demuestra que Generate Service puede exponer una query con WITH/CTE, separando la lógica de filtrado y devolviendo el resultado como lista de negocio.",
+    "gsQPersonasTotalHijosWith": "Este caso demuestra una consulta con CTE, LEFT JOIN y agregación. El cliente ve personas filtradas por estado junto con el total de hijos calculado por PostgreSQL.",
+    "gsQPersonasStatsWith": "Este caso demuestra una query agregada con WITH que devuelve métricas listas para consumo REST: total, promedio, edad mínima y edad máxima.",
+    "gsQPersonasByCityJoin": "Este caso demuestra una consulta JOIN entre persona y dirección. El cliente filtra por ciudad y recibe datos combinados sin armar joins fuera de la API.",
+    "gsQPersonasByJson": "Este caso demuestra que Generate Service acepta un array JSON natural en REST, lo entrega a PostgreSQL como JSON raw y devuelve las personas relacionadas por los ids del documento.",
+    "gsQPersonasByJsonb": "Este caso demuestra el mismo flujo usando JSONB: el cliente envía un array JSON natural, PostgreSQL lo procesa como jsonb y la API devuelve filas tipadas.",
+    "gsQPersonasAsJson": "Este caso demuestra que una query puede construir JSON nativo en PostgreSQL y Generate Service lo entrega como JSON natural en REST, no como string escapado.",
+    "gsQPersonasAsJsonb": "Este caso demuestra que una query puede agregar resultados como JSONB y publicarlos en REST como documento JSON natural listo para clientes web.",
+    "gsQInsertPersona": "Este caso demuestra una query INSERT sin RETURNING. Generate Service expone la operación como POST y responde booleano cuando se ejecuta sin excepción.",
+    "gsQInsertPersonaSelect": "Este caso demuestra un INSERT basado en SELECT. El cliente envía los datos variables y PostgreSQL completa el nuevo registro desde una persona base; la respuesta REST es booleana si no hay excepción.",
+    "gsQUpdatePersona": "Este caso demuestra una query UPDATE parametrizada. Generate Service publica la actualización como endpoint REST y devuelve booleano de ejecución sin excepción.",
+    "gsQDeletePersona": "Este caso demuestra una query DELETE parametrizada. El cliente envía el identificador y Generate Service responde booleano cuando la eliminación se ejecuta sin error."
+  },
+  "support": {
+    "kicker": "Documentación Generate Service",
+    "title": "Soporte Postgres",
+    "subtitle": "Guía de procedimientos, funciones, queries SQL, tipos compuestos, arrays, cursores y JSON/JSONB publicados por Generate Service para PostgreSQL.",
+    "jsonTitle": "JSON y JSONB nativos",
+    "jsonSubtitle": "PostgreSQL 17 documenta JSON y JSONB como tipos nativos. JSON conserva el texto de entrada; JSONB almacena una representación binaria descompuesta y suele ser mejor para procesamiento e índices.",
+    "jsonRawNote": "Generate Service mapea JSON y JSONB a String en Java, pero los DTOs usan @RawJson en entrada y @JsonRawValue en salida. Por eso la UI debe enviar y recibir objetos o arrays JSON naturales, no strings con JSON escapado.",
+    "capabilitiesTitle": "Capacidades soportadas",
+    "capabilitiesSubtitle": "El catálogo Postgres cubre procedimientos con IN/OUT/INOUT, funciones RETURNS TABLE, RETURNS SETOF, queries SQL, tipos compuestos, arrays, REFCURSOR y JSON/JSONB nativo.",
+    "typeMappingTitle": "Tipos Postgres soportados por Generate Service",
+    "typeMappingSubtitle": "Tabla acotada de equivalencias entre tipos PostgreSQL usados o confirmados para esta suite y el contrato Java/REST generado.",
+    "sqlType": "Tipo Postgres",
+    "contractType": "Tipo Java",
+    "simpleListType": "Tipo en listas",
+    "restShape": "Forma REST",
+    "typeMappingNote": "Esta tabla no documenta todos los tipos existentes de PostgreSQL. Los tipos PostgreSQL fuera de este alcance quedan pendientes hasta tener soporte confirmado en el contrato generado.",
+    "rulesTitle": "Reglas de generación e integridad",
+    "rulesSubtitle": "Estas reglas aplican al microservicio generado y ayudan a mantener estable el contrato publicado para el cliente.",
+    "jsonWorkflow": {
+      "nativeJson": {
+        "title": "Tipos nativos",
+        "description": "PostgreSQL usa JSON y JSONB directamente en procedimientos, funciones y tipos compuestos; no necesita alias custom para este caso."
+      },
+      "jsonOperators": {
+        "title": "Lectura dentro de PL/pgSQL",
+        "description": "Los procedimientos del suite leen campos con ->> y convierten a INTEGER, DATE o BOOLEAN cuando corresponde."
+      },
+      "javaRaw": {
+        "title": "Java mantiene String raw",
+        "description": "El contrato Java conserva String internamente, pero las anotaciones raw serializan y deserializan JSON real."
+      },
+      "naturalRest": {
+        "title": "Payload REST natural",
+        "description": "El request debe enviar objetos o arrays JSON normales; Generate Service hace la conversión raw hacia el String interno."
+      }
+    },
+    "capabilities": {
+      "procedures": {
+        "title": "Procedures",
+        "description": "Soporta procedimientos PL/pgSQL con IN, OUT e INOUT, incluyendo respuestas escalares, compuestas, arrays y JSON/JSONB."
+      },
+      "functions": {
+        "title": "Funciones",
+        "description": "Expone funciones RETURNS de escalares, filas, tipos compuestos, VOID y parámetros OUT como endpoints POST."
+      },
+      "setReturningFunctions": {
+        "title": "Funciones SETOF/TABLE",
+        "description": "RETURNS SETOF y RETURNS TABLE se publican como listas en el response DTO."
+      },
+      "queries": {
+        "title": "Queries SQL",
+        "description": "Las consultas SQL libres se publican como endpoints POST, incluyendo filtros, JOIN, WITH/CTE, agregaciones y JSON/JSONB natural."
+      },
+      "compositeTypes": {
+        "title": "Tipos compuestos",
+        "description": "CREATE TYPE genera modelos Java anotados como OBJECT, por ejemplo GsPersonaObj y GsPersonaDetalleObj."
+      },
+      "arrays": {
+        "title": "Arrays",
+        "description": "Parámetros como gs_persona_obj[] e INTEGER[] se representan en REST como arrays/listas."
+      },
+      "refcursors": {
+        "title": "REFCURSOR",
+        "description": "Los cursores OUT o INOUT se materializan como listas de filas según el DTO generado."
+      },
+      "jsonTypes": {
+        "title": "JSON/JSONB",
+        "description": "JSON y JSONB se tratan como JSON dinámico en REST mediante @RawJson y @JsonRawValue."
+      },
+      "transactions": {
+        "title": "Pruebas transaccionales",
+        "description": "Las funciones VOID y de error controlado permiten validar rollback y manejo de excepciones."
+      }
+    },
+    "ruleGroups": {
+      "naming": {
+        "title": "Nombres y exposición REST",
+        "rules": {
+          "snakeCase": "En PostgreSQL se recomienda usar snake_case para parámetros, aliases SQL y nombres PL/pgSQL.",
+          "camelCase": "Generate Service transforma nombres PostgreSQL a camelCase para Java y para el contrato REST.",
+          "endpointNames": "Los nombres PL/pgSQL y queries pasan a ser nombres de métodos y endpoints REST generados.",
+          "envOverride": "La URL base por motor se configura desde .env con API_ENDPOINT_POSTGRES; si no existe, la UI usa http://localhost:8083 por defecto. Las rutas REST del backend también pueden modificarse por variables de entorno.",
+          "jsonProperty": "Los nombres de variables expuestas en JSON pueden ajustarse con la anotación Jackson @JsonProperty."
+        }
+      },
+      "methods": {
+        "title": "Métodos REST",
+        "rules": {
+          "postOnly": "Todos los endpoints Postgres generados en este proyecto usan POST.",
+          "apiBase": "El controller generado usa base /api, por eso la ruta final es /api/{operation}.",
+          "envOverride": "Las rutas REST pueden cambiarse con variables API_REST_ENDPOINT_* del backend generado.",
+          "serverSideFetch": "La UI ejecuta los endpoints mediante server actions."
+        }
+      },
+      "json": {
+        "title": "Reglas JSON",
+        "rules": {
+          "nativeTypes": "JSON y JSONB son tipos nativos de PostgreSQL 17.",
+          "dynamicContract": "Generate Service los mantiene como String interno, no como DTO rígido.",
+          "naturalPayload": "En REST se envía JSON natural: objeto o array, no texto JSON escapado.",
+          "jsonbNote": "JSONB puede reordenar claves y normalizar detalles no semánticos; JSON conserva el texto de entrada.",
+          "compositeJson": "En gs_persona_json_obj, el campo datos es JSONB y se expone como JSON natural."
+        }
+      },
+      "types": {
+        "title": "Tipos",
+        "rules": {
+          "officialVersion": "La referencia oficial usada para esta guía es PostgreSQL 17, igual que la imagen postgres:17 del docker-compose.",
+          "outOfScope": "Tipos oficiales sin mapping confirmado quedan fuera de alcance en esta documentación."
+        }
+      },
+      "integrity": {
+        "title": "Integridad del API generado",
+        "rules": {
+          "repositoryIntegrity": "Una vez generado el microservicio, Generate Service valida la integridad de los repositories generados.",
+          "licenseValidation": "La API generada incluye validaciones locales de integridad y licencia mediante un token seguro emitido por Generate Service. Estas validaciones se ejecutan dentro de la propia API generada y no requieren llamadas a servicios externos de licenciamiento.",
+          "signedMetadata": "No se deben modificar @Callable, @SpParameter, tipos, entradas, salidas, nombre PL/pgSQL ni query firmada.",
+          "regenerateOnSourceChange": "Si cambia la fuente de datos, procedure, function, query, parámetros o tipos, se debe regenerar el microservicio.",
+          "oneEndpointPerSource": "Cada PL/pgSQL o query que se quiera consumir debe generarse como su propia fuente estable de API."
+        }
+      },
+      "customization": {
+        "title": "Personalización permitida",
+        "rules": {
+          "controllers": "Se puede agregar lógica en controllers para validar, adaptar o enriquecer la entrada y salida.",
+          "services": "Se puede agregar lógica de negocio en services antes o después de invocar la fuente generada.",
+          "businessLogic": "Se puede recalcular, componer o transformar la respuesta sin cambiar la metadata firmada.",
+          "sourceLock": "La fuente de datos generada queda protegida: repositories, firma, parámetros, query y PL/pgSQL no se modifican manualmente."
+        }
+      }
+    }
+  }
+}
