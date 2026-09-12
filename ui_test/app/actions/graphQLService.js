@@ -1,7 +1,7 @@
 "use server";
 
-const API_ENDPOINT = process.env.API_ENDPOINT || "http://localhost:8080";
-const ENDPOINT = `${API_ENDPOINT}/graphql`;
+const GRAPHQL_BASE_URL = "http://localhost:8080";
+const ENDPOINT = `${GRAPHQL_BASE_URL}/graphql`;
 
 export async function getAllApi() {
     const data = { "query": "mutation { getAllClient { getAllClientOut { id name email cellPhone address } } }" };

@@ -1,13 +1,13 @@
 "use server";
 
-const API_ENDPOINT = process.env.API_ENDPOINT || "http://localhost:8080";
-const GET_ALL = `${API_ENDPOINT}/api/getAllClient`;
-const GET = `${API_ENDPOINT}/api/getClientById`;
-const GET_NAME = `${API_ENDPOINT}/api/getClientByName`;
-const SAVE = `${API_ENDPOINT}/api/insertClient`;
-const SAVE_MULTIPLE = `${API_ENDPOINT}/api/insertMultipleClient`;
-const DELETE = `${API_ENDPOINT}/api/deleteClient`;
-const UPDATE = `${API_ENDPOINT}/api/updateClient`;
+const REST_BASE_URL = "http://localhost:8080";
+const GET_ALL = `${REST_BASE_URL}/api/getAllClient`;
+const GET = `${REST_BASE_URL}/api/getClientById`;
+const GET_NAME = `${REST_BASE_URL}/api/getClientByName`;
+const SAVE = `${REST_BASE_URL}/api/insertClient`;
+const SAVE_MULTIPLE = `${REST_BASE_URL}/api/insertMultipleClient`;
+const DELETE = `${REST_BASE_URL}/api/deleteClient`;
+const UPDATE = `${REST_BASE_URL}/api/updateClient`;
 
 export async function getAllApi() {
     const headers = { "Content-Type": "application/json" };

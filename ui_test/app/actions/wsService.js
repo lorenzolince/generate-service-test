@@ -1,8 +1,8 @@
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
 
-const API_ENDPOINT = process.env.API_ENDPOINT || "http://localhost:8080";
-const WS_URL = `${API_ENDPOINT}/clientesw`;
+const WS_BASE_URL = "http://localhost:8080";
+const WS_URL = `${WS_BASE_URL}/clientesw`;
 
 let stompClient;
 let connected = false;

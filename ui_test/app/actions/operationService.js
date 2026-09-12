@@ -26,7 +26,7 @@ const getEngineEndpoint = (engine) => {
     ?.map((key) => process.env[key])
     .find(Boolean);
 
-  return engineEndpoint || process.env.API_ENDPOINT || process.env.NEXT_PUBLIC_API_ENDPOINT || ENGINE_DEFAULT_API_ENDPOINTS[engine] || DEFAULT_API_ENDPOINT;
+  return engineEndpoint || ENGINE_DEFAULT_API_ENDPOINTS[engine] || DEFAULT_API_ENDPOINT;
 };
 
 export async function getBaseApiEndpoint(engine) {
