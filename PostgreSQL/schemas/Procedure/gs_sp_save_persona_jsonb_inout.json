@@ -1,0 +1,17 @@
+{
+  "name" : "gs_sp_save_persona_jsonb_inout",
+  "type" : "PROCEDURE",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_persona",
+    "inOut" : "IN/OUT",
+    "type" : "JSONB",
+    "typeName" : "JSONB",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

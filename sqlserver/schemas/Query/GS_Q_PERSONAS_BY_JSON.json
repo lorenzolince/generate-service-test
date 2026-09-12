@@ -1,0 +1,67 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_JSON",
+  "type" : "QUERY",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT P.ID_PERSONA, P.NOMBRE, P.APELLIDO, P.EDAD, P.EMAIL, P.FECHA_NACIMIENTO, P.ACTIVO, P.FECHA_REGISTRO FROM OPENJSON(CAST(? AS NVARCHAR(MAX))) WITH (ID_PERSONA INT '$.idPersona') J INNER JOIN dbo.GS_PERSONA P ON P.ID_PERSONA = J.ID_PERSONA ORDER BY P.ID_PERSONA",
+  "attrs" : [ {
+    "name" : "personas_json",
+    "inOut" : "IN",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_jsonquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_JSON_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_JSON_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "date",
+      "typeName" : "date",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "datetime",
+      "typeName" : "datetime",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,68 @@
+{
+  "name" : "GS_SP_UPDATE_PERSONA",
+  "type" : "p",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "@p_nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "@p_apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 3
+  }, {
+    "name" : "@p_edad",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 4
+  }, {
+    "name" : "@p_email",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 5
+  }, {
+    "name" : "@p_fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 6
+  }, {
+    "name" : "@p_activo",
+    "inOut" : "IN",
+    "type" : "BIT",
+    "typeName" : "BIT",
+    "position" : 7
+  }, {
+    "name" : "gs_sp_update_persona1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_UPDATE_PERSONA1",
+    "position" : 8
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_UPDATE_PERSONA1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "resultado",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 1
+    } ]
+  } ]
+}

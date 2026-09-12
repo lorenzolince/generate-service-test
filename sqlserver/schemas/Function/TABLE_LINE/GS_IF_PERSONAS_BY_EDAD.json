@@ -1,0 +1,57 @@
+{
+  "name" : "GS_IF_PERSONAS_BY_EDAD",
+  "type" : "IF",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_edad_minima",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "gs_if_personas_by_edad1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_IF_PERSONAS_BY_EDAD1",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_IF_PERSONAS_BY_EDAD1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre_completo",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "edad",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 3
+    }, {
+      "name" : "correo",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 4
+    }, {
+      "name" : "estado",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 5
+    }, {
+      "name" : "fecha_alta",
+      "type" : "datetime",
+      "typeName" : "datetime",
+      "position" : 6
+    } ]
+  } ]
+}

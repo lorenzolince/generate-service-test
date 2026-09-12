@@ -1,0 +1,17 @@
+{
+  "name" : "FN_COUNT_PERSONAS",
+  "type" : "FUNCTION",
+  "owner" : "TEST",
+  "packageName" : "GS_PKG_TEST",
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "fn_count_personas",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

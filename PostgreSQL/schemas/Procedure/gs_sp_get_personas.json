@@ -1,0 +1,65 @@
+{
+  "name" : "gs_sp_get_personas",
+  "type" : "PROCEDURE",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_personas",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "_GS_PERSONA_OBJ",
+    "position" : 1
+  } ],
+  "typesObject" : [ {
+    "nameType" : "_GS_PERSONA_OBJ",
+    "argType" : "GS_PERSONA_OBJ",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_PERSONA_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INT4",
+      "typeName" : "INT4",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT4",
+      "typeName" : "INT4",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOL",
+      "typeName" : "BOOL",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    } ]
+  } ]
+}

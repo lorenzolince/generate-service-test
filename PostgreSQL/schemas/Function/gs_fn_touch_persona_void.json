@@ -1,0 +1,17 @@
+{
+  "name" : "gs_fn_touch_persona_void",
+  "type" : "FUNCTION",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

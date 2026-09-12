@@ -1,0 +1,47 @@
+{
+  "name" : "GS_SP_LOB_VALUES",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_texto_in",
+    "inOut" : "IN",
+    "type" : "CLOB",
+    "typeName" : "CLOB",
+    "position" : 1
+  }, {
+    "name" : "p_archivo_in",
+    "inOut" : "IN",
+    "type" : "BLOB",
+    "typeName" : "BLOB",
+    "position" : 2
+  }, {
+    "name" : "p_texto_out",
+    "inOut" : "OUT",
+    "type" : "CLOB",
+    "typeName" : "CLOB",
+    "position" : 3
+  }, {
+    "name" : "p_archivo_out",
+    "inOut" : "OUT",
+    "type" : "BLOB",
+    "typeName" : "BLOB",
+    "position" : 4
+  }, {
+    "name" : "p_texto_length",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 5
+  }, {
+    "name" : "p_archivo_length",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 6
+  } ],
+  "typesObject" : [ ]
+}

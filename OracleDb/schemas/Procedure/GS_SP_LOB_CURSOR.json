@@ -1,0 +1,36 @@
+{
+  "name" : "GS_SP_LOB_CURSOR",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_lobs",
+    "inOut" : "OUT",
+    "type" : "REF_CURSOR",
+    "typeName" : "p_lobs",
+    "position" : 1
+  } ],
+  "typesObject" : [ {
+    "nameType" : "p_lobs",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_lob",
+      "type" : "DECIMAL",
+      "typeName" : "DECIMAL",
+      "position" : 1
+    }, {
+      "name" : "texto_clob",
+      "type" : "CLOB",
+      "typeName" : "CLOB",
+      "position" : 2
+    }, {
+      "name" : "archivo_blob",
+      "type" : "BLOB",
+      "typeName" : "BLOB",
+      "position" : 3
+    } ]
+  } ]
+}

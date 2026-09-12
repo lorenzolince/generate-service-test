@@ -1,0 +1,17 @@
+{
+  "name" : "GS_SP_TEST_OUT",
+  "type" : "p",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_valor",
+    "inOut" : "OUT",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

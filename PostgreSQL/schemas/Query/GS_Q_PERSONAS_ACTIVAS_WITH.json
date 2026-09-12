@@ -1,0 +1,47 @@
+{
+  "name" : "GS_Q_PERSONAS_ACTIVAS_WITH",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "WITH personas_filtradas AS (SELECT id_persona, nombre, apellido, activo FROM gs_persona WHERE activo = ?) SELECT id_persona, nombre, apellido, activo FROM personas_filtradas ORDER BY id_persona",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_activas_with",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_ACTIVAS_WITH_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_ACTIVAS_WITH_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "activo",
+      "type" : "BOOL",
+      "typeName" : "BOOL",
+      "position" : 4
+    } ]
+  } ]
+}

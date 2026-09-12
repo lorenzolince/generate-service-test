@@ -1,0 +1,53 @@
+{
+  "name" : "GS_Q_UPDATE_PERSONA",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "UPDATE gs_persona SET nombre = ?, apellido = ?, edad = ?, email = ?, fecha_nacimiento = ?, activo = ? WHERE id_persona = ?",
+  "attrs" : [ {
+    "name" : "nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "edad",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 3
+  }, {
+    "name" : "email",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 4
+  }, {
+    "name" : "fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 5
+  }, {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 6
+  }, {
+    "name" : "id_persona",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 7
+  } ],
+  "typesObject" : [ ]
+}

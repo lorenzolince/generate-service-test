@@ -1,0 +1,23 @@
+{
+  "name" : "gs_sp_insert_persona_jsonb",
+  "type" : "PROCEDURE",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_persona",
+    "inOut" : "IN",
+    "type" : "JSONB",
+    "typeName" : "JSONB",
+    "position" : 1
+  }, {
+    "name" : "p_id_persona",
+    "inOut" : "OUT",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

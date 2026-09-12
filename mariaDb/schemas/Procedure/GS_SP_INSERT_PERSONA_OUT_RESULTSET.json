@@ -1,0 +1,103 @@
+{
+  "name" : "GS_SP_INSERT_PERSONA_OUT_RESULTSET",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "p_apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "p_edad",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 3
+  }, {
+    "name" : "p_email",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 4
+  }, {
+    "name" : "p_fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 5
+  }, {
+    "name" : "p_activo",
+    "inOut" : "IN",
+    "type" : "TINYINT",
+    "typeName" : "TINYINT",
+    "position" : 6
+  }, {
+    "name" : "p_id_persona",
+    "inOut" : "OUT",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 7
+  }, {
+    "name" : "gs_sp_insert_persona_out_resultset1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_INSERT_PERSONA_OUT_RESULTSET1",
+    "position" : 9
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_INSERT_PERSONA_OUT_RESULTSET1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BIT",
+      "typeName" : "BIT",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "DATETIME",
+      "typeName" : "DATETIME",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "name" : "gs_sp_update_persona_jsonb",
+  "type" : "PROCEDURE",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_persona",
+    "inOut" : "IN",
+    "type" : "JSONB",
+    "typeName" : "JSONB",
+    "position" : 1
+  }, {
+    "name" : "p_actualizado",
+    "inOut" : "OUT",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

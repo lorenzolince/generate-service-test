@@ -1,0 +1,57 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_CITY_JOIN",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT p.id_persona, p.nombre, p.apellido, d.pais, d.ciudad, d.telefono FROM gs_persona p INNER JOIN gs_persona_direccion d ON d.id_persona = p.id_persona WHERE d.ciudad = ? ORDER BY p.id_persona",
+  "attrs" : [ {
+    "name" : "ciudad",
+    "inOut" : "IN",
+    "type" : "TEXT",
+    "typeName" : "TEXT",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_city_join",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_CITY_JOIN_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_CITY_JOIN_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "pais",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 4
+    }, {
+      "name" : "ciudad",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "telefono",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 6
+    } ]
+  } ]
+}

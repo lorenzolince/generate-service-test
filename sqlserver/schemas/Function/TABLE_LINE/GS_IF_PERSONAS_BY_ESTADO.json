@@ -1,0 +1,67 @@
+{
+  "name" : "GS_IF_PERSONAS_BY_ESTADO",
+  "type" : "IF",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_activo",
+    "inOut" : "IN",
+    "type" : "BIT",
+    "typeName" : "BIT",
+    "position" : 1
+  }, {
+    "name" : "gs_if_personas_by_estado1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_IF_PERSONAS_BY_ESTADO1",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_IF_PERSONAS_BY_ESTADO1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "date",
+      "typeName" : "date",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "datetime",
+      "typeName" : "datetime",
+      "position" : 8
+    } ]
+  } ]
+}

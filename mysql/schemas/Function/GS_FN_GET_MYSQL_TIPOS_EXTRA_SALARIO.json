@@ -1,0 +1,23 @@
+{
+  "name" : "GS_FN_GET_MYSQL_TIPOS_EXTRA_SALARIO",
+  "type" : "FUNCTION",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "gs_fn_get_mysql_tipos_extra_salario_out",
+    "inOut" : "OUT",
+    "type" : "DECIMAL",
+    "typeName" : "DECIMAL",
+    "position" : 0
+  }, {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

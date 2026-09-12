@@ -1,0 +1,23 @@
+{
+  "name" : "GS_FN_CURSOR_IN_COUNT",
+  "type" : "FUNCTION",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_personas",
+    "inOut" : "IN",
+    "type" : "REF_CURSOR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "gs_fn_cursor_in_count",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

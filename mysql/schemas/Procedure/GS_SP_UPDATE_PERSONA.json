@@ -1,0 +1,53 @@
+{
+  "name" : "GS_SP_UPDATE_PERSONA",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "p_nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "p_apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 3
+  }, {
+    "name" : "p_edad",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 4
+  }, {
+    "name" : "p_email",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 5
+  }, {
+    "name" : "p_fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 6
+  }, {
+    "name" : "p_activo",
+    "inOut" : "IN",
+    "type" : "TINYINT",
+    "typeName" : "TINYINT",
+    "position" : 7
+  } ],
+  "typesObject" : [ ]
+}

@@ -1,0 +1,51 @@
+{
+  "name" : "GS_SP_INSERT_PERSONAS",
+  "type" : "p",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_personas",
+    "inOut" : "IN",
+    "type" : "COLLECTION",
+    "typeName" : "GS_PERSONA_TYPE",
+    "position" : 1
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_PERSONA_TYPE",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "NOMBRE",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 1
+    }, {
+      "name" : "APELLIDO",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "EDAD",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 3
+    }, {
+      "name" : "EMAIL",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 4
+    }, {
+      "name" : "FECHA_NACIMIENTO",
+      "type" : "date",
+      "typeName" : "date",
+      "position" : 5
+    }, {
+      "name" : "ACTIVO",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 6
+    } ]
+  } ]
+}

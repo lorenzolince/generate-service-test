@@ -1,0 +1,42 @@
+{
+  "name" : "GS_Q_PERSONAS_STATS_EXTRA_WITH",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "WITH PERSONAS_FILTRADAS AS (SELECT P.ID_PERSONA, P.EDAD, E.SALARIO FROM GS_PERSONA P LEFT JOIN GS_MYSQL_TIPOS_EXTRA E ON E.ID_PERSONA = P.ID_PERSONA WHERE P.ACTIVO = ?) SELECT COUNT(*) AS total_personas, COALESCE(AVG(EDAD), 0) AS edad_promedio, COALESCE(SUM(SALARIO), 0) AS salario_total FROM PERSONAS_FILTRADAS",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BIT",
+    "typeName" : "BIT",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_stats_extra_withquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_STATS_EXTRA_WITH_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_STATS_EXTRA_WITH_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "total_personas",
+      "type" : "BIGINT",
+      "typeName" : "BIGINT",
+      "position" : 1
+    }, {
+      "name" : "edad_promedio",
+      "type" : "DECIMAL",
+      "typeName" : "DECIMAL",
+      "position" : 2
+    }, {
+      "name" : "salario_total",
+      "type" : "DECIMAL",
+      "typeName" : "DECIMAL",
+      "position" : 3
+    } ]
+  } ]
+}

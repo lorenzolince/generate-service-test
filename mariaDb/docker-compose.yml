@@ -12,16 +12,5 @@
     ports:
       - "3306:3306"
     volumes:
-      - ./mariadb_data:/var/lib/mysql
       - ./generate_service_mariadb_test_suite.sql:/docker-entrypoint-initdb.d/01-generate_service_mariadb_test_suite.sql:ro
       
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
-    restart: always
-    environment:
-      PMA_HOST: mariadb
-      PMA_USER: sa
-      PMA_PASSWORD: 123456
-    ports:
-      - "8076:80"

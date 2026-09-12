@@ -1,0 +1,29 @@
+{
+  "name" : "gs_sp_resumen_personas",
+  "type" : "PROCEDURE",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_total",
+    "inOut" : "OUT",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 1
+  }, {
+    "name" : "p_activos",
+    "inOut" : "OUT",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 2
+  }, {
+    "name" : "p_inactivos",
+    "inOut" : "OUT",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 3
+  } ],
+  "typesObject" : [ ]
+}

@@ -1,0 +1,47 @@
+{
+  "name" : "GS_Q_INSERT_PERSONA",
+  "type" : "QUERY",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "INSERT INTO GS_PERSONA (NOMBRE, APELLIDO, EDAD, EMAIL, FECHA_NACIMIENTO, ACTIVO) VALUES (?, ?, ?, ?, ?, ?)",
+  "attrs" : [ {
+    "name" : "nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 1
+  }, {
+    "name" : "apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 2
+  }, {
+    "name" : "edad",
+    "inOut" : "IN",
+    "type" : "INTEGER",
+    "typeName" : "INTEGER",
+    "position" : 3
+  }, {
+    "name" : "email",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 4
+  }, {
+    "name" : "fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 5
+  }, {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 6
+  } ],
+  "typesObject" : [ ]
+}

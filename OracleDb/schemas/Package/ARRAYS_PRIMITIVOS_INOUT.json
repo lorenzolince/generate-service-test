@@ -1,0 +1,63 @@
+{
+  "name" : "ARRAYS_PRIMITIVOS_INOUT",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : "GS_PKG_TEST",
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_numeros",
+    "inOut" : "IN",
+    "type" : "TABLE",
+    "typeName" : "GS_NUMBER_TAB",
+    "position" : 1
+  }, {
+    "name" : "p_textos",
+    "inOut" : "IN/OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_VARCHAR2_TAB",
+    "position" : 2
+  }, {
+    "name" : "p_fechas",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_DATE_TAB",
+    "position" : 3
+  }, {
+    "name" : "p_timestamps",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_TIMESTAMP_TAB",
+    "position" : 4
+  }, {
+    "name" : "p_total",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 5
+  }, {
+    "name" : "p_suma",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 6
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_NUMBER_TAB",
+    "argType" : "NUMBER",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_VARCHAR2_TAB",
+    "argType" : "VARCHAR2",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_DATE_TAB",
+    "argType" : "DATE",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_TIMESTAMP_TAB",
+    "argType" : "TIMESTAMP",
+    "attr" : [ ]
+  } ]
+}

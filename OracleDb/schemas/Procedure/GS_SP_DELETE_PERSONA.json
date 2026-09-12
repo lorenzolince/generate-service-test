@@ -1,0 +1,23 @@
+{
+  "name" : "GS_SP_DELETE_PERSONA",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 1
+  }, {
+    "name" : "p_eliminado",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

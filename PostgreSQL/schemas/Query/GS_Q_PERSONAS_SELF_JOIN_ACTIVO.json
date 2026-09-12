@@ -1,0 +1,52 @@
+{
+  "name" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT p.id_persona AS persona_id, p.nombre, p.apellido, r.id_persona AS referencia_id, r.activo AS activo_referencia FROM gs_persona p INNER JOIN gs_persona r ON r.activo = p.activo WHERE r.id_persona = ? ORDER BY p.id_persona",
+  "attrs" : [ {
+    "name" : "id_persona_referencia",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_self_join_activo",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "referencia_id",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 4
+    }, {
+      "name" : "activo_referencia",
+      "type" : "BOOL",
+      "typeName" : "BOOL",
+      "position" : 5
+    } ]
+  } ]
+}

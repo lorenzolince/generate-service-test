@@ -1,0 +1,17 @@
+{
+  "name" : "GS_SP_INCREMENTAR_EDAD_INOUT",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_edad",
+    "inOut" : "IN/OUT",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

@@ -1,0 +1,32 @@
+{
+  "name" : "GS_Q_PERSONAS_AS_JSON",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT COALESCE(json_agg(json_build_object('idPersona', id_persona, 'nombre', nombre, 'apellido', apellido, 'edad', edad, 'email', email, 'fechaNacimiento', fecha_nacimiento, 'activo', activo, 'fechaRegistro', fecha_registro) ORDER BY id_persona), '[]'::json) AS personas_json FROM gs_persona WHERE activo = ?",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_as_json",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_AS_JSON_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_AS_JSON_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "personas_json",
+      "type" : "JSON",
+      "typeName" : "JSON",
+      "position" : 1
+    } ]
+  } ]
+}

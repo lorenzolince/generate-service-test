@@ -1,0 +1,52 @@
+{
+  "name" : "GS_Q_PERSONAS_TOTAL_HIJOS_WITH",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "WITH hijos_por_persona AS (SELECT id_persona, COUNT(1)::INTEGER AS total_hijos FROM gs_hijo GROUP BY id_persona) SELECT p.id_persona, p.nombre, p.apellido, p.activo, COALESCE(h.total_hijos, 0)::INTEGER AS total_hijos FROM gs_persona p LEFT JOIN hijos_por_persona h ON h.id_persona = p.id_persona WHERE p.activo = ? ORDER BY p.id_persona",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_total_hijos_with",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_TOTAL_HIJOS_WITH_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_TOTAL_HIJOS_WITH_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "activo",
+      "type" : "BOOL",
+      "typeName" : "BOOL",
+      "position" : 4
+    }, {
+      "name" : "total_hijos",
+      "type" : "INT4",
+      "typeName" : "INT4",
+      "position" : 5
+    } ]
+  } ]
+}

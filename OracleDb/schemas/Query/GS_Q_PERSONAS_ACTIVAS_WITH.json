@@ -1,0 +1,47 @@
+{
+  "name" : "GS_Q_PERSONAS_ACTIVAS_WITH",
+  "type" : "QUERY",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "WITH PERSONAS_FILTRADAS AS (SELECT ID_PERSONA, NOMBRE, APELLIDO, ACTIVO FROM GS_PERSONA WHERE ACTIVO = ?) SELECT ID_PERSONA, NOMBRE, APELLIDO, ACTIVO FROM PERSONAS_FILTRADAS ORDER BY ID_PERSONA",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_activas_with",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_ACTIVAS_WITH_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_ACTIVAS_WITH_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 4
+    } ]
+  } ]
+}

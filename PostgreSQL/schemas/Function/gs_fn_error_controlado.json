@@ -1,0 +1,17 @@
+{
+  "name" : "gs_fn_error_controlado",
+  "type" : "FUNCTION",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "gs_fn_error_controlado",
+    "inOut" : "OUT_TABLE",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

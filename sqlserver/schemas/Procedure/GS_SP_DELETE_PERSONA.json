@@ -1,0 +1,32 @@
+{
+  "name" : "GS_SP_DELETE_PERSONA",
+  "type" : "p",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "gs_sp_delete_persona1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_DELETE_PERSONA1",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_DELETE_PERSONA1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "resultado",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 1
+    } ]
+  } ]
+}

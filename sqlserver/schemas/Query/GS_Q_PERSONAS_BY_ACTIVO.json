@@ -1,0 +1,57 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_ACTIVO",
+  "type" : "QUERY",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT ID_PERSONA AS persona_id, NOMBRE AS nombre, APELLIDO AS apellido, EDAD AS edad, EMAIL AS email, ACTIVO AS activo FROM dbo.GS_PERSONA WHERE ACTIVO = ? ORDER BY ID_PERSONA",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_activoquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_ACTIVO_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_ACTIVO_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 5
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 6
+    } ]
+  } ]
+}

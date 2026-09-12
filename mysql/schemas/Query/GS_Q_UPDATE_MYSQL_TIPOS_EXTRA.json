@@ -1,0 +1,53 @@
+{
+  "name" : "GS_Q_UPDATE_MYSQL_TIPOS_EXTRA",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "UPDATE GS_MYSQL_TIPOS_EXTRA SET SALARIO = ?, BIO = ?, ULTIMO_ACCESO = ?, HORA_CONTACTO = ?, FOTO = ?, PERFIL_JSON = ? WHERE ID_PERSONA = ?",
+  "attrs" : [ {
+    "name" : "salario",
+    "inOut" : "IN",
+    "type" : "DECIMAL",
+    "typeName" : "DECIMAL",
+    "position" : 1
+  }, {
+    "name" : "bio",
+    "inOut" : "IN",
+    "type" : "TEXT",
+    "typeName" : "TEXT",
+    "position" : 2
+  }, {
+    "name" : "ultimo_acceso",
+    "inOut" : "IN",
+    "type" : "TIMESTAMP",
+    "typeName" : "TIMESTAMP",
+    "position" : 3
+  }, {
+    "name" : "hora_contacto",
+    "inOut" : "IN",
+    "type" : "TIME",
+    "typeName" : "TIME",
+    "position" : 4
+  }, {
+    "name" : "foto",
+    "inOut" : "IN",
+    "type" : "VARBINARY",
+    "typeName" : "VARBINARY",
+    "position" : 5
+  }, {
+    "name" : "perfil_json",
+    "inOut" : "IN",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 6
+  }, {
+    "name" : "id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 7
+  } ],
+  "typesObject" : [ ]
+}

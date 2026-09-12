@@ -1,0 +1,71 @@
+{
+  "name" : "GS_SP_ARRAYS_PRIMITIVOS_OUT",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_numeros",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_NUMBER_TAB",
+    "position" : 1
+  }, {
+    "name" : "p_enteros",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_INTEGER_TAB",
+    "position" : 2
+  }, {
+    "name" : "p_booleanos",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_BOOLEAN_TAB",
+    "position" : 3
+  }, {
+    "name" : "p_textos",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_VARCHAR2_TAB",
+    "position" : 4
+  }, {
+    "name" : "p_fechas",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_DATE_TAB",
+    "position" : 5
+  }, {
+    "name" : "p_timestamps",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_TIMESTAMP_TAB",
+    "position" : 6
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_NUMBER_TAB",
+    "argType" : "NUMBER",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_INTEGER_TAB",
+    "argType" : "INTEGER",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_BOOLEAN_TAB",
+    "argType" : "BOOLEAN",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_VARCHAR2_TAB",
+    "argType" : "VARCHAR2",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_DATE_TAB",
+    "argType" : "DATE",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_TIMESTAMP_TAB",
+    "argType" : "TIMESTAMP",
+    "attr" : [ ]
+  } ]
+}

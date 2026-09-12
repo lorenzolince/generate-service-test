@@ -1,0 +1,53 @@
+{
+  "name" : "GS_Q_UPDATE_PERSONASS",
+  "type" : "QUERY",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "UPDATE GS_PERSONA SET NOMBRE = ?, APELLIDO = ?, EDAD = ?, EMAIL = ?, FECHA_NACIMIENTO = ?, ACTIVO = ? WHERE ID_PERSONA = ?",
+  "attrs" : [ {
+    "name" : "nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 1
+  }, {
+    "name" : "apellido",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 2
+  }, {
+    "name" : "edad",
+    "inOut" : "IN",
+    "type" : "INTEGER",
+    "typeName" : "INTEGER",
+    "position" : 3
+  }, {
+    "name" : "email",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 4
+  }, {
+    "name" : "fecha_nacimiento",
+    "inOut" : "IN",
+    "type" : "DATE",
+    "typeName" : "DATE",
+    "position" : 5
+  }, {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 6
+  }, {
+    "name" : "id_persona",
+    "inOut" : "IN",
+    "type" : "INTEGER",
+    "typeName" : "INTEGER",
+    "position" : 7
+  } ],
+  "typesObject" : [ ]
+}

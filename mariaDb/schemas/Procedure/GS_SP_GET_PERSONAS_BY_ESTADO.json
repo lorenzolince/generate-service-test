@@ -1,0 +1,67 @@
+{
+  "name" : "GS_SP_GET_PERSONAS_BY_ESTADO",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_activo",
+    "inOut" : "IN",
+    "type" : "TINYINT",
+    "typeName" : "TINYINT",
+    "position" : 1
+  }, {
+    "name" : "gs_sp_get_personas_by_estado1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_GET_PERSONAS_BY_ESTADO1",
+    "position" : 3
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_GET_PERSONAS_BY_ESTADO1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre_completo",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido_completo",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad_actual",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 4
+    }, {
+      "name" : "correo",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "estado",
+      "type" : "BIT",
+      "typeName" : "BIT",
+      "position" : 7
+    }, {
+      "name" : "fecha_alta",
+      "type" : "DATETIME",
+      "typeName" : "DATETIME",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+  "name" : "gs_fn_get_personas_jsonb_setof",
+  "type" : "FUNCTION",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "gs_fn_get_personas_jsonb_setof",
+    "inOut" : "OUT_TABLE",
+    "type" : "OUT_TABLE_ARRAY_LIST",
+    "typeName" : "JSONB",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

@@ -1,0 +1,52 @@
+{
+  "name" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERFIL_JSON",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT P.ID_PERSONA, P.NOMBRE, P.APELLIDO, JSON_UNQUOTE(JSON_EXTRACT(E.PERFIL_JSON, '$.nivel')) AS nivel, E.PERFIL_JSON FROM GS_PERSONA P JOIN GS_MYSQL_TIPOS_EXTRA E ON E.ID_PERSONA = P.ID_PERSONA WHERE JSON_UNQUOTE(JSON_EXTRACT(E.PERFIL_JSON, '$.nivel')) = ? ORDER BY P.ID_PERSONA",
+  "attrs" : [ {
+    "name" : "nivel",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "gs_q_mysql_tipos_extra_by_perfil_jsonquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERFIL_JSON_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERFIL_JSON_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "nivel",
+      "type" : "LONGTEXT",
+      "typeName" : "LONGTEXT",
+      "position" : 4
+    }, {
+      "name" : "perfil_json",
+      "type" : "JSON",
+      "typeName" : "JSON",
+      "position" : 5
+    } ]
+  } ]
+}

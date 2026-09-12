@@ -1,0 +1,96 @@
+{
+  "name" : "GS_SP_GET_TWO_CURSORS",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_personas",
+    "inOut" : "OUT",
+    "type" : "REF_CURSOR",
+    "typeName" : "p_personas",
+    "position" : 1
+  }, {
+    "name" : "p_hijos",
+    "inOut" : "OUT",
+    "type" : "REF_CURSOR",
+    "typeName" : "p_hijos",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "p_personas",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    } ]
+  }, {
+    "nameType" : "p_hijos",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_hijo",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 2
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 4
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 5
+    } ]
+  } ]
+}

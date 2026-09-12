@@ -1,0 +1,42 @@
+{
+  "name" : "gs_fn_get_persona_json_obj",
+  "type" : "FUNCTION",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 1
+  }, {
+    "name" : "gs_fn_get_persona_json_obj",
+    "inOut" : "OUT_TABLE",
+    "type" : "OBJECT",
+    "typeName" : "GS_PERSONA_JSON_OBJ",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_PERSONA_JSON_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INT4",
+      "typeName" : "INT4",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "datos",
+      "type" : "JSONB",
+      "typeName" : "JSONB",
+      "position" : 3
+    } ]
+  } ]
+}

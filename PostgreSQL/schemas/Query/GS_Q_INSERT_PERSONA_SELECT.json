@@ -1,0 +1,35 @@
+{
+  "name" : "GS_Q_INSERT_PERSONA_SELECT",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "INSERT INTO gs_persona (nombre, apellido, edad, email, fecha_nacimiento, activo) SELECT ?, p.apellido, p.edad, ?, p.fecha_nacimiento, ? FROM gs_persona p WHERE p.id_persona = ?",
+  "attrs" : [ {
+    "name" : "nombre",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "email",
+    "inOut" : "IN",
+    "type" : "VARCHAR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOL",
+    "typeName" : "BOOL",
+    "position" : 3
+  }, {
+    "name" : "id_persona_base",
+    "inOut" : "IN",
+    "type" : "INT4",
+    "typeName" : "INT4",
+    "position" : 4
+  } ],
+  "typesObject" : [ ]
+}

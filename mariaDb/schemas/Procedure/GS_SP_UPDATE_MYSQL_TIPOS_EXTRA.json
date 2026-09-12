@@ -1,0 +1,59 @@
+{
+  "name" : "GS_SP_UPDATE_MYSQL_TIPOS_EXTRA",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "p_salario",
+    "inOut" : "IN",
+    "type" : "DECIMAL",
+    "typeName" : "DECIMAL",
+    "position" : 2
+  }, {
+    "name" : "p_bio",
+    "inOut" : "IN",
+    "type" : "TEXT",
+    "typeName" : "TEXT",
+    "position" : 3
+  }, {
+    "name" : "p_ultimo_acceso",
+    "inOut" : "IN",
+    "type" : "TIMESTAMP",
+    "typeName" : "TIMESTAMP",
+    "position" : 4
+  }, {
+    "name" : "p_hora_contacto",
+    "inOut" : "IN",
+    "type" : "TIME",
+    "typeName" : "TIME",
+    "position" : 5
+  }, {
+    "name" : "p_foto",
+    "inOut" : "IN",
+    "type" : "VARBINARY",
+    "typeName" : "VARBINARY",
+    "position" : 6
+  }, {
+    "name" : "p_perfil_json",
+    "inOut" : "IN",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 7
+  }, {
+    "name" : "p_filas_afectadas",
+    "inOut" : "OUT",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 8
+  } ],
+  "typesObject" : [ ]
+}

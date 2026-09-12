@@ -1,0 +1,53 @@
+{
+  "name" : "GS_SP_GET_MYSQL_TIPOS_EXTRA_OUT",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "p_salario",
+    "inOut" : "OUT",
+    "type" : "DECIMAL",
+    "typeName" : "DECIMAL",
+    "position" : 2
+  }, {
+    "name" : "p_bio",
+    "inOut" : "OUT",
+    "type" : "TEXT",
+    "typeName" : "TEXT",
+    "position" : 3
+  }, {
+    "name" : "p_ultimo_acceso",
+    "inOut" : "OUT",
+    "type" : "TIMESTAMP",
+    "typeName" : "TIMESTAMP",
+    "position" : 4
+  }, {
+    "name" : "p_hora_contacto",
+    "inOut" : "OUT",
+    "type" : "TIME",
+    "typeName" : "TIME",
+    "position" : 5
+  }, {
+    "name" : "p_foto",
+    "inOut" : "OUT",
+    "type" : "VARBINARY",
+    "typeName" : "VARBINARY",
+    "position" : 6
+  }, {
+    "name" : "p_perfil_json",
+    "inOut" : "OUT",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 7
+  } ],
+  "typesObject" : [ ]
+}

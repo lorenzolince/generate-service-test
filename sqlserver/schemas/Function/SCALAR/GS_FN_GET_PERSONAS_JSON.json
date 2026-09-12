@@ -1,0 +1,17 @@
+{
+  "name" : "GS_FN_GET_PERSONAS_JSON",
+  "type" : "FN",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "gs_fn_get_personas_json_out",
+    "inOut" : "OUT",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 0
+  } ],
+  "typesObject" : [ ]
+}

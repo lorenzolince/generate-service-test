@@ -1,0 +1,122 @@
+{
+  "name" : "GS_SP_GET_PERSONAS_DETALLE",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_personas",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_PERSONA_DETALLE_TAB",
+    "position" : 1
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_PERSONA_DETALLE_TAB",
+    "argType" : "GS_PERSONA_DETALLE_OBJ",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_DIRECCION_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "pais",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 1
+    }, {
+      "name" : "ciudad",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "telefono",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    } ]
+  }, {
+    "nameType" : "GS_HIJO_TAB",
+    "argType" : "GS_HIJO_OBJ",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_HIJO_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 1
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 3
+    }, {
+      "name" : "direccion",
+      "type" : "OBJECT",
+      "typeName" : "GS_DIRECCION_OBJ",
+      "position" : 4
+    } ]
+  }, {
+    "nameType" : "GS_PERSONA_DETALLE_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    }, {
+      "name" : "direccion",
+      "type" : "OBJECT",
+      "typeName" : "GS_DIRECCION_OBJ",
+      "position" : 9
+    }, {
+      "name" : "hijos",
+      "type" : "COLLECTION",
+      "typeName" : "GS_HIJO_TAB",
+      "position" : 10
+    } ]
+  } ]
+}

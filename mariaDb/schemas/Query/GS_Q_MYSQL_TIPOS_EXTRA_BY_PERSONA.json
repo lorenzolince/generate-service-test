@@ -1,0 +1,67 @@
+{
+  "name" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERSONA",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT ID_EXTRA, ID_PERSONA, SALARIO, BIO, ULTIMO_ACCESO, HORA_CONTACTO, FOTO, PERFIL_JSON FROM GS_MYSQL_TIPOS_EXTRA WHERE ID_PERSONA = ?",
+  "attrs" : [ {
+    "name" : "id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "gs_q_mysql_tipos_extra_by_personaquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERSONA_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_MYSQL_TIPOS_EXTRA_BY_PERSONA_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_extra",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "id_persona",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 2
+    }, {
+      "name" : "salario",
+      "type" : "DECIMAL",
+      "typeName" : "DECIMAL",
+      "position" : 3
+    }, {
+      "name" : "bio",
+      "type" : "TEXT",
+      "typeName" : "TEXT",
+      "position" : 4
+    }, {
+      "name" : "ultimo_acceso",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 5
+    }, {
+      "name" : "hora_contacto",
+      "type" : "TIME",
+      "typeName" : "TIME",
+      "position" : 6
+    }, {
+      "name" : "foto",
+      "type" : "VARBINARY",
+      "typeName" : "VARBINARY",
+      "position" : 7
+    }, {
+      "name" : "perfil_json",
+      "type" : "JSON",
+      "typeName" : "JSON",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,77 @@
+{
+  "name" : "GS_SP_MULTI_RESULT_PERSONA",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_activo",
+    "inOut" : "IN",
+    "type" : "TINYINT",
+    "typeName" : "TINYINT",
+    "position" : 1
+  }, {
+    "name" : "gs_sp_multi_result_persona1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_MULTI_RESULT_PERSONA1",
+    "position" : 3
+  }, {
+    "name" : "gs_sp_multi_result_persona2",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_MULTI_RESULT_PERSONA2",
+    "position" : 4
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_MULTI_RESULT_PERSONA1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 4
+    } ]
+  }, {
+    "nameType" : "GS_SP_MULTI_RESULT_PERSONA2",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "total_personas",
+      "type" : "BIGINT",
+      "typeName" : "BIGINT",
+      "position" : 1
+    }, {
+      "name" : "edad_promedio",
+      "type" : "DECIMAL",
+      "typeName" : "DECIMAL",
+      "position" : 2
+    }, {
+      "name" : "edad_minima",
+      "type" : "BIGINT",
+      "typeName" : "BIGINT",
+      "position" : 3
+    }, {
+      "name" : "edad_maxima",
+      "type" : "BIGINT",
+      "typeName" : "BIGINT",
+      "position" : 4
+    } ]
+  } ]
+}

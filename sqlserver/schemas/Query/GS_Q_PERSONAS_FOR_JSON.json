@@ -1,0 +1,32 @@
+{
+  "name" : "GS_Q_PERSONAS_FOR_JSON",
+  "type" : "QUERY",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT (SELECT ID_PERSONA AS idPersona, NOMBRE AS nombre, APELLIDO AS apellido, EDAD AS edad, EMAIL AS email, FECHA_NACIMIENTO AS fechaNacimiento, ACTIVO AS activo, FECHA_REGISTRO AS fechaRegistro FROM dbo.GS_PERSONA WHERE ACTIVO = ? ORDER BY ID_PERSONA FOR JSON PATH) AS personas_json",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_for_jsonquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_FOR_JSON_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_FOR_JSON_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "personas_json",
+      "type" : "JSON",
+      "typeName" : "JSON",
+      "position" : 1
+    } ]
+  } ]
+}

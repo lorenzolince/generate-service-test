@@ -1,0 +1,71 @@
+{
+  "name" : "GS_FN_PIPE_PERSONAS",
+  "type" : "FUNCTION",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : true,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_activo",
+    "inOut" : "IN",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 1
+  }, {
+    "name" : "gs_fn_pipe_personas",
+    "inOut" : "OUT",
+    "type" : "TABLE",
+    "typeName" : "GS_PERSONA_TAB",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_PERSONA_TAB",
+    "argType" : "GS_PERSONA_OBJ",
+    "attr" : [ ]
+  }, {
+    "nameType" : "GS_PERSONA_OBJ",
+    "argType" : null,
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,67 @@
+{
+  "name" : "GS_SP_GET_PERSONA",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "gs_sp_get_persona1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_GET_PERSONA1",
+    "position" : 3
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_GET_PERSONA1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BIT",
+      "typeName" : "BIT",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "DATETIME",
+      "typeName" : "DATETIME",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,57 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_CITY_JOINSS",
+  "type" : "QUERY",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT P.ID_PERSONA, P.NOMBRE, P.APELLIDO, D.PAIS, D.CIUDAD, D.TELEFONO FROM GS_PERSONA P JOIN GS_PERSONA_DIRECCION D ON D.ID_PERSONA = P.ID_PERSONA WHERE D.CIUDAD = ?",
+  "attrs" : [ {
+    "name" : "ciudad",
+    "inOut" : "IN",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_city_joinss",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_CITY_JOINSS_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_CITY_JOINSS_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "pais",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 4
+    }, {
+      "name" : "ciudad",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 5
+    }, {
+      "name" : "telefono",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 6
+    } ]
+  } ]
+}

@@ -1,0 +1,52 @@
+{
+  "name" : "GS_SP_MULTI_RESULT_PERSONA",
+  "type" : "p",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "@p_activo",
+    "inOut" : "IN",
+    "type" : "BIT",
+    "typeName" : "BIT",
+    "position" : 1
+  }, {
+    "name" : "gs_sp_multi_result_persona1",
+    "inOut" : "OUT_TABLE",
+    "type" : "COLLECTION",
+    "typeName" : "GS_SP_MULTI_RESULT_PERSONA1",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_SP_MULTI_RESULT_PERSONA1",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "varchar(100)",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "varchar(100)",
+      "typeName" : "varchar",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 5
+    } ]
+  } ]
+}

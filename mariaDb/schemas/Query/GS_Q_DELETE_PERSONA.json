@@ -1,0 +1,17 @@
+{
+  "name" : "GS_Q_DELETE_PERSONA",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "DELETE FROM GS_PERSONA WHERE ID_PERSONA = ?",
+  "attrs" : [ {
+    "name" : "id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

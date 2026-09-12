@@ -1,0 +1,23 @@
+{
+  "name" : "GS_SP_COUNT_PERSONAS_CURSOR",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_personas",
+    "inOut" : "IN",
+    "type" : "REF_CURSOR",
+    "typeName" : "VARCHAR",
+    "position" : 1
+  }, {
+    "name" : "p_total",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

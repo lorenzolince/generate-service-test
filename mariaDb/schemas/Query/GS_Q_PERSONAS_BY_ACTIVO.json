@@ -1,0 +1,57 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_ACTIVO",
+  "type" : "QUERY",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT ID_PERSONA AS persona_id, NOMBRE AS nombre, APELLIDO AS apellido, EDAD AS edad, EMAIL AS email, ACTIVO AS activo FROM GS_PERSONA WHERE ACTIVO = ? ORDER BY ID_PERSONA",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BIT",
+    "typeName" : "BIT",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_activoquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_ACTIVO_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_ACTIVO_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT",
+      "typeName" : "INT",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "activo",
+      "type" : "BIT",
+      "typeName" : "BIT",
+      "position" : 6
+    } ]
+  } ]
+}

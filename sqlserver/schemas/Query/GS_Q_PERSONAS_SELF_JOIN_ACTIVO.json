@@ -1,0 +1,52 @@
+{
+  "name" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO",
+  "type" : "QUERY",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT P.ID_PERSONA AS persona_id, P.NOMBRE AS nombre, P.APELLIDO AS apellido, R.ID_PERSONA AS referencia_id, R.ACTIVO AS activo_referencia FROM dbo.GS_PERSONA P INNER JOIN dbo.GS_PERSONA R ON R.ACTIVO = P.ACTIVO WHERE R.ID_PERSONA = ? ORDER BY P.ID_PERSONA",
+  "attrs" : [ {
+    "name" : "id_persona_referencia",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_self_join_activoquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_SELF_JOIN_ACTIVO_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "persona_id",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "varchar",
+      "typeName" : "varchar",
+      "position" : 3
+    }, {
+      "name" : "referencia_id",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    }, {
+      "name" : "activo_referencia",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 5
+    } ]
+  } ]
+}

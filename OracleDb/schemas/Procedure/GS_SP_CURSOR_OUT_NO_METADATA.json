@@ -1,0 +1,35 @@
+{
+  "name" : "GS_SP_CURSOR_OUT_NO_METADATA",
+  "type" : "PROCEDURE",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_abrir_cursor",
+    "inOut" : "IN",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 1
+  }, {
+    "name" : "p_personas",
+    "inOut" : "OUT",
+    "type" : "REF_CURSOR",
+    "typeName" : "VARCHAR",
+    "position" : 2
+  }, {
+    "name" : "p_total",
+    "inOut" : "OUT",
+    "type" : "NUMBER",
+    "typeName" : "NUMBER",
+    "position" : 3
+  }, {
+    "name" : "p_mensaje",
+    "inOut" : "OUT",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 4
+  } ],
+  "typesObject" : [ ]
+}

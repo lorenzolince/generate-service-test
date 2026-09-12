@@ -1,0 +1,17 @@
+{
+  "name" : "GS_SP_GET_PERSONA_REQUIRED",
+  "type" : "PROCEDURE",
+  "owner" : null,
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INT",
+    "typeName" : "INT",
+    "position" : 1
+  } ],
+  "typesObject" : [ ]
+}

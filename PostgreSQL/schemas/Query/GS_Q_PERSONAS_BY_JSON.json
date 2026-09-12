@@ -1,0 +1,67 @@
+{
+  "name" : "GS_Q_PERSONAS_BY_JSON",
+  "type" : "QUERY",
+  "owner" : "public",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "SELECT p.id_persona, p.nombre, p.apellido, p.edad, p.email, p.fecha_nacimiento, p.activo, p.fecha_registro FROM json_array_elements(CAST(? AS json)) AS item(persona) INNER JOIN gs_persona p ON p.id_persona = (item.persona ->> 'idPersona')::INTEGER ORDER BY p.id_persona",
+  "attrs" : [ {
+    "name" : "personas_json",
+    "inOut" : "IN",
+    "type" : "JSON",
+    "typeName" : "JSON",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_by_json",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_BY_JSON_QUERY",
+    "position" : 2
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_BY_JSON_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "SERIAL",
+      "typeName" : "SERIAL",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INT4",
+      "typeName" : "INT4",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR",
+      "typeName" : "VARCHAR",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOL",
+      "typeName" : "BOOL",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    } ]
+  } ]
+}

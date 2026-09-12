@@ -1,0 +1,61 @@
+{
+  "name" : "GS_FN_GET_PERSONAS_CURSOR",
+  "type" : "FUNCTION",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "gs_fn_get_personas_cursor",
+    "inOut" : "OUT",
+    "type" : "REF_CURSOR",
+    "typeName" : "gs_fn_get_personas_cursor",
+    "position" : 1
+  } ],
+  "typesObject" : [ {
+    "nameType" : "gs_fn_get_personas_cursor",
+    "argType" : "COLLECTION",
+    "attr" : [ {
+      "name" : "id_persona",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 1
+    }, {
+      "name" : "nombre",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 2
+    }, {
+      "name" : "apellido",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 3
+    }, {
+      "name" : "edad",
+      "type" : "INTEGER",
+      "typeName" : "INTEGER",
+      "position" : 4
+    }, {
+      "name" : "email",
+      "type" : "VARCHAR2",
+      "typeName" : "VARCHAR2",
+      "position" : 5
+    }, {
+      "name" : "fecha_nacimiento",
+      "type" : "DATE",
+      "typeName" : "DATE",
+      "position" : 6
+    }, {
+      "name" : "activo",
+      "type" : "BOOLEAN",
+      "typeName" : "BOOLEAN",
+      "position" : 7
+    }, {
+      "name" : "fecha_registro",
+      "type" : "TIMESTAMP",
+      "typeName" : "TIMESTAMP",
+      "position" : 8
+    } ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "name" : "GS_FN_TYPE_NOMBRE",
+  "type" : "FUNCTION",
+  "owner" : "TEST",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : null,
+  "attrs" : [ {
+    "name" : "p_id_persona",
+    "inOut" : "IN",
+    "type" : "INTEGER",
+    "typeName" : "INTEGER",
+    "position" : 1
+  }, {
+    "name" : "gs_fn_type_nombre",
+    "inOut" : "OUT",
+    "type" : "VARCHAR2",
+    "typeName" : "VARCHAR2",
+    "position" : 2
+  } ],
+  "typesObject" : [ ]
+}

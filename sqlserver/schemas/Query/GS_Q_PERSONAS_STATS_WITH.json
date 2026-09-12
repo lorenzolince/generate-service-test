@@ -1,0 +1,47 @@
+{
+  "name" : "GS_Q_PERSONAS_STATS_WITH",
+  "type" : "QUERY",
+  "owner" : "dbo",
+  "packageName" : null,
+  "resulSetCount" : 0,
+  "pipelined" : false,
+  "query" : "WITH PERSONAS_FILTRADAS AS (SELECT ID_PERSONA, EDAD, ACTIVO FROM dbo.GS_PERSONA WHERE ACTIVO = ?) SELECT COUNT(*) AS total_personas, COALESCE(AVG(CAST(EDAD AS DECIMAL(10,2))), 0) AS edad_promedio, COALESCE(MIN(EDAD), 0) AS edad_minima, COALESCE(MAX(EDAD), 0) AS edad_maxima FROM PERSONAS_FILTRADAS",
+  "attrs" : [ {
+    "name" : "activo",
+    "inOut" : "IN",
+    "type" : "BOOLEAN",
+    "typeName" : "BOOLEAN",
+    "position" : 1
+  }, {
+    "name" : "gs_q_personas_stats_withquery",
+    "inOut" : "OUT",
+    "type" : "QUERY",
+    "typeName" : "GS_Q_PERSONAS_STATS_WITH_QUERY",
+    "position" : 0
+  } ],
+  "typesObject" : [ {
+    "nameType" : "GS_Q_PERSONAS_STATS_WITH_QUERY",
+    "argType" : "QUERY",
+    "attr" : [ {
+      "name" : "total_personas",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 1
+    }, {
+      "name" : "edad_promedio",
+      "type" : "decimal",
+      "typeName" : "decimal",
+      "position" : 2
+    }, {
+      "name" : "edad_minima",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 3
+    }, {
+      "name" : "edad_maxima",
+      "type" : "int",
+      "typeName" : "int",
+      "position" : 4
+    } ]
+  } ]
+}
