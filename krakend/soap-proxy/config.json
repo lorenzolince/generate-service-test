@@ -1,0 +1,670 @@
+{
+  "gsSpGetTwoCursors": {
+    "operationName": "GsSpGetTwoCursors",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad",
+      "idHijo"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpGetPersonasCursor": {
+    "operationName": "GsSpGetPersonasCursor",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpArraysPrimitivosOut": {
+    "operationName": "GsSpArraysPrimitivosOut",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "pNumeros",
+      "pEnteros"
+    ],
+    "booleanFields": [
+      "pBooleanos"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpGetThreeCursors": {
+    "operationName": "GsSpGetThreeCursors",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad",
+      "idHijo",
+      "idReferencia"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpGetPersonasDetalle": {
+    "operationName": "GsSpGetPersonasDetalle",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpLobCursor": {
+    "operationName": "GsSpLobCursor",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idLob"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpGetPersonas": {
+    "operationName": "GsSpGetPersonas",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnCountPersonas": {
+    "operationName": "GsFnCountPersonas",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "gsFnCountPersonas"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsFnGetPersonasTab": {
+    "operationName": "GsFnGetPersonasTab",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnGetPersonasCursor": {
+    "operationName": "GsFnGetPersonasCursor",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "fnCountPersonas": {
+    "operationName": "FnCountPersonas",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "fnCountPersonas"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "getPersonasCursor": {
+    "operationName": "GetPersonasCursor",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "fnGetPersonasCursor": {
+    "operationName": "FnGetPersonasCursor",
+    "category": "empty",
+    "params": {},
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpTypeParams": {
+    "operationName": "GsSpTypeParams",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [],
+    "booleanFields": [
+      "pActivo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpDeletePersona": {
+    "operationName": "GsSpDeletePersona",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [
+      "pEliminado"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpGetPersona": {
+    "operationName": "GsSpGetPersona",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpCursorOutNoMetadata": {
+    "operationName": "GsSpCursorOutNoMetadata",
+    "category": "scalar",
+    "params": {
+      "field": "pAbrirCursor"
+    },
+    "numericFields": [
+      "pTotal"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": [
+      "pPersonas"
+    ]
+  },
+  "gsSpGetPersonaDetalle": {
+    "operationName": "GsSpGetPersonaDetalle",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnTypeNombre": {
+    "operationName": "GsFnTypeNombre",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsFnPipePersonas": {
+    "operationName": "GsFnPipePersonas",
+    "category": "scalar",
+    "params": {
+      "field": "pActivo"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnCursorReturnWithOut": {
+    "operationName": "GsFnCursorReturnWithOut",
+    "category": "scalar",
+    "params": {
+      "field": "pActivo"
+    },
+    "numericFields": [
+      "pTotal",
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnGetPersonaObj": {
+    "operationName": "GsFnGetPersonaObj",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "pipePersonas": {
+    "operationName": "PipePersonas",
+    "category": "scalar",
+    "params": {
+      "field": "pActivo"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "getPersona": {
+    "operationName": "GetPersona",
+    "category": "scalar",
+    "params": {
+      "field": "pIdPersona"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsQPersonasTotalHijosWith": {
+    "operationName": "GsQPersonasTotalHijosWith",
+    "category": "scalar",
+    "params": {
+      "field": "activo"
+    },
+    "numericFields": [
+      "idPersona",
+      "totalHijos"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsQDeletePersona": {
+    "operationName": "GsQDeletePersona",
+    "category": "scalar",
+    "params": {
+      "field": "idPersona"
+    },
+    "numericFields": [],
+    "booleanFields": [],
+    "anyTypeOutputFields": [],
+    "emptyResponse": true
+  },
+  "gsQPersonasActivasWith": {
+    "operationName": "GsQPersonasActivasWith",
+    "category": "scalar",
+    "params": {
+      "field": "activo"
+    },
+    "numericFields": [
+      "idPersona"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsQPersonasByCityJoinss": {
+    "operationName": "GsQPersonasByCityJoinss",
+    "category": "scalar",
+    "params": {
+      "field": "ciudad"
+    },
+    "numericFields": [
+      "idPersona"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsQPersonaByNombre": {
+    "operationName": "GsQPersonaByNombre",
+    "category": "scalar",
+    "params": {
+      "field": "nombre"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsQPersonaById": {
+    "operationName": "GsQPersonaById",
+    "category": "scalar",
+    "params": {
+      "field": "idPersona"
+    },
+    "numericFields": [
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsQUpdatePersonass": {
+    "operationName": "GsQUpdatePersonass",
+    "category": "multiScalar",
+    "params": {
+      "fields": [
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo",
+        "idPersona"
+      ]
+    },
+    "numericFields": [],
+    "booleanFields": [],
+    "anyTypeOutputFields": [],
+    "emptyResponse": true
+  },
+  "gsQInsertPersonaSelect": {
+    "operationName": "GsQInsertPersonaSelect",
+    "category": "multiScalar",
+    "params": {
+      "fields": [
+        "nombre",
+        "email",
+        "activo",
+        "idPersonaBase"
+      ]
+    },
+    "numericFields": [],
+    "booleanFields": [],
+    "anyTypeOutputFields": [],
+    "emptyResponse": true
+  },
+  "gsQInsertPersona": {
+    "operationName": "GsQInsertPersona",
+    "category": "multiScalar",
+    "params": {
+      "fields": [
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo"
+      ]
+    },
+    "numericFields": [],
+    "booleanFields": [],
+    "anyTypeOutputFields": [],
+    "emptyResponse": true
+  },
+  "gsSpInsertPersona": {
+    "operationName": "GsSpInsertPersona",
+    "category": "nestedObj",
+    "params": {
+      "wrapper": "pPersona",
+      "fields": [
+        "idPersona",
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo",
+        "fechaRegistro"
+      ]
+    },
+    "numericFields": [
+      "pIdPersona"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpUpdatePersona": {
+    "operationName": "GsSpUpdatePersona",
+    "category": "nestedObj",
+    "params": {
+      "wrapper": "pPersona",
+      "fields": [
+        "idPersona",
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo",
+        "fechaRegistro"
+      ]
+    },
+    "numericFields": [
+      "pActualizado"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpCursorInoutPersonas": {
+    "operationName": "GsSpCursorInoutPersonas",
+    "category": "repeatedObj",
+    "params": {
+      "wrapper": "pPersonas",
+      "fields": [
+        "idPersona",
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo",
+        "fechaRegistro"
+      ]
+    },
+    "numericFields": [
+      "idPersona",
+      "edad",
+      "pTotal"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnCursorInoutPersonas": {
+    "operationName": "GsFnCursorInoutPersonas",
+    "category": "repeatedObj",
+    "params": {
+      "wrapper": "pPersonas",
+      "fields": [
+        "idPersona",
+        "nombre",
+        "apellido",
+        "edad",
+        "email",
+        "fechaNacimiento",
+        "activo",
+        "fechaRegistro"
+      ]
+    },
+    "numericFields": [
+      "idPersona",
+      "edad",
+      "gsFnCursorInoutPersonas"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsSpArraysPrimitivosInout": {
+    "operationName": "GsSpArraysPrimitivosInout",
+    "category": "repeatedFlat",
+    "params": {
+      "arrays": [
+        "pNumeros",
+        "pTextos"
+      ]
+    },
+    "numericFields": [
+      "pTotal",
+      "pSuma"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "arraysPrimitivosInout": {
+    "operationName": "ArraysPrimitivosInout",
+    "category": "repeatedFlat",
+    "params": {
+      "arrays": [
+        "pNumeros",
+        "pTextos"
+      ]
+    },
+    "numericFields": [
+      "pTotal",
+      "pSuma"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpLobValues": {
+    "operationName": "GsSpLobValues",
+    "category": "multiScalar",
+    "params": {
+      "fields": [
+        "pTextoIn",
+        "pArchivoIn"
+      ]
+    },
+    "numericFields": [
+      "pTextoLength",
+      "pArchivoLength"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpLobInout": {
+    "operationName": "GsSpLobInout",
+    "category": "multiScalar",
+    "params": {
+      "fields": [
+        "pTexto",
+        "pArchivo"
+      ]
+    },
+    "numericFields": [
+      "pTextoLength",
+      "pArchivoLength"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpCountPersonasCursor": {
+    "operationName": "GsSpCountPersonasCursor",
+    "category": "anytype",
+    "params": {
+      "field": "pPersonas"
+    },
+    "numericFields": [
+      "pTotal"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "gsSpCursorInWithOutputs": {
+    "operationName": "GsSpCursorInWithOutputs",
+    "category": "anytype",
+    "params": {
+      "field": "pEntrada"
+    },
+    "numericFields": [
+      "pTotal",
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  },
+  "gsFnCursorInCount": {
+    "operationName": "GsFnCursorInCount",
+    "category": "anytype",
+    "params": {
+      "field": "pPersonas"
+    },
+    "numericFields": [
+      "gsFnCursorInCount"
+    ],
+    "booleanFields": [],
+    "anyTypeOutputFields": []
+  },
+  "cursorInWithOutputs": {
+    "operationName": "CursorInWithOutputs",
+    "category": "anytype",
+    "params": {
+      "field": "pEntrada"
+    },
+    "numericFields": [
+      "pTotal",
+      "idPersona",
+      "edad"
+    ],
+    "booleanFields": [
+      "activo"
+    ],
+    "anyTypeOutputFields": []
+  }
+}

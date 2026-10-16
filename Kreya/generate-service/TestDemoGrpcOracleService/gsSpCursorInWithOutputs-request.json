@@ -1,0 +1,24 @@
+{
+  "pEntrada": [
+    {
+      "idPersona": 11,
+      "nombre": "Daniel",
+      "apellido": "Rivas",
+      "edad": 38,
+      "email": "daniel.rivas@example.com",
+      "fechaNacimiento": "1988-01-14",
+      "activo": true,
+      "fechaRegistro": "2026-09-01 09:00:00"
+    },
+    {
+      "idPersona": 14,
+      "nombre": "Elena",
+      "apellido": "Suarez",
+      "edad": 30,
+      "email": "elena.suarez@example.com",
+      "fechaNacimiento": "1996-09-03",
+      "activo": false,
+      "fechaRegistro": "2026-09-01 09:20:00"
+    }
+  ]
+}

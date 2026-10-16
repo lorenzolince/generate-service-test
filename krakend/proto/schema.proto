@@ -1,0 +1,600 @@
+syntax = "proto3";
+
+import "google/type/date.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+option java_package = "com.app.test.proto";
+option java_outer_classname = "TestDemoGrpcOracleProto";
+
+service TestDemoGrpcOracleService {
+rpc gsSpGetThreeCursors(GsSpGetThreeCursorsRequest) returns (GsSpGetThreeCursorsResponse);
+rpc gsSpUpdatePersona(GsSpUpdatePersonaRequest) returns (GsSpUpdatePersonaResponse);
+rpc gsSpGetPersonasDetalle(GsSpGetPersonasDetalleRequest) returns (GsSpGetPersonasDetalleResponse);
+rpc gsSpGetPersonasCursor(GsSpGetPersonasCursorRequest) returns (GsSpGetPersonasCursorResponse);
+rpc gsSpGetPersonas(GsSpGetPersonasRequest) returns (GsSpGetPersonasResponse);
+rpc gsSpGetPersona(GsSpGetPersonaRequest) returns (GsSpGetPersonaResponse);
+rpc gsSpDeletePersona(GsSpDeletePersonaRequest) returns (GsSpDeletePersonaResponse);
+rpc gsSpCursorOutNoMetadata(GsSpCursorOutNoMetadataRequest) returns (GsSpCursorOutNoMetadataResponse);
+rpc gsSpCursorInWithOutputs(GsSpCursorInWithOutputsRequest) returns (GsSpCursorInWithOutputsResponse);
+rpc gsSpCursorInoutPersonas(GsSpCursorInoutPersonasRequest) returns (GsSpCursorInoutPersonasResponse);
+rpc gsSpCountPersonasCursor(GsSpCountPersonasCursorRequest) returns (GsSpCountPersonasCursorResponse);
+rpc gsSpArraysPrimitivosOut(GsSpArraysPrimitivosOutRequest) returns (GsSpArraysPrimitivosOutResponse);
+rpc gsSpArraysPrimitivosInout(GsSpArraysPrimitivosInoutRequest) returns (GsSpArraysPrimitivosInoutResponse);
+rpc gsSpGetTwoCursors(GsSpGetTwoCursorsRequest) returns (GsSpGetTwoCursorsResponse);
+rpc gsSpInsertPersona(GsSpInsertPersonaRequest) returns (GsSpInsertPersonaResponse);
+rpc gsSpLobCursor(GsSpLobCursorRequest) returns (GsSpLobCursorResponse);
+rpc gsSpLobInout(GsSpLobInoutRequest) returns (GsSpLobInoutResponse);
+rpc gsSpLobValues(GsSpLobValuesRequest) returns (GsSpLobValuesResponse);
+rpc gsSpTypeParams(GsSpTypeParamsRequest) returns (GsSpTypeParamsResponse);
+rpc gsSpGetPersonaDetalle(GsSpGetPersonaDetalleRequest) returns (GsSpGetPersonaDetalleResponse);
+rpc gsFnTypeNombre(GsFnTypeNombreRequest) returns (GsFnTypeNombreResponse);
+rpc gsFnPipePersonas(GsFnPipePersonasRequest) returns (GsFnPipePersonasResponse);
+rpc gsFnGetPersonaObj(GsFnGetPersonaObjRequest) returns (GsFnGetPersonaObjResponse);
+rpc gsFnGetPersonasTab(GsFnGetPersonasTabRequest) returns (GsFnGetPersonasTabResponse);
+rpc gsFnCountPersonas(GsFnCountPersonasRequest) returns (GsFnCountPersonasResponse);
+rpc gsFnCursorReturnWithOut(GsFnCursorReturnWithOutRequest) returns (GsFnCursorReturnWithOutResponse);
+rpc gsFnCursorInCount(GsFnCursorInCountRequest) returns (GsFnCursorInCountResponse);
+rpc gsFnCursorInoutPersonas(GsFnCursorInoutPersonasRequest) returns (GsFnCursorInoutPersonasResponse);
+rpc gsFnGetPersonasCursor(GsFnGetPersonasCursorRequest) returns (GsFnGetPersonasCursorResponse);
+rpc fnGetPersonasCursor(FnGetPersonasCursorRequest) returns (FnGetPersonasCursorResponse);
+rpc pipePersonas(PipePersonasRequest) returns (PipePersonasResponse);
+rpc fnCountPersonas(FnCountPersonasRequest) returns (FnCountPersonasResponse);
+rpc arraysPrimitivosInout(ArraysPrimitivosInoutRequest) returns (ArraysPrimitivosInoutResponse);
+rpc cursorInWithOutputs(CursorInWithOutputsRequest) returns (CursorInWithOutputsResponse);
+rpc getPersonasCursor(GetPersonasCursorRequest) returns (GetPersonasCursorResponse);
+rpc getPersona(GetPersonaRequest) returns (GetPersonaResponse);
+rpc gsQPersonaByNombre(GsQPersonaByNombreRequest) returns (GsQPersonaByNombreResponse);
+rpc gsQPersonaById(GsQPersonaByIdRequest) returns (GsQPersonaByIdResponse);
+rpc gsQPersonasByCityJoinss(GsQPersonasByCityJoinssRequest) returns (GsQPersonasByCityJoinssResponse);
+rpc gsQPersonasActivasWith(GsQPersonasActivasWithRequest) returns (GsQPersonasActivasWithResponse);
+rpc gsQPersonasTotalHijosWith(GsQPersonasTotalHijosWithRequest) returns (GsQPersonasTotalHijosWithResponse);
+rpc gsQInsertPersona(GsQInsertPersonaRequest) returns (GsQInsertPersonaResponse);
+rpc gsQInsertPersonaSelect(GsQInsertPersonaSelectRequest) returns (GsQInsertPersonaSelectResponse);
+rpc gsQUpdatePersonass(GsQUpdatePersonassRequest) returns (GsQUpdatePersonassResponse);
+rpc gsQDeletePersona(GsQDeletePersonaRequest) returns (GsQDeletePersonaResponse);
+
+}
+
+message GsSpGetThreeCursorsResponse {
+repeated PPersonas pPersonas = 1;
+repeated PHijos pHijos = 2;
+repeated PDirecciones pDirecciones = 3;
+}
+
+message PPersonas {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message PHijos {
+int32 idHijo = 1;
+int32 idPersona = 2;
+string nombre = 3;
+string apellido = 4;
+google.type.Date fechaNacimiento = 5;
+}
+
+message PDirecciones {
+string tipo = 1;
+int32 idReferencia = 2;
+string pais = 3;
+string ciudad = 4;
+string telefono = 5;
+}
+
+message GsSpGetThreeCursorsRequest {
+}
+
+message GsSpUpdatePersonaRequest {
+GsPersonaObj pPersona = 1;
+}
+
+message GsSpUpdatePersonaResponse {
+string pActualizado = 1;
+}
+
+message GsPersonaObj {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message GsSpGetPersonasDetalleResponse {
+repeated GsPersonaDetalleObj pPersonas = 1;
+}
+
+message GsDireccionObj {
+string pais = 1;
+string ciudad = 2;
+string telefono = 3;
+}
+
+message GsHijoObj {
+string nombre = 1;
+string apellido = 2;
+google.type.Date fechaNacimiento = 3;
+GsDireccionObj direccion = 4;
+}
+
+message GsPersonaDetalleObj {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+GsDireccionObj direccion = 9;
+repeated GsHijoObj hijos = 10;
+}
+
+message GsSpGetPersonasDetalleRequest {
+}
+
+message GsSpGetPersonasCursorResponse {
+repeated PPersonas pPersonas = 1;
+}
+
+message GsSpGetPersonasCursorRequest {
+}
+
+message GsSpGetPersonasResponse {
+repeated GsPersonaObj pPersonas = 1;
+}
+
+message GsSpGetPersonasRequest {
+}
+
+message GsSpGetPersonaRequest {
+string pIdPersona = 1;
+}
+
+message GsSpGetPersonaResponse {
+GsPersonaObj pPersona = 1;
+}
+
+message GsSpDeletePersonaRequest {
+string pIdPersona = 1;
+}
+
+message GsSpDeletePersonaResponse {
+string pEliminado = 1;
+}
+
+message GsSpCursorOutNoMetadataRequest {
+string pAbrirCursor = 1;
+}
+
+message GsSpCursorOutNoMetadataResponse {
+repeated google.protobuf.Struct pPersonas = 1;
+string pTotal = 2;
+string pMensaje = 3;
+}
+
+message GsSpCursorInWithOutputsRequest {
+repeated google.protobuf.Struct pEntrada = 1;
+}
+
+message GsSpCursorInWithOutputsResponse {
+string pTotal = 1;
+repeated PPersonas pPersonas = 2;
+}
+
+message GsSpCursorInoutPersonasRequest {
+repeated PPersonas pPersonas = 1;
+}
+
+message GsSpCursorInoutPersonasResponse {
+repeated PPersonas pPersonas = 1;
+string pTotal = 2;
+}
+
+message GsSpCountPersonasCursorRequest {
+repeated google.protobuf.Struct pPersonas = 1;
+}
+
+message GsSpCountPersonasCursorResponse {
+string pTotal = 1;
+}
+
+message GsSpArraysPrimitivosOutResponse {
+repeated string pNumeros = 1;
+repeated int32 pEnteros = 2;
+repeated bool pBooleanos = 3;
+repeated string pTextos = 4;
+repeated google.type.Date pFechas = 5;
+repeated google.protobuf.Timestamp pTimestamps = 6;
+}
+
+message GsSpArraysPrimitivosOutRequest {
+}
+
+message GsSpArraysPrimitivosInoutRequest {
+repeated string pNumeros = 1;
+repeated string pTextos = 2;
+}
+
+message GsSpArraysPrimitivosInoutResponse {
+repeated string pTextos = 1;
+repeated google.type.Date pFechas = 2;
+repeated google.protobuf.Timestamp pTimestamps = 3;
+string pTotal = 4;
+string pSuma = 5;
+}
+
+message GsSpGetTwoCursorsResponse {
+repeated PPersonas pPersonas = 1;
+repeated PHijos pHijos = 2;
+}
+
+message GsSpGetTwoCursorsRequest {
+}
+
+message GsSpInsertPersonaRequest {
+GsPersonaObj pPersona = 1;
+}
+
+message GsSpInsertPersonaResponse {
+string pIdPersona = 1;
+}
+
+message GsSpLobCursorResponse {
+repeated PLobs pLobs = 1;
+}
+
+message PLobs {
+string idLob = 1;
+string textoClob = 2;
+bytes archivoBlob = 3;
+}
+
+message GsSpLobCursorRequest {
+}
+
+message GsSpLobInoutRequest {
+string pTexto = 1;
+bytes pArchivo = 2;
+}
+
+message GsSpLobInoutResponse {
+string pTexto = 1;
+bytes pArchivo = 2;
+string pTextoLength = 3;
+string pArchivoLength = 4;
+}
+
+message GsSpLobValuesRequest {
+string pTextoIn = 1;
+bytes pArchivoIn = 2;
+}
+
+message GsSpLobValuesResponse {
+string pTextoOut = 1;
+bytes pArchivoOut = 2;
+string pTextoLength = 3;
+string pArchivoLength = 4;
+}
+
+message GsSpTypeParamsRequest {
+int32 pIdPersona = 1;
+}
+
+message GsSpTypeParamsResponse {
+string pNombre = 1;
+string pEmail = 2;
+bool pActivo = 3;
+google.type.Date pFechaNacimiento = 4;
+google.protobuf.Timestamp pFechaRegistro = 5;
+}
+
+message GsSpGetPersonaDetalleRequest {
+string pIdPersona = 1;
+}
+
+message GsSpGetPersonaDetalleResponse {
+GsPersonaDetalleObj pPersona = 1;
+}
+
+message GsFnTypeNombreRequest {
+int32 pIdPersona = 1;
+}
+
+message GsFnTypeNombreResponse {
+string gsFnTypeNombre = 1;
+}
+
+message GsFnPipePersonasRequest {
+string pActivo = 1;
+}
+
+message GsFnPipePersonasResponse {
+repeated GsPersonaObj gsFnPipePersonas = 1;
+}
+
+message GsFnGetPersonaObjRequest {
+string pIdPersona = 1;
+}
+
+message GsFnGetPersonaObjResponse {
+GsPersonaObj gsFnGetPersonaObj = 1;
+}
+
+message GsFnGetPersonasTabResponse {
+repeated GsPersonaObj gsFnGetPersonasTab = 1;
+}
+
+message GsFnGetPersonasTabRequest {
+}
+
+message GsFnCountPersonasResponse {
+string gsFnCountPersonas = 1;
+}
+
+message GsFnCountPersonasRequest {
+}
+
+message GsFnCursorReturnWithOutRequest {
+string pActivo = 1;
+}
+
+message GsFnCursorReturnWithOutResponse {
+string pTotal = 1;
+repeated GsFnCursorReturnWithOut gsFnCursorReturnWithOut = 2;
+}
+
+message GsFnCursorReturnWithOut {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message GsFnCursorInCountRequest {
+repeated google.protobuf.Struct pPersonas = 1;
+}
+
+message GsFnCursorInCountResponse {
+string gsFnCursorInCount = 1;
+}
+
+message GsFnCursorInoutPersonasRequest {
+repeated PPersonas pPersonas = 1;
+}
+
+message GsFnCursorInoutPersonasResponse {
+repeated PPersonas pPersonas = 1;
+string gsFnCursorInoutPersonas = 2;
+}
+
+message GsFnGetPersonasCursorResponse {
+repeated GsFnGetPersonasCursor gsFnGetPersonasCursor = 1;
+}
+
+message GsFnGetPersonasCursor {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message GsFnGetPersonasCursorRequest {
+}
+
+message FnGetPersonasCursorResponse {
+repeated FnGetPersonasCursor fnGetPersonasCursor = 1;
+}
+
+message FnGetPersonasCursor {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message FnGetPersonasCursorRequest {
+}
+
+message PipePersonasRequest {
+string pActivo = 1;
+}
+
+message PipePersonasResponse {
+repeated GsPersonaObj pipePersonas = 1;
+}
+
+message FnCountPersonasResponse {
+string fnCountPersonas = 1;
+}
+
+message FnCountPersonasRequest {
+}
+
+message ArraysPrimitivosInoutRequest {
+repeated string pNumeros = 1;
+repeated string pTextos = 2;
+}
+
+message ArraysPrimitivosInoutResponse {
+repeated string pTextos = 1;
+repeated google.type.Date pFechas = 2;
+repeated google.protobuf.Timestamp pTimestamps = 3;
+string pTotal = 4;
+string pSuma = 5;
+}
+
+message CursorInWithOutputsRequest {
+repeated google.protobuf.Struct pEntrada = 1;
+}
+
+message CursorInWithOutputsResponse {
+string pTotal = 1;
+repeated PPersonas pPersonas = 2;
+}
+
+message GetPersonasCursorResponse {
+repeated PPersonas pPersonas = 1;
+}
+
+message GetPersonasCursorRequest {
+}
+
+message GetPersonaRequest {
+string pIdPersona = 1;
+}
+
+message GetPersonaResponse {
+GsPersonaObj pPersona = 1;
+}
+
+message GsQPersonaByNombreRequest {
+string nombre = 1;
+}
+
+message GsQPersonaByNombreResponse {
+repeated GsQPersonaByNombreQuery gsQPersonaByNombre = 1;
+}
+
+message GsQPersonaByNombreQuery {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message GsQPersonaByIdRequest {
+int32 idPersona = 1;
+}
+
+message GsQPersonaByIdResponse {
+repeated GsQPersonaByIdQuery gsQPersonaById = 1;
+}
+
+message GsQPersonaByIdQuery {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+int32 edad = 4;
+string email = 5;
+google.type.Date fechaNacimiento = 6;
+bool activo = 7;
+google.protobuf.Timestamp fechaRegistro = 8;
+}
+
+message GsQPersonasByCityJoinssRequest {
+string ciudad = 1;
+}
+
+message GsQPersonasByCityJoinssResponse {
+repeated GsQPersonasByCityJoinssQuery gsQPersonasByCityJoinss = 1;
+}
+
+message GsQPersonasByCityJoinssQuery {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+string pais = 4;
+string ciudad = 5;
+string telefono = 6;
+}
+
+message GsQPersonasActivasWithRequest {
+bool activo = 1;
+}
+
+message GsQPersonasActivasWithResponse {
+repeated GsQPersonasActivasWithQuery gsQPersonasActivasWith = 1;
+}
+
+message GsQPersonasActivasWithQuery {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+bool activo = 4;
+}
+
+message GsQPersonasTotalHijosWithRequest {
+bool activo = 1;
+}
+
+message GsQPersonasTotalHijosWithResponse {
+repeated GsQPersonasTotalHijosWithQuery gsQPersonasTotalHijosWith = 1;
+}
+
+message GsQPersonasTotalHijosWithQuery {
+int32 idPersona = 1;
+string nombre = 2;
+string apellido = 3;
+bool activo = 4;
+int32 totalHijos = 5;
+}
+
+message GsQInsertPersonaRequest {
+string nombre = 1;
+string apellido = 2;
+int32 edad = 3;
+string email = 4;
+google.type.Date fechaNacimiento = 5;
+bool activo = 6;
+}
+
+message GsQInsertPersonaResponse {
+}
+
+message GsQInsertPersonaSelectRequest {
+string nombre = 1;
+string email = 2;
+bool activo = 3;
+int32 idPersonaBase = 4;
+}
+
+message GsQInsertPersonaSelectResponse {
+}
+
+message GsQUpdatePersonassRequest {
+string nombre = 1;
+string apellido = 2;
+int32 edad = 3;
+string email = 4;
+google.type.Date fechaNacimiento = 5;
+bool activo = 6;
+int32 idPersona = 7;
+}
+
+message GsQUpdatePersonassResponse {
+}
+
+message GsQDeletePersonaRequest {
+int32 idPersona = 1;
+}
+
+message GsQDeletePersonaResponse {
+}
+

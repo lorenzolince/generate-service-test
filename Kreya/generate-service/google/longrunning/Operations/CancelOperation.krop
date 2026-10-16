@@ -1,0 +1,13 @@
+{
+  "details": {
+    "methodFqn": "google.longrunning.Operations.CancelOperation"
+  },
+  "requests": [
+    {
+      "location": "CancelOperation-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc",
+  "importStreamId": "59eeb607-06e2-4310-856f-2169d05deb2c"
+}

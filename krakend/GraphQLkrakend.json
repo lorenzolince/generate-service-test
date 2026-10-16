@@ -1,0 +1,1096 @@
+{
+    "$schema": "https://www.krakend.io/schema/v3.json",
+    "version": 3,
+    "name": "generate-service-graphql-rest-gateway",
+    "port": 8083,
+    "timeout": "30000ms",
+    "cache_ttl": "300s",
+    "endpoints": [
+        {
+            "endpoint": "/api/gsSpGetTwoCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetTwoCursors",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpGetTwoCursors { pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } pHijos { idHijo idPersona nombre apellido fechaNacimiento } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetPersonasCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpGetPersonasCursor { pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpArraysPrimitivosInout",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpArraysPrimitivosInout",
+                            "query": "mutation gsSpArraysPrimitivosInout($pNumeros: [BigDecimal], $pTextos: [String]) {\n  gsSpArraysPrimitivosInout(request: { pNumeros: $pNumeros, pTextos: $pTextos }) {\n    pFechas\n    pSuma\n    pTextos\n    pTimestamps\n    pTotal\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpTypeParams",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpTypeParams",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpTypeParams",
+                            "query": "mutation gsSpTypeParams($pIdPersona: Int!) {\n  gsSpTypeParams(request: { pIdPersona: $pIdPersona }) {\n    pNombre\n    pEmail\n    pActivo\n    pFechaNacimiento\n    pFechaRegistro\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCountPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpCountPersonasCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation GsSpCountPersonasCursor($pPersonas: Json!) { gsSpCountPersonasCursor(request: { pPersonas: $pPersonas }) { pTotal } }')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpInsertPersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpInsertPersona",
+                            "query": "mutation gsSpInsertPersona($pPersona: GsPersonaObjInput) {\n  gsSpInsertPersona(request: { pPersona: $pPersona }) {\n    pIdPersona\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpUpdatePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpUpdatePersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpUpdatePersona",
+                            "query": "mutation gsSpUpdatePersona($pPersona: GsPersonaObjInput) {\n  gsSpUpdatePersona(request: { pPersona: $pPersona }) {\n    pActualizado\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpDeletePersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpDeletePersona",
+                            "query": "mutation gsSpDeletePersona($pIdPersona: BigDecimal) {\n  gsSpDeletePersona(request: { pIdPersona: $pIdPersona }) {\n    pEliminado\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetPersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpGetPersona",
+                            "query": "mutation gsSpGetPersona($pIdPersona: BigDecimal) {\n  gsSpGetPersona(request: { pIdPersona: $pIdPersona }) {\n    pPersona { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobValues",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpLobValues",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpLobValues",
+                            "query": "mutation gsSpLobValues($pTextoIn: String, $pArchivoIn: Base64String) {\n  gsSpLobValues(request: { pTextoIn: $pTextoIn, pArchivoIn: $pArchivoIn }) {\n    pTextoOut\n    pArchivoOut\n    pTextoLength\n    pArchivoLength\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetThreeCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetThreeCursors",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpGetThreeCursors { pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } pHijos { idHijo idPersona nombre apellido fechaNacimiento } pDirecciones { tipo idReferencia pais ciudad telefono } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetPersonasDetalle",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpGetPersonasDetalle { pPersonas  { idPersona nombre apellido  edad email fechaNacimiento activo fechaRegistro direccion { pais ciudad telefono }     hijos {nombre apellido fechaNacimiento direccion { pais ciudad telefono } } } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpCursorInWithOutputs",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation GsSpCursorInWithOutputs($pEntrada: Json!) { gsSpCursorInWithOutputs(request: { pEntrada: $pEntrada }) { pTotal pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } }')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpLobCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpLobCursor { pLobs { idLob textoClob archivoBlob } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpArraysPrimitivosOut",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpArraysPrimitivosOut { pNumeros   pEnteros   pBooleanos   pTextos   pFechas    pTimestamps } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorOutNoMetadata",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpCursorOutNoMetadata",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpCursorOutNoMetadata",
+                            "query": "mutation gsSpCursorOutNoMetadata($pAbrirCursor: BigDecimal) {\n  gsSpCursorOutNoMetadata(request: { pAbrirCursor: $pAbrirCursor }) {\n    pPersonas\n    pTotal\n    pMensaje\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpLobInout",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpLobInout",
+                            "query": "mutation gsSpLobInout($pTexto: String, $pArchivo: Base64String) {\n  gsSpLobInout(request: { pTexto: $pTexto, pArchivo: $pArchivo }) {\n    pTexto\n    pArchivo\n    pTextoLength\n    pArchivoLength\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetPersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsSpGetPersonas {  pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonaDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpGetPersonaDetalle",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpGetPersonaDetalle",
+                            "query": "mutation gsSpGetPersonaDetalle($pIdPersona: BigDecimal) {\n  gsSpGetPersonaDetalle(request: { pIdPersona: $pIdPersona }) {\n    pPersona {\n      idPersona\n      nombre\n      apellido\n      edad\n      email\n      fechaNacimiento\n      activo\n      fechaRegistro\n      direccion { pais ciudad telefono }\n      hijos {\n        nombre\n        apellido\n        fechaNacimiento\n        direccion { pais ciudad telefono }\n      }\n    }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsSpCursorInoutPersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsSpCursorInoutPersonas",
+                            "query": "mutation gsSpCursorInoutPersonas($pPersonas: [PPersonasInput]) {\n  gsSpCursorInoutPersonas(request: { pPersonas: $pPersonas }) {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    pTotal\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnCountPersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsFnCountPersonas { gsFnCountPersonas } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnTypeNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnTypeNombre",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsFnTypeNombre",
+                            "query": "mutation gsFnTypeNombre($pIdPersona: Int!) {\n  gsFnTypeNombre(request: { pIdPersona: $pIdPersona }) {\n    gsFnTypeNombre\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnPipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnPipePersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsFnPipePersonas",
+                            "query": "mutation gsFnPipePersonas($pActivo: BigDecimal) {\n  gsFnPipePersonas(request: { pActivo: $pActivo }) {\n    gsFnPipePersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasTab",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnGetPersonasTab",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsFnGetPersonasTab { gsFnGetPersonasTab { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnCursorInoutPersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsFnCursorInoutPersonas",
+                            "query": "mutation gsFnCursorInoutPersonas($pPersonas: [PPersonasInput]) {\n  gsFnCursorInoutPersonas(request: { pPersonas: $pPersonas }) {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    gsFnCursorInoutPersonas\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorReturnWithOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnCursorReturnWithOut",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsFnCursorReturnWithOut",
+                            "query": "mutation gsFnCursorReturnWithOut($pActivo: BigDecimal) {\n  gsFnCursorReturnWithOut(request: { pActivo: $pActivo }) {\n    pTotal\n    gsFnCursorReturnWithOut { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnGetPersonasCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { gsFnGetPersonasCursor { gsFnGetPersonasCursor { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInCount",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnCursorInCount",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation GsFnCursorInCount($pPersonas: Json!) { gsFnCursorInCount(request: { pPersonas: $pPersonas })  { gsFnCursorInCount } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonaObj",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsFnGetPersonaObj",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsFnGetPersonaObj",
+                            "query": "mutation gsFnGetPersonaObj($pIdPersona: BigDecimal) {\n  gsFnGetPersonaObj(request: { pIdPersona: $pIdPersona }) {\n    gsFnGetPersonaObj { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.fnCountPersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { fnCountPersonas { fnCountPersonas } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/pipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.pipePersonas",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "pipePersonas",
+                            "query": "mutation pipePersonas($pActivo: BigDecimal) {\n  pipePersonas(request: { pActivo: $pActivo }) {\n    pipePersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.getPersonasCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { getPersonasCursor { pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.getPersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "getPersona",
+                            "query": "mutation getPersona($pIdPersona: BigDecimal) {\n  getPersona(request: { pIdPersona: $pIdPersona }) {\n    pPersona { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.fnGetPersonasCursor",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation { fnGetPersonasCursor { fnGetPersonasCursor {idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } } ')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/arraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.arraysPrimitivosInout",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "arraysPrimitivosInout",
+                            "query": "mutation arraysPrimitivosInout($pNumeros: [BigDecimal], $pTextos: [String]) {\n  arraysPrimitivosInout(request: { pNumeros: $pNumeros, pTextos: $pTextos }) {\n    pFechas\n    pSuma\n    pTextos\n    pTimestamps\n    pTotal\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/cursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.cursorInWithOutputs",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "graphql_raw_request('mutation CursorInWithOutputs($pEntrada: Json!) { cursorInWithOutputs(request: { pEntrada: $pEntrada }) { pTotal pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro } } }')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQUpdatePersonass",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQUpdatePersonass",
+                            "query": "mutation gsQUpdatePersonass($nombre: String, $apellido: String, $edad: Int!, $email: String, $fechaNacimiento: Date, $activo: Boolean!, $idPersona: Int!) {\n  gsQUpdatePersonass(request: { nombre: $nombre, apellido: $apellido, edad: $edad, email: $email, fechaNacimiento: $fechaNacimiento, activo: $activo, idPersona: $idPersona })\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasTotalHijosWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQPersonasTotalHijosWith",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQPersonasTotalHijosWith",
+                            "query": "mutation gsQPersonasTotalHijosWith($activo: Boolean!) {\n  gsQPersonasTotalHijosWith(request: { activo: $activo }) {\n    gsQPersonasTotalHijosWith { idPersona nombre apellido activo totalHijos }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQDeletePersona",
+                            "query": "mutation gsQDeletePersona($idPersona: Int!) {\n  gsQDeletePersona(request: { idPersona: $idPersona })\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasActivasWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQPersonasActivasWith",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQPersonasActivasWith",
+                            "query": "mutation gsQPersonasActivasWith($activo: Boolean!) {\n  gsQPersonasActivasWith(request: { activo: $activo }) {\n    gsQPersonasActivasWith { idPersona nombre apellido activo }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasByCityJoinss",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQPersonasByCityJoinss",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQPersonasByCityJoinss",
+                            "query": "mutation gsQPersonasByCityJoinss($ciudad: String) {\n  gsQPersonasByCityJoinss(request: { ciudad: $ciudad }) {\n    gsQPersonasByCityJoinss { idPersona nombre apellido pais ciudad telefono }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersonaSelect",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQInsertPersonaSelect",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQInsertPersonaSelect",
+                            "query": "mutation gsQInsertPersonaSelect($nombre: String, $email: String, $activo: Boolean!, $idPersonaBase: Int!) {\n  gsQInsertPersonaSelect(request: { nombre: $nombre, email: $email, activo: $activo, idPersonaBase: $idPersonaBase })\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaByNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQPersonaByNombre",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQPersonaByNombre",
+                            "query": "mutation gsQPersonaByNombre($nombre: String) {\n  gsQPersonaByNombre(request: { nombre: $nombre }) {\n    gsQPersonaByNombre { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaById",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQPersonaById",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQPersonaById",
+                            "query": "mutation gsQPersonaById($idPersona: Int!) {\n  gsQPersonaById(request: { idPersona: $idPersona }) {\n    gsQPersonaById { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://host.docker.internal:8084"
+                    ],
+                    "target": "data.gsQInsertPersona",
+                    "url_pattern": "/graphql",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "backend/graphql": {
+                            "type": "mutation",
+                            "operationName": "gsQInsertPersona",
+                            "query": "mutation gsQInsertPersona($nombre: String, $apellido: String, $edad: Int!, $email: String, $fechaNacimiento: Date, $activo: Boolean!) {\n  gsQInsertPersona(request: { nombre: $nombre, apellido: $apellido, edad: $edad, email: $email, fechaNacimiento: $fechaNacimiento, activo: $activo })\n}"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

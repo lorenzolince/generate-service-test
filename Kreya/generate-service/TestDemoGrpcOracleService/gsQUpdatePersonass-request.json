@@ -1,0 +1,13 @@
+{
+  "nombre": "Hector2",
+  "apellido": "Salazar2",
+  "edad": 15,
+  "email": "hector.salazar2@example.com",
+  "fechaNacimiento": {
+    "year": 1962,
+    "month": 4,
+    "day": 25
+  },
+  "activo": false,
+  "idPersona": 61
+}

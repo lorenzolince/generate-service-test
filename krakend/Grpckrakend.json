@@ -1,0 +1,854 @@
+{
+    "$schema": "https://www.krakend.io/schema/v3.json",
+    "version": 3,
+    "name": "generate-service-grpc-rest-gateway",
+    "port": 8083,
+    "timeout": "30000ms",
+    "endpoints": [
+        {
+            "endpoint": "/api/gsSpGetTwoCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetTwoCursors",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpArraysPrimitivosInout",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_pnumeros_strings()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpTypeParams",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpTypeParams",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCountPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpCountPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpInsertPersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpUpdatePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpUpdatePersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpDeletePersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pIdPersona')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetPersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pIdPersona')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobValues",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpLobValues",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetThreeCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetThreeCursors",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetPersonasDetalle",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpCursorInWithOutputs",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpLobCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpArraysPrimitivosOut",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorOutNoMetadata",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpCursorOutNoMetadata",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pAbrirCursor')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpLobInout",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonaDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpGetPersonaDetalle",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pIdPersona')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsSpCursorInoutPersonas",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnCountPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnTypeNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnTypeNombre",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnPipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnPipePersonas",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pActivo')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasTab",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnGetPersonasTab",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnCursorInoutPersonas",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorReturnWithOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnCursorReturnWithOut",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pActivo')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInCount",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnCursorInCount",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonaObj",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsFnGetPersonaObj",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pIdPersona')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/fnCountPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/pipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/pipePersonas",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pActivo')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/getPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/getPersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_scalar_to_string('pIdPersona')",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/fnGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/arraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/arraysPrimitivosInout",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_pnumeros_strings()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/cursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/cursorInWithOutputs",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQUpdatePersonass",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQUpdatePersonass",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasTotalHijosWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQPersonasTotalHijosWith",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQDeletePersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasActivasWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQPersonasActivasWith",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasByCityJoinss",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQPersonasByCityJoinss",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersonaSelect",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQInsertPersonaSelect",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaByNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQPersonaByNombre",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaById",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQPersonaById",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://envoy:8080"
+                    ],
+                    "url_pattern": "/TestDemoGrpcOracleService/gsQInsertPersona",
+                    "method": "POST",
+                    "encoding": "json",
+                    "extra_config": {
+                        "modifier/lua-backend": {
+                            "sources": [
+                                "scripts/utils.lua"
+                            ],
+                            "pre": "fix_dates_input()",
+                            "allow_open_libs": true,
+                            "live": false
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

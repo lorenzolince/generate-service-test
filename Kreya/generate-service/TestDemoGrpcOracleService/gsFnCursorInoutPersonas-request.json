@@ -1,0 +1,32 @@
+{
+  "pPersonas": [
+    {
+      "idPersona": 24,
+      "nombre": "Hector",
+      "apellido": "Salazar",
+      "edad": 52,
+      "email": "hector.salazar@example.com",
+      "fechaNacimiento": {
+        "year": 2031,
+        "month": 8,
+        "day": 14
+      },
+      "activo": false,
+      "fechaRegistro": "1970-01-01T00:14:07.000000433Z"
+    },
+    {
+      "idPersona": 29,
+      "nombre": "Ines",
+      "apellido": "Vargas",
+      "edad": 33,
+      "email": "ines.vargas@example.com",
+      "fechaNacimiento": {
+        "year": 2020,
+        "month": 9,
+        "day": 13
+      },
+      "activo": true,
+      "fechaRegistro": "1970-01-01T00:11:42.000000845Z"
+    }
+  ]
+}

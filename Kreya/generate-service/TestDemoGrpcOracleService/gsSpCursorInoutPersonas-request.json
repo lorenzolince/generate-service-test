@@ -1,0 +1,32 @@
+{
+  "pPersonas": [
+    {
+      "idPersona": 86,
+      "nombre": "Liberia",
+      "apellido": "Creative",
+      "edad": 733,
+      "email": "{{ faker.internet.example_email }}",
+      "fechaNacimiento": {
+        "year": 2035,
+        "month": 5,
+        "day": 2
+      },
+      "activo": false,
+      "fechaRegistro": "1970-01-01T00:13:32.000000422Z"
+    },
+    {
+      "idPersona": 62,
+      "nombre": "SMTP Knoll EXE",
+      "apellido": "Jewelery Plains",
+      "edad": 271,
+      "email": "{{ faker.internet.example_email }}",
+      "fechaNacimiento": {
+        "year": 2045,
+        "month": 2,
+        "day": 14
+      },
+      "activo": false,
+      "fechaRegistro": "1970-01-01T00:15:20.000000672Z"
+    }
+  ]
+}

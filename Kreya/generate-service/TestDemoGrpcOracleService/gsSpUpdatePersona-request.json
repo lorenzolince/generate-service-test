@@ -1,0 +1,16 @@
+{
+  "pPersona": {
+    "idPersona": 63,
+    "nombre": "Renata 2",
+    "apellido": "Ortiz 2",
+    "edad": 44,
+    "email": "renata.ortiz2@example.com",
+    "fechaNacimiento": {
+      "year": 1923,
+      "month": 5,
+      "day": 13
+    },
+    "activo": true,
+    "fechaRegistro": "1970-01-01T00:15:44.000000182Z"
+  }
+}

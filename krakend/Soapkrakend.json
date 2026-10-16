@@ -1,0 +1,684 @@
+{
+    "$schema": "https://www.krakend.io/schema/v3.json",
+    "version": 3,
+    "name": "generate-service-soap-rest-gateway",
+    "port": 8083,
+    "timeout": "30000ms",
+    "endpoints": [
+        {
+            "endpoint": "/api/gsSpGetTwoCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetTwoCursors",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpArraysPrimitivosOut",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetThreeCursors",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetThreeCursors",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonasDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetPersonasDetalle",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpLobCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnCountPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasTab",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnGetPersonasTab",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnCountPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/fnCountPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/getPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/fnGetPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/fnGetPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpTypeParams",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpTypeParams",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpDeletePersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetPersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorOutNoMetadata",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpCursorOutNoMetadata",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpGetPersonaDetalle",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpGetPersonaDetalle",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnTypeNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnTypeNombre",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnPipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnPipePersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorReturnWithOut",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnCursorReturnWithOut",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnGetPersonaObj",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnGetPersonaObj",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/pipePersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/pipePersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/getPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/getPersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasTotalHijosWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQPersonasTotalHijosWith",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQDeletePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQDeletePersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasActivasWith",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQPersonasActivasWith",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonasByCityJoinss",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQPersonasByCityJoinss",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaByNombre",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQPersonaByNombre",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQPersonaById",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQPersonaById",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQUpdatePersonass",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQUpdatePersonass",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersonaSelect",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQInsertPersonaSelect",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsQInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsQInsertPersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpInsertPersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpInsertPersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpUpdatePersona",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpUpdatePersona",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpCursorInoutPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInoutPersonas",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnCursorInoutPersonas",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpArraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpArraysPrimitivosInout",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/arraysPrimitivosInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/arraysPrimitivosInout",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobValues",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpLobValues",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpLobInout",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpLobInout",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCountPersonasCursor",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpCountPersonasCursor",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsSpCursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsSpCursorInWithOutputs",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/gsFnCursorInCount",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/gsFnCursorInCount",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        },
+        {
+            "endpoint": "/api/cursorInWithOutputs",
+            "method": "POST",
+            "output_encoding": "json",
+            "backend": [
+                {
+                    "host": [
+                        "http://soap-proxy:4000"
+                    ],
+                    "url_pattern": "/api/cursorInWithOutputs",
+                    "method": "POST",
+                    "encoding": "json"
+                }
+            ]
+        }
+    ]
+}

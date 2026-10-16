@@ -1,0 +1,47 @@
+services:
+
+  # Servicio "de un solo uso" que compila el .proto a descriptor binario (.pb)
+  # Se ejecuta con `docker compose run --rm protoc-builder`
+  protoc-builder:
+    image: znly/protoc:0.4.0
+    volumes:
+      - ./proto:/proto:ro
+      - ./grpcatalog:/out
+    entrypoint: ["protoc"]
+    command:
+      - "--proto_path=/proto"
+      - "--include_imports"
+      - "--descriptor_set_out=/out/schema.pb"
+      - "/proto/schema.proto"
+
+  soap-proxy:
+    build:
+      context: ./soap-proxy
+    container_name: generate-service-soap-proxy
+    ports:
+      - "4000:4000"
+    environment:
+      - SOAP_URL=http://host.docker.internal:8085/service/endpoints
+      - PORT=4000
+      
+  envoy:
+    image: envoyproxy/envoy:v1.31.2
+    container_name: generate-service-envoy
+    volumes:
+      - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml:ro
+      - ./grpcatalog/schema.pb:/etc/envoy/schema.pb:ro
+    ports:
+      - "9901:9901"   # panel admin de Envoy, útil para debug
+    command: ["envoy", "-c", "/etc/envoy/envoy.yaml"]
+
+  krakend:
+    image: devopsfaith/krakend:2.7
+    container_name: generate-service-krakend-grpc-test
+    ports:
+      - "8083:8083"
+    volumes:
+      - ./Soapkrakend.json:/etc/krakend/krakend.json:ro
+      - ./scripts:/etc/krakend/scripts:ro
+    command: ["run", "-c", "/etc/krakend/krakend.json"]
+  # depends_on:
+  #  - envoy

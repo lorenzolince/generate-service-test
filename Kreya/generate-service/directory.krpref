@@ -1,0 +1,20 @@
+{
+  "settings": [
+    {
+      "options": {
+        "grpc": {
+          "endpoint": "localhost:9090"
+        },
+        "rest": {
+          "endpoint": "http://localhost:8083"
+        },
+        "websocket": {
+          "endpoint": "http://localhost:8085"
+        },
+        "graphql": {
+          "endpoint": "http://localhost:8084/graphql"
+        }
+      }
+    }
+  ]
+}

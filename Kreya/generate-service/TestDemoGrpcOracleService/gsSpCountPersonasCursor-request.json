@@ -1,0 +1,34 @@
+{
+  "pPersonas": [
+    {
+      "idPersona": 2,
+      "nombre": "Ana",
+      "apellido": "Torres",
+      "edad": 34,
+      "email": "ana.torres@example.com",
+      "fechaNacimiento": "1992-03-18",
+      "activo": true,
+      "fechaRegistro": "2026-09-01 08:10:00"
+    },
+    {
+      "idPersona": 5,
+      "nombre": "Bruno",
+      "apellido": "Castillo",
+      "edad": 41,
+      "email": "bruno.castillo@example.com",
+      "fechaNacimiento": "1985-11-07",
+      "activo": false,
+      "fechaRegistro": "2026-09-01 08:25:00"
+    },
+    {
+      "idPersona": 8,
+      "nombre": "Carla",
+      "apellido": "Mendoza",
+      "edad": 27,
+      "email": "carla.mendoza@example.com",
+      "fechaNacimiento": "1999-06-22",
+      "activo": true,
+      "fechaRegistro": "2026-09-01 08:40:00"
+    }
+  ]
+}

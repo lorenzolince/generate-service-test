@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "f347360e-445f-4594-ae5f-f009eac1499b",
+    "_postman_id": "661b0fc9-fc93-4c58-9c2f-8628e32f8788",
     "name": "generate-service-test",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "30131500",
-    "_collection_link": "https://go.postman.co/collection/30131500-f347360e-445f-4594-ae5f-f009eac1499b?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/30131500-661b0fc9-fc93-4c58-9c2f-8628e32f8788?source=collection_link"
   },
   "item": [
     {
@@ -3559,7 +3559,6 @@
               "item": [
                 {
                   "name": "gsQPersonaById",
-                  "description": "Consulta SQL parametrizada para recuperar una persona por id como lista REST generada por Generate Service.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3589,7 +3588,6 @@
                 },
                 {
                   "name": "gsQPersonasByNombre",
-                  "description": "Busqueda de texto con ILIKE; el cliente envia parte del nombre y recibe las personas coincidentes.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3619,7 +3617,6 @@
                 },
                 {
                   "name": "gsQPersonasByActivo",
-                  "description": "Filtro booleano directo para consultar personas activas o inactivas mediante un endpoint query generado.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3649,7 +3646,6 @@
                 },
                 {
                   "name": "gsQPersonasSelfJoinActivo",
-                  "description": "Query con self join que compara personas por estado compartido y expone el resultado como filas REST.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3679,7 +3675,6 @@
                 },
                 {
                   "name": "gsQPersonasActivasWith",
-                  "description": "Query con WITH/CTE que separa la logica de filtrado y devuelve personas por estado.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3709,7 +3704,6 @@
                 },
                 {
                   "name": "gsQPersonasTotalHijosWith",
-                  "description": "Query con CTE, LEFT JOIN y agregacion para devolver personas con el total de hijos calculado.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3739,7 +3733,6 @@
                 },
                 {
                   "name": "gsQPersonasStatsWith",
-                  "description": "Query agregada con WITH que devuelve total, edad promedio, edad minima y edad maxima para clientes REST.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3769,7 +3762,6 @@
                 },
                 {
                   "name": "gsQPersonasByCityJoin",
-                  "description": "JOIN entre persona y direccion para filtrar por ciudad y devolver datos combinados.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3799,7 +3791,6 @@
                 },
                 {
                   "name": "gsQPersonasByJson",
-                  "description": "Recibe un array JSON natural con ids, lo procesa como JSON en PostgreSQL y devuelve las personas relacionadas.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3829,7 +3820,6 @@
                 },
                 {
                   "name": "gsQPersonasByJsonb",
-                  "description": "Recibe un array JSON natural, lo procesa como JSONB en PostgreSQL y devuelve filas tipadas.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3859,7 +3849,6 @@
                 },
                 {
                   "name": "gsQPersonasAsJson",
-                  "description": "Construye JSON nativo desde una query y lo expone como JSON natural en REST, no como texto escapado.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3889,7 +3878,6 @@
                 },
                 {
                   "name": "gsQPersonasAsJsonb",
-                  "description": "Agrega resultados como JSONB y los devuelve como documento JSON natural en REST.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3919,7 +3907,6 @@
                 },
                 {
                   "name": "gsQInsertPersona",
-                  "description": "INSERT sin RETURNING generado como POST; la respuesta booleana indica ejecucion sin excepcion.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3949,7 +3936,6 @@
                 },
                 {
                   "name": "gsQInsertPersonaSelect",
-                  "description": "INSERT basado en SELECT; PostgreSQL completa la fila nueva desde una persona base y devuelve resultado booleano de ejecucion.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -3979,7 +3965,6 @@
                 },
                 {
                   "name": "gsQUpdatePersona",
-                  "description": "UPDATE parametrizado generado como endpoint REST; devuelve booleano cuando PostgreSQL ejecuta sin error.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -4009,7 +3994,6 @@
                 },
                 {
                   "name": "gsQDeletePersona",
-                  "description": "DELETE parametrizado generado como endpoint REST; devuelve booleano cuando la ejecucion termina sin error.",
                   "request": {
                     "method": "POST",
                     "header": [],
@@ -4268,7 +4252,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n  \"pIdPersona\": 7\r\n}",
+                      "raw": "{\r\n  \"pIdPersona\": 1\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -4835,7 +4819,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n  \"pActivo\": 0\r\n}",
+                      "raw": "{\r\n  \"pActivo\": 1\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -4996,7 +4980,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n  \"nombre\": \"Mateo\",\r\n  \"apellido\": \"Rojas\",\r\n  \"edad\": 39,\r\n  \"email\": \"mateo.rojas@example.com\",\r\n  \"fechaNacimiento\": \"1987-03-21\",\r\n  \"activo\": true,\r\n  \"idPersona\": 12\r\n}",
+                      "raw": "{\r\n  \"nombre\": \"Mateo\",\r\n  \"apellido\": \"Rojas\",\r\n  \"edad\": 39,\r\n  \"email\": \"mateo.rojas@example.com\",\r\n  \"fechaNacimiento\": \"1987-03-21\",\r\n  \"activo\": false,\r\n  \"idPersona\": 5\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -5025,7 +5009,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n  \"activo\": false\r\n}",
+                      "raw": "{\r\n  \"activo\": true\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -5245,6 +5229,2972 @@
                       "path": [
                         "api",
                         "gsQInsertPersona"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "graphql",
+      "item": [
+        {
+          "name": "Oracle",
+          "item": [
+            {
+              "name": "PROCEDURE",
+              "item": [
+                {
+                  "name": "gsSpGetTwoCursors",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetTwoCursors {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    pHijos { idHijo idPersona nombre apellido fechaNacimiento }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetPersonasCursor {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpArraysPrimitivosInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpArraysPrimitivosInout(request: { pNumeros: [7, 14, 21, 28], pTextos: [\"norte\", \"sur\", \"oriente\"] }) {\n    pFechas\n    pSuma\n    pTextos\n    pTimestamps\n    pTotal\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpTypeParams",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpTypeParams(request: { pIdPersona: 3 }) {\n    pNombre\n    pEmail\n    pActivo\n    pFechaNacimiento\n    pFechaRegistro\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCountPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpCountPersonasCursor(request: { pPersonas: [{ idPersona: 2, nombre: \"Ana\", apellido: \"Torres\", edad: 34, email: \"ana.torres@example.com\", fechaNacimiento: \"1992-03-18\", activo: true, fechaRegistro: \"2026-09-01 08:10:00\" }, { idPersona: 5, nombre: \"Bruno\", apellido: \"Castillo\", edad: 41, email: \"bruno.castillo@example.com\", fechaNacimiento: \"1985-11-07\", activo: false, fechaRegistro: \"2026-09-01 08:25:00\" }, { idPersona: 8, nombre: \"Carla\", apellido: \"Mendoza\", edad: 27, email: \"carla.mendoza@example.com\", fechaNacimiento: \"1999-06-22\", activo: true, fechaRegistro: \"2026-09-01 08:40:00\" }] }) {\n    pTotal\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpInsertPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpInsertPersona(request: { pPersona: { idPersona: 0, nombre: \"Natalia\", apellido: \"Prieto\", edad: 31, email: \"natalia.prieto@example.com\", fechaNacimiento: \"1995-04-12\", activo: true, fechaRegistro: \"2026-09-01 12:30:00\" } }) {\n    pIdPersona\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpUpdatePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpUpdatePersona(request: { pPersona: { idPersona: 7, nombre: \"Renata\", apellido: \"Ortiz\", edad: 44, email: \"renata.ortiz@example.com\", fechaNacimiento: \"1982-12-02\", activo: false, fechaRegistro: \"2026-09-01 13:00:00\" } }) {\n    pActualizado\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpDeletePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpDeletePersona(request: { pIdPersona: 8 }) {\n    pEliminado\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetPersona(request: { pIdPersona: 7 }) {\n    pPersona { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobValues",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpLobValues(request: { pTextoIn: \"Archivo de prueba Oracle PROCEDURE LOB\", pArchivoIn: \"T3JhY2xlIFByb2NlZHVyZSBMT0I=\" }) {\n    pTextoOut\n    pArchivoOut\n    pTextoLength\n    pArchivoLength\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetThreeCursors",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetThreeCursors {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    pHijos { idHijo idPersona nombre apellido fechaNacimiento }\n    pDirecciones { tipo idReferencia pais ciudad telefono }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonasDetalle",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetPersonasDetalle {\n    pPersonas {\n      idPersona\n      nombre\n      apellido\n      edad\n      email\n      fechaNacimiento\n      activo\n      fechaRegistro\n      direccion { pais ciudad telefono }\n      hijos {\n        nombre\n        apellido\n        fechaNacimiento\n        direccion { pais ciudad telefono }\n      }\n    }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorInWithOutputs",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpCursorInWithOutputs(request: { pEntrada: [{ idPersona: 11, nombre: \"Daniel\", apellido: \"Rivas\", edad: 38, email: \"daniel.rivas@example.com\", fechaNacimiento: \"1988-01-14\", activo: true, fechaRegistro: \"2026-09-01 09:00:00\" }, { idPersona: 14, nombre: \"Elena\", apellido: \"Suarez\", edad: 30, email: \"elena.suarez@example.com\", fechaNacimiento: \"1996-09-03\", activo: false, fechaRegistro: \"2026-09-01 09:20:00\" }] }) {\n    pTotal\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpLobCursor {\n    pLobs { idLob textoClob archivoBlob }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpArraysPrimitivosOut",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpArraysPrimitivosOut {\n    pNumeros\n    pEnteros\n    pBooleanos\n    pTextos\n    pFechas\n    pTimestamps\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorOutNoMetadata",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpCursorOutNoMetadata(request: { pAbrirCursor: 10 }) {\n    pPersonas\n    pTotal\n    pMensaje\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpLobInout(request: { pTexto: \"Documento INOUT actualizado desde Postman\", pArchivo: \"T0JBQ0xFIEJMT0IgSU5PVVQ=\" }) {\n    pTexto\n    pArchivo\n    pTextoLength\n    pArchivoLength\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetPersonas {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonaDetalle",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpGetPersonaDetalle(request: { pIdPersona: 1 }) {\n    pPersona {\n      idPersona\n      nombre\n      apellido\n      edad\n      email\n      fechaNacimiento\n      activo\n      fechaRegistro\n      direccion { pais ciudad telefono }\n      hijos {\n        nombre\n        apellido\n        fechaNacimiento\n        direccion { pais ciudad telefono }\n      }\n    }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorInoutPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsSpCursorInoutPersonas(request: { pPersonas: [{ idPersona: 17, nombre: \"Fabian\", apellido: \"Navarro\", edad: 45, email: \"fabian.navarro@example.com\", fechaNacimiento: \"1981-12-29\", activo: true, fechaRegistro: \"2026-09-01 09:45:00\" }, { idPersona: 21, nombre: \"Gabriela\", apellido: \"Pineda\", edad: 26, email: \"gabriela.pineda@example.com\", fechaNacimiento: \"2000-04-11\", activo: true, fechaRegistro: \"2026-09-01 10:05:00\" }] }) {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    pTotal\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "FUNCTION",
+              "item": [
+                {
+                  "name": "gsFnCountPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnCountPersonas {\n    gsFnCountPersonas\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnTypeNombre",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnTypeNombre(request: { pIdPersona: 1 }) {\n    gsFnTypeNombre\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnPipePersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnPipePersonas(request: { pActivo: 1 }) {\n    gsFnPipePersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonasTab",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnGetPersonasTab {\n    gsFnGetPersonasTab { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorInoutPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnCursorInoutPersonas(request: { pPersonas: [{ idPersona: 24, nombre: \"Hector\", apellido: \"Salazar\", edad: 52, email: \"hector.salazar@example.com\", fechaNacimiento: \"1974-07-19\", activo: false, fechaRegistro: \"2026-09-01 10:30:00\" }, { idPersona: 29, nombre: \"Ines\", apellido: \"Vargas\", edad: 33, email: \"ines.vargas@example.com\", fechaNacimiento: \"1993-02-05\", activo: true, fechaRegistro: \"2026-09-01 10:55:00\" }] }) {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n    gsFnCursorInoutPersonas\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorReturnWithOut",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnCursorReturnWithOut(request: { pActivo: 1 }) {\n    pTotal\n    gsFnCursorReturnWithOut { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnGetPersonasCursor {\n    gsFnGetPersonasCursor { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorInCount",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnCursorInCount(request: { pPersonas: [{ idPersona: 32, nombre: \"Julian\", apellido: \"Cabrera\", edad: 47, email: \"julian.cabrera@example.com\", fechaNacimiento: \"1979-10-26\", activo: true, fechaRegistro: \"2026-09-01 11:15:00\" }, { idPersona: 37, nombre: \"Karen\", apellido: \"Mora\", edad: 29, email: \"karen.mora@example.com\", fechaNacimiento: \"1997-05-09\", activo: false, fechaRegistro: \"2026-09-01 11:40:00\" }, { idPersona: 43, nombre: \"Marco\", apellido: \"Leon\", edad: 36, email: \"marco.leon@example.com\", fechaNacimiento: \"1990-08-17\", activo: true, fechaRegistro: \"2026-09-01 12:05:00\" }] }) {\n    gsFnCursorInCount\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonaObj",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsFnGetPersonaObj(request: { pIdPersona: 1 }) {\n    gsFnGetPersonaObj { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "PACKAGE",
+              "item": [
+                {
+                  "name": "fnCountPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  fnCountPersonas {\n    fnCountPersonas\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "pipePersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  pipePersonas(request: { pActivo: 0 }) {\n    pipePersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "getPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  getPersonasCursor {\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "getPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  getPersona(request: { pIdPersona: 3 }) {\n    pPersona { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "fnGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  fnGetPersonasCursor {\n    fnGetPersonasCursor { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "arraysPrimitivosInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  arraysPrimitivosInout(request: { pNumeros: [5, 10, 15, 20], pTextos: [\"alfa\", \"beta\", \"gamma\"] }) {\n    pFechas\n    pSuma\n    pTextos\n    pTimestamps\n    pTotal\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "cursorInWithOutputs",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  cursorInWithOutputs(request: { pEntrada: [{ idPersona: 2, nombre: \"Ana\", apellido: \"Torres\", edad: 34, email: \"ana.torres@example.com\", fechaNacimiento: \"1992-03-18\", activo: true, fechaRegistro: \"2026-09-01 08:10:00\" }, { idPersona: 29, nombre: \"Ines\", apellido: \"Vargas\", edad: 33, email: \"ines.vargas@example.com\", fechaNacimiento: \"1993-02-05\", activo: true, fechaRegistro: \"2026-09-01 10:55:00\" }] }) {\n    pTotal\n    pPersonas { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "QUERY",
+              "item": [
+                {
+                  "name": "gsQUpdatePersonass",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQUpdatePersonass(request: { nombre: \"Mateo\", apellido: \"Rojas\", edad: 39, email: \"mateo.rojas@example.com\", fechaNacimiento: \"1987-03-21\", activo: true, idPersona: 12 })\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasTotalHijosWith",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQPersonasTotalHijosWith(request: { activo: false }) {\n    gsQPersonasTotalHijosWith { idPersona nombre apellido activo totalHijos }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQDeletePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQDeletePersona(request: { idPersona: 10 })\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasActivasWith",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQPersonasActivasWith(request: { activo: true }) {\n    gsQPersonasActivasWith { idPersona nombre apellido activo }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasByCityJoinss",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQPersonasByCityJoinss(request: { ciudad: \"Bogota\" }) {\n    gsQPersonasByCityJoinss { idPersona nombre apellido pais ciudad telefono }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQInsertPersonaSelect",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQInsertPersonaSelect(request: { nombre: \"Laura\", email: \"laura.casas@example.com\", activo: false, idPersonaBase: 5 })\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonaByNombre",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQPersonaByNombre(request: { nombre: \"Santiago\" }) {\n    gsQPersonaByNombre { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonaById",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQPersonaById(request: { idPersona: 1 }) {\n    gsQPersonaById { idPersona nombre apellido edad email fechaNacimiento activo fechaRegistro }\n  }\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQInsertPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "graphql",
+                      "graphql": {
+                        "query": "mutation {\n  gsQInsertPersona(request: { nombre: \"Santiago\", apellido: \"Pardo\", edad: 28, email: \"santiago.pardo@example.com\", fechaNacimiento: \"1998-07-16\", activo: true })\n}",
+                        "variables": ""
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/graphql",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "graphql"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "testGraphQL",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\r\n  testGraphQL\r\n}\r\n",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8084/graphql",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "graphql"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "soap",
+      "item": [
+        {
+          "name": "ORALCE",
+          "item": [
+            {
+              "name": "PROCEDURE",
+              "item": [
+                {
+                  "name": "gsSpGetTwoCursors",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <dom:GsSpGetTwoCursorsRequest/>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <dom:GsSpGetPersonasCursorRequest/>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpArraysPrimitivosInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <dom:ArraysPrimitivosInoutRequest>\r\n         <dom:pNumeros>7</dom:pNumeros>\r\n         <dom:pNumeros>14</dom:pNumeros>\r\n         <dom:pNumeros>21</dom:pNumeros>\r\n         <dom:pNumeros>28</dom:pNumeros>\r\n         <dom:pTextos>norte</dom:pTextos>\r\n         <dom:pTextos>sur</dom:pTextos>\r\n         <dom:pTextos>oriente</dom:pTextos>\r\n      </dom:ArraysPrimitivosInoutRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpTypeParams",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <dom:GsSpTypeParamsRequest>\r\n         <!--Optional:-->\r\n         <dom:pIdPersona>1</dom:pIdPersona>\r\n      </dom:GsSpTypeParamsRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCountPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpCountPersonasCursorRequest>\n         <dom:pPersonas><![CDATA[[{\"idPersona\":2,\"nombre\":\"Ana\",\"apellido\":\"Torres\",\"edad\":34,\"email\":\"ana.torres@example.com\",\"fechaNacimiento\":\"1992-03-18\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 08:10:00\"},{\"idPersona\":5,\"nombre\":\"Bruno\",\"apellido\":\"Castillo\",\"edad\":41,\"email\":\"bruno.castillo@example.com\",\"fechaNacimiento\":\"1985-11-07\",\"activo\":false,\"fechaRegistro\":\"2026-09-01 08:25:00\"},{\"idPersona\":8,\"nombre\":\"Carla\",\"apellido\":\"Mendoza\",\"edad\":27,\"email\":\"carla.mendoza@example.com\",\"fechaNacimiento\":\"1999-06-22\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 08:40:00\"}]]]></dom:pPersonas>\n      </dom:GsSpCountPersonasCursorRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpInsertPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpInsertPersonaRequest>\n         <dom:pPersona>\n            <dom:idPersona>0</dom:idPersona>\n            <dom:nombre>Natalia</dom:nombre>\n            <dom:apellido>Prieto</dom:apellido>\n            <dom:edad>31</dom:edad>\n            <dom:email>natalia.prieto@example.com</dom:email>\n            <dom:fechaNacimiento>1995-04-12</dom:fechaNacimiento>\n            <dom:activo>true</dom:activo>\n            <dom:fechaRegistro>2026-09-01 12:30:00</dom:fechaRegistro>\n         </dom:pPersona>\n      </dom:GsSpInsertPersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpUpdatePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpUpdatePersonaRequest>\n         <dom:pPersona>\n            <dom:idPersona>7</dom:idPersona>\n            <dom:nombre>Renata</dom:nombre>\n            <dom:apellido>Ortiz</dom:apellido>\n            <dom:edad>44</dom:edad>\n            <dom:email>renata.ortiz@example.com</dom:email>\n            <dom:fechaNacimiento>1982-12-02</dom:fechaNacimiento>\n            <dom:activo>false</dom:activo>\n            <dom:fechaRegistro>2026-09-01 13:00:00</dom:fechaRegistro>\n         </dom:pPersona>\n      </dom:GsSpUpdatePersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpDeletePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpDeletePersonaRequest>\n         <dom:pIdPersona>8</dom:pIdPersona>\n      </dom:GsSpDeletePersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpGetPersonaRequest>\n         <dom:pIdPersona>1</dom:pIdPersona>\n      </dom:GsSpGetPersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobValues",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpLobValuesRequest>\n         <dom:pTextoIn>Archivo de prueba Oracle PROCEDURE LOB</dom:pTextoIn>\n         <dom:pArchivoIn>T3JhY2xlIFByb2NlZHVyZSBMT0I=</dom:pArchivoIn>\n      </dom:GsSpLobValuesRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetThreeCursors",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpGetThreeCursorsRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonasDetalle",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpGetPersonasDetalleRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorInWithOutputs",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpCursorInWithOutputsRequest>\n         <dom:pEntrada>[{\"idPersona\":11,\"nombre\":\"Daniel\",\"apellido\":\"Rivas\",\"edad\":38,\"email\":\"daniel.rivas@example.com\",\"fechaNacimiento\":\"1988-01-14\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 09:00:00\"},{\"idPersona\":14,\"nombre\":\"Elena\",\"apellido\":\"Suarez\",\"edad\":30,\"email\":\"elena.suarez@example.com\",\"fechaNacimiento\":\"1996-09-03\",\"activo\":false,\"fechaRegistro\":\"2026-09-01 09:20:00\"}]</dom:pEntrada>\n      </dom:GsSpCursorInWithOutputsRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpLobCursorRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpArraysPrimitivosOut",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <dom:GsSpArraysPrimitivosOutRequest/>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorOutNoMetadata",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpCursorOutNoMetadataRequest>\n         <dom:pAbrirCursor>10</dom:pAbrirCursor>\n      </dom:GsSpCursorOutNoMetadataRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpLobInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpLobInoutRequest>\n         <dom:pTexto>Documento INOUT actualizado desde Postman</dom:pTexto>\n         <dom:pArchivo>T0JBQ0xFIEJMT0IgSU5PVVQ=</dom:pArchivo>\n      </dom:GsSpLobInoutRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpGetPersonasRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpGetPersonaDetalle",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpGetPersonaDetalleRequest>\n         <dom:pIdPersona>1</dom:pIdPersona>\n      </dom:GsSpGetPersonaDetalleRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsSpCursorInoutPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsSpCursorInoutPersonasRequest>\n         <dom:pPersonas>\n            <dom:idPersona>17</dom:idPersona>\n            <dom:nombre>Fabian</dom:nombre>\n            <dom:apellido>Navarro</dom:apellido>\n            <dom:edad>45</dom:edad>\n            <dom:email>fabian.navarro@example.com</dom:email>\n            <dom:fechaNacimiento>1981-12-29</dom:fechaNacimiento>\n            <dom:activo>true</dom:activo>\n            <dom:fechaRegistro>2026-09-01 09:45:00</dom:fechaRegistro>\n         </dom:pPersonas>\n         <dom:pPersonas>\n            <dom:idPersona>21</dom:idPersona>\n            <dom:nombre>Gabriela</dom:nombre>\n            <dom:apellido>Pineda</dom:apellido>\n            <dom:edad>26</dom:edad>\n            <dom:email>gabriela.pineda@example.com</dom:email>\n            <dom:fechaNacimiento>2000-04-11</dom:fechaNacimiento>\n            <dom:activo>true</dom:activo>\n            <dom:fechaRegistro>2026-09-01 10:05:00</dom:fechaRegistro>\n         </dom:pPersonas>\n      </dom:GsSpCursorInoutPersonasRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "FUNCTION",
+              "item": [
+                {
+                  "name": "gsFnCountPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnCountPersonasRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnTypeNombre",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnTypeNombreRequest>\n         <dom:pIdPersona>1</dom:pIdPersona>\n      </dom:GsFnTypeNombreRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnPipePersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnPipePersonasRequest>\n         <dom:pActivo>1</dom:pActivo>\n      </dom:GsFnPipePersonasRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonasTab",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnGetPersonasTabRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorInoutPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnCursorInoutPersonasRequest>\n         <dom:pPersonas>\n            <dom:idPersona>24</dom:idPersona>\n            <dom:nombre>Hector</dom:nombre>\n            <dom:apellido>Salazar</dom:apellido>\n            <dom:edad>52</dom:edad>\n            <dom:email>hector.salazar@example.com</dom:email>\n            <dom:fechaNacimiento>1974-07-19</dom:fechaNacimiento>\n            <dom:activo>false</dom:activo>\n            <dom:fechaRegistro>2026-09-01 10:30:00</dom:fechaRegistro>\n         </dom:pPersonas>\n         <dom:pPersonas>\n            <dom:idPersona>29</dom:idPersona>\n            <dom:nombre>Ines</dom:nombre>\n            <dom:apellido>Vargas</dom:apellido>\n            <dom:edad>33</dom:edad>\n            <dom:email>ines.vargas@example.com</dom:email>\n            <dom:fechaNacimiento>1993-02-05</dom:fechaNacimiento>\n            <dom:activo>true</dom:activo>\n            <dom:fechaRegistro>2026-09-01 10:55:00</dom:fechaRegistro>\n         </dom:pPersonas>\n      </dom:GsFnCursorInoutPersonasRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorReturnWithOut",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnCursorReturnWithOutRequest>\n         <dom:pActivo>1</dom:pActivo>\n      </dom:GsFnCursorReturnWithOutRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnGetPersonasCursorRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnCursorInCount",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnCursorInCountRequest>\n         <dom:pPersonas>[{\"idPersona\":32,\"nombre\":\"Julian\",\"apellido\":\"Cabrera\",\"edad\":47,\"email\":\"julian.cabrera@example.com\",\"fechaNacimiento\":\"1979-10-26\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 11:15:00\"},{\"idPersona\":37,\"nombre\":\"Karen\",\"apellido\":\"Mora\",\"edad\":29,\"email\":\"karen.mora@example.com\",\"fechaNacimiento\":\"1997-05-09\",\"activo\":false,\"fechaRegistro\":\"2026-09-01 11:40:00\"},{\"idPersona\":43,\"nombre\":\"Marco\",\"apellido\":\"Leon\",\"edad\":36,\"email\":\"marco.leon@example.com\",\"fechaNacimiento\":\"1990-08-17\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 12:05:00\"}]</dom:pPersonas>\n      </dom:GsFnCursorInCountRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsFnGetPersonaObj",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsFnGetPersonaObjRequest>\n         <dom:pIdPersona>1</dom:pIdPersona>\n      </dom:GsFnGetPersonaObjRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "PACKAGE",
+              "item": [
+                {
+                  "name": "fnCountPersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:FnCountPersonasRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "pipePersonas",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:PipePersonasRequest>\n         <dom:pActivo>0</dom:pActivo>\n      </dom:PipePersonasRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "getPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GetPersonasCursorRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "getPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GetPersonaRequest>\n         <dom:pIdPersona>3</dom:pIdPersona>\n      </dom:GetPersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "fnGetPersonasCursor",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:FnGetPersonasCursorRequest/>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "arraysPrimitivosInout",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:ArraysPrimitivosInoutRequest>\n         <dom:pNumeros>5</dom:pNumeros>\n         <dom:pNumeros>10</dom:pNumeros>\n         <dom:pNumeros>15</dom:pNumeros>\n         <dom:pNumeros>20</dom:pNumeros>\n         <dom:pTextos>alfa</dom:pTextos>\n         <dom:pTextos>beta</dom:pTextos>\n         <dom:pTextos>gamma</dom:pTextos>\n      </dom:ArraysPrimitivosInoutRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "cursorInWithOutputs",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:CursorInWithOutputsRequest>\n         <dom:pEntrada>[{\"idPersona\":2,\"nombre\":\"Ana\",\"apellido\":\"Torres\",\"edad\":34,\"email\":\"ana.torres@example.com\",\"fechaNacimiento\":\"1992-03-18\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 08:10:00\"},{\"idPersona\":29,\"nombre\":\"Ines\",\"apellido\":\"Vargas\",\"edad\":33,\"email\":\"ines.vargas@example.com\",\"fechaNacimiento\":\"1993-02-05\",\"activo\":true,\"fechaRegistro\":\"2026-09-01 10:55:00\"}]</dom:pEntrada>\n      </dom:CursorInWithOutputsRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "QUERY",
+              "item": [
+                {
+                  "name": "gsQUpdatePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQUpdatePersonassRequest>\n         <dom:nombre>Mateo</dom:nombre>\n         <dom:apellido>Rojas</dom:apellido>\n         <dom:edad>39</dom:edad>\n         <dom:email>mateo.rojas@example.com</dom:email>\n         <dom:fechaNacimiento>1987-03-21</dom:fechaNacimiento>\n         <dom:activo>true</dom:activo>\n         <dom:idPersona>12</dom:idPersona>\n      </dom:GsQUpdatePersonassRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasTotalHijosWith",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQPersonasTotalHijosWithRequest>\n         <dom:activo>false</dom:activo>\n      </dom:GsQPersonasTotalHijosWithRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQDeletePersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQDeletePersonaRequest>\n         <dom:idPersona>10</dom:idPersona>\n      </dom:GsQDeletePersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasActivasWith",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQPersonasActivasWithRequest>\n         <dom:activo>true</dom:activo>\n      </dom:GsQPersonasActivasWithRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonasByCityJoin",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQPersonasByCityJoinssRequest>\n         <dom:ciudad>Bogota</dom:ciudad>\n      </dom:GsQPersonasByCityJoinssRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQInsertPersonaSelect",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQInsertPersonaSelectRequest>\n         <dom:nombre>Laura</dom:nombre>\n         <dom:email>laura.casas@example.com</dom:email>\n         <dom:activo>false</dom:activo>\n         <dom:idPersonaBase>5</dom:idPersonaBase>\n      </dom:GsQInsertPersonaSelectRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonaByNombre",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQPersonaByNombreRequest>\n         <dom:nombre>Santiago</dom:nombre>\n      </dom:GsQPersonaByNombreRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQPersonaById",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQPersonaByIdRequest>\n         <dom:idPersona>1</dom:idPersona>\n      </dom:GsQPersonaByIdRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "gsQInsertPersona",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "text/xml; charset=utf-8"
+                      },
+                      {
+                        "key": "SOAPAction",
+                        "value": "\"\""
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:dom=\"http://test.app.com/domain\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <dom:GsQInsertPersonaRequest>\n         <dom:nombre>Santiago</dom:nombre>\n         <dom:apellido>Pardo</dom:apellido>\n         <dom:edad>28</dom:edad>\n         <dom:email>santiago.pardo@example.com</dom:email>\n         <dom:fechaNacimiento>1998-07-16</dom:fechaNacimiento>\n         <dom:activo>true</dom:activo>\n      </dom:GsQInsertPersonaRequest>\n   </soapenv:Body>\n</soapenv:Envelope>",
+                      "options": {
+                        "raw": {
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8085/service/endpoints",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8085",
+                      "path": [
+                        "service",
+                        "endpoints"
                       ]
                     }
                   },

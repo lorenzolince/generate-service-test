@@ -1,26 +1,28 @@
 # Generate Service Test
 
-**Generate Service Test** es una guía práctica para probar las capacidades de **Generate Service** a partir de esquemas reales de base de datos. El proyecto reúne motores, scripts SQL, archivos de esquema, una colección de Postman y una interfaz de prueba para que el cliente pueda generar microservicios, consumir sus endpoints y validar el comportamiento resultante.
+**Generate Service Test** es una guía práctica para probar las capacidades de **Generate Service** a partir de esquemas reales de base de datos. El proyecto reúne motores, scripts SQL, archivos de esquema, colecciones de prueba, configuraciones de gateway y una interfaz de validación para que el cliente pueda generar microservicios, consumir sus endpoints y verificar el comportamiento resultante.
 
-Generate Service permite crear microservicios de distintos tipos, como REST, GraphQL, gRPC, WebSocket, SOAP y otros modelos de integración, usando como entrada la estructura y la lógica disponible en una base de datos. En este repositorio las pruebas se enfocan en APIs REST, porque el objetivo principal es validar el núcleo del producto: acceso a datos, lectura de metadata, interpretación de parámetros, manejo de tipos complejos y transformación transparente de entradas y salidas.
+Generate Service permite crear microservicios de distintos tipos, como REST, GraphQL, gRPC, SOAP, WebSocket y otros modelos de integración, usando como entrada la estructura y la lógica disponible en una base de datos. En este repositorio el contrato visible para la UI se mantiene como REST, pero el backend generado puede ser REST, GraphQL, gRPC o SOAP. Cuando el backend no es REST, **KrakenD** actúa como una fachada que transforma esas APIs generadas en endpoints REST consumibles por la interfaz de prueba.
 
 ## Propósito
 
 El propósito de este proyecto es que un cliente pueda probar Generate Service con escenarios preparados y tomar decisiones técnicas con evidencia. Cada motor incluido contiene una base de datos de prueba, scripts de inicialización y archivos de esquema que representan operaciones publicables como servicios.
 
-Con este material, el cliente puede levantar una base de datos, seleccionar los esquemas que quiere probar, generar el microservicio desde Generate Service y ejecutar los endpoints resultantes desde la UI o desde Postman.
+Con este material, el cliente puede levantar una base de datos, seleccionar los esquemas que quiere probar, generar el microservicio desde Generate Service y ejecutar los endpoints resultantes desde la UI, desde Postman o desde Kreya, dependiendo del protocolo generado.
 
-También puede extender las pruebas creando sus propios procedimientos, funciones, packages, queries o tipos sobre las bases incluidas, generar nuevos esquemas y validar cómo Generate Service los transforma en servicios consumibles.
+También puede extender las pruebas creando sus propios procedimientos, funciones, packages, queries o tipos sobre las bases incluidas, generar nuevos esquemas y validar cómo Generate Service los transforma en servicios consumibles. La misma idea se puede reutilizar en aplicaciones propias: generar APIs desde nuevos objetos de base de datos, exponerlas en REST, GraphQL, gRPC o SOAP, y usar KrakenD para publicar un contrato REST estable que pueda renderizarse desde una UI.
 
 ## Qué Permite Probar
 
 - Generación de microservicios a partir de procedimientos, funciones, packages y queries.
-- Publicación de operaciones de base de datos como endpoints REST.
+- Publicación de operaciones de base de datos como endpoints REST, GraphQL, gRPC y SOAP.
+- Transformación de APIs GraphQL, gRPC y SOAP a un contrato REST mediante KrakenD.
 - Manejo de parámetros de entrada, salida e `INOUT`.
 - Transformación de tipos complejos, arreglos, cursores, JSON, objetos y estructuras tabulares.
-- Consumo de los endpoints generados desde una interfaz de prueba o desde Postman.
+- Consumo de los endpoints generados desde una interfaz de prueba, desde Postman o desde Kreya.
 - Comparación de escenarios equivalentes en distintos motores de base de datos.
 - Validación de la estructura técnica generada: controllers, services, models, repositories y configuración del microservicio.
+- Reutilización del patrón para probar APIs generadas desde nuevos schemas o nuevos stored procedures del cliente.
 
 ## Cómo Se Alimenta Generate Service
 
@@ -44,6 +46,44 @@ Cada carpeta `schemas/` contiene archivos de esquema correspondientes a operacio
 
 Cuando se necesite probar una operación nueva que no exista en estas carpetas, el cliente puede crearla en la base de datos correspondiente y usar el cliente local de Generate Service para generar el nuevo archivo de esquema.
 
+## Objetivo de KrakenD
+
+KrakenD se usa como gateway de adaptación para que la UI de pruebas pueda consumir siempre un contrato REST bajo `/api/...`, incluso cuando el microservicio generado por Generate Service expone otro protocolo.
+
+El objetivo no es reemplazar el microservicio generado, sino demostrar un patrón reutilizable:
+
+1. Generate Service genera una API REST, GraphQL, gRPC o SOAP a partir del esquema de base de datos.
+2. KrakenD recibe las llamadas REST que espera la UI en `http://localhost:8083/api/...`.
+3. KrakenD transforma la llamada hacia el backend generado correspondiente.
+4. La UI recibe una respuesta JSON normalizada y puede renderizarla como si todo fuera REST.
+
+La carpeta `krakend/` contiene configuraciones separadas para distintos protocolos generados:
+
+- `GraphQLkrakend.json`: fachada REST sobre operaciones GraphQL generadas.
+- `Grpckrakend.json`: fachada REST sobre operaciones gRPC generadas, usando Envoy como transcodificador gRPC/JSON.
+- `Soapkrakend.json`: fachada REST sobre operaciones SOAP generadas, usando el proxy SOAP incluido.
+- `proto/`: descriptor fuente para las pruebas gRPC.
+- `envoy/`: configuración para traducir llamadas HTTP/JSON hacia gRPC.
+- `soap-proxy/`: adaptador intermedio para invocar servicios SOAP desde KrakenD.
+- `scripts/`: transformaciones auxiliares usadas por algunas rutas para normalizar payloads, fechas, arreglos o cuerpos GraphQL.
+
+Con este enfoque, un cliente puede generar sus propios microservicios en el protocolo que necesite y mantener una experiencia homogénea para la UI o para otros consumidores REST. Si se generan nuevos stored procedures, funciones, packages o queries, el mismo patrón se puede repetir: agregar o regenerar el schema, generar la API, ajustar la configuración de KrakenD y validar el endpoint desde la UI.
+
+## Objetivo de Kreya
+
+Kreya se incluye como herramienta de prueba para las APIs gRPC generadas desde el schema de Oracle DB. Mientras la UI consume los endpoints transformados por KrakenD como REST, Kreya permite probar directamente el contrato gRPC generado.
+
+La carpeta `Kreya/generate-service/` contiene un proyecto Kreya con operaciones de `TestDemoGrpcOracleService`. Cada operación tiene su archivo `.krop` y su request JSON asociado, por ejemplo:
+
+- `gsSpGetPersona`
+- `gsSpInsertPersona`
+- `gsSpCursorInWithOutputs`
+- `gsFnCountPersonas`
+- `gsQPersonaById`
+- `pipePersonas`
+
+Este material sirve para validar que el microservicio gRPC generado responde correctamente contra el esquema Oracle de ejemplo. También sirve como plantilla: si el cliente genera nuevos stored procedures o nuevas operaciones gRPC, puede crear nuevas requests en Kreya siguiendo el mismo formato y probarlas contra su propio servicio generado.
+
 ## Contenido del Proyecto
 
 - `mysql/`: scripts, schemas y configuración Docker para MySQL.
@@ -51,6 +91,8 @@ Cuando se necesite probar una operación nueva que no exista en estas carpetas, 
 - `PostgreSQL/`: scripts, schemas y configuración Docker para PostgreSQL.
 - `OracleDb/`: scripts, schemas y configuración Docker para Oracle.
 - `sqlserver/`: scripts, schemas y configuración Docker para SQL Server.
+- `krakend/`: gateway y adaptadores para exponer GraphQL, gRPC y SOAP como endpoints REST consumibles por la UI.
+- `Kreya/`: proyecto Kreya con colección gRPC Oracle para probar directamente APIs gRPC generadas.
 - `ui_test/`: interfaz de prueba para explorar endpoints, payloads, respuestas y documentación por motor.
 - `generate-service-test.postman_collection.json`: colección de Postman para ejecutar escenarios desde un cliente HTTP.
 
@@ -59,20 +101,21 @@ Cuando se necesite probar una operación nueva que no exista en estas carpetas, 
 1. Levantar el motor de base de datos que se quiere evaluar.
 2. Usar los scripts SQL incluidos para inicializar los objetos de prueba.
 3. Adjuntar en Generate Service los archivos de `schemas/` incluidos o seleccionar objetos desde un datasource configurado.
-4. Generar y descargar el microservicio REST.
-5. Ejecutar el microservicio generado en `http://localhost:8083` o ajustar la URL base en la UI y en Postman.
-6. Probar los endpoints desde `ui_test/` o desde la colección de Postman.
-7. Revisar la documentación de cada operación para entender qué escenario demuestra.
+4. Generar y descargar el microservicio en el protocolo que se quiere validar: REST, GraphQL, gRPC o SOAP.
+5. Si el microservicio generado es REST, consumirlo directamente desde la UI o desde Postman.
+6. Si el microservicio generado es GraphQL, gRPC o SOAP, levantar KrakenD con la configuración correspondiente para exponerlo como REST en `http://localhost:8083/api/...`.
+7. Probar los endpoints desde `ui_test/`, desde Postman o desde Kreya cuando se quiera validar gRPC directamente.
+8. Revisar la documentación de cada operación para entender qué escenario demuestra.
 
 ## Puertos y Configuración
 
-La colección de Postman y la interfaz `ui_test/` están configuradas para consumir por defecto microservicios REST en:
+La colección de Postman y la interfaz `ui_test/` están configuradas para consumir por defecto endpoints REST en:
 
 ```text
 http://localhost:8083
 ```
 
-Por eso, el microservicio generado debe ejecutarse en el puerto `8083` para probarlo sin cambios. Si se ejecuta en otro puerto, se debe actualizar la colección de Postman o configurar la URL base de `ui_test/`, por ejemplo:
+Ese puerto puede corresponder a un microservicio REST generado directamente o a KrakenD cuando se necesita adaptar GraphQL, gRPC o SOAP hacia REST. Si se ejecuta en otro puerto, se debe actualizar la colección de Postman o configurar la URL base de `ui_test/`, por ejemplo:
 
 ```text
 API_ENDPOINT_MYSQL=http://localhost:8083
@@ -83,9 +126,20 @@ API_ENDPOINT_SQLSERVER=http://localhost:8083
 
 La UI de pruebas se ejecuta en el puerto `3033`.
 
+Puertos usados por los adaptadores incluidos:
+
+- `8083`: contrato REST consumido por la UI y por Postman. Puede estar servido por el backend REST generado o por KrakenD.
+- `8084`: puerto esperado para el microservicio GraphQL generado en las pruebas Oracle.
+- `9090`: puerto esperado para el microservicio gRPC generado en las pruebas Oracle.
+- `8085`: puerto esperado para el microservicio SOAP generado en las pruebas Oracle.
+- `4000`: proxy SOAP usado por KrakenD para adaptar SOAP a JSON/REST.
+- `9901`: panel de administración de Envoy para depuración gRPC.
+
 ## Ejecutar la UI de Pruebas
 
 La carpeta `ui_test/` contiene la interfaz **Generate Service Test**. Esta UI permite consumir los endpoints generados, revisar payloads, ver respuestas y consultar documentación de soporte por motor, incluyendo tipos de datos soportados y reglas de generación asociadas a nombres de PL/SQL, procedimientos, funciones, queries y atributos.
+
+La UI siempre espera endpoints REST. Por eso puede conectarse directamente a un microservicio REST generado o a KrakenD cuando el backend generado sea GraphQL, gRPC o SOAP.
 
 Requisitos recomendados:
 
@@ -178,6 +232,19 @@ Este repositorio está pensado para:
 - Arquitectos que deben evaluar alternativas para publicar lógica de datos como microservicios.
 - Organizaciones que necesitan probar un flujo donde las conexiones y credenciales puedan mantenerse dentro de su entorno local.
 
+## Reutilización del Concepto
+
+El material incluido no está limitado a los ejemplos Oracle, MySQL, MariaDB, PostgreSQL o SQL Server del repositorio. El cliente puede reutilizar el concepto completo en sus propias aplicaciones generadas:
+
+1. Crear o seleccionar nuevos objetos de base de datos.
+2. Generar nuevos archivos de schema desde Generate Service o desde el cliente local.
+3. Generar una API REST, GraphQL, gRPC o SOAP.
+4. Probar el protocolo nativo con la herramienta adecuada: Postman para REST/GraphQL, Kreya para gRPC o clientes SOAP cuando aplique.
+5. Exponer el contrato esperado por la UI mediante KrakenD si el protocolo generado no es REST.
+6. Agregar el endpoint a la UI de prueba para validar payload, respuesta y documentación funcional.
+
 ## Resultado Esperado
 
 Al terminar el recorrido, el cliente debe poder levantar una base de datos de prueba, generar un microservicio desde Generate Service, ejecutar sus endpoints y comprobar cómo la plataforma transforma esquemas y operaciones complejas en servicios listos para integrarse en una solución real.
+
+Además, debe poder entender cómo reutilizar el patrón con sus propios schemas y APIs generadas: usar REST directamente cuando aplique, usar Kreya para validar gRPC nativo y usar KrakenD para adaptar GraphQL, gRPC o SOAP a REST cuando se necesite renderizar o consumir todo desde la misma UI.
