@@ -1,8 +1,15 @@
 # Generate Service Test
 
-**Generate Service Test** es una guía práctica para probar las capacidades de **Generate Service** a partir de esquemas reales de base de datos. El proyecto reúne motores, scripts SQL, archivos de esquema, colecciones de prueba, configuraciones de gateway y una interfaz de validación para que el cliente pueda generar microservicios, consumir sus endpoints y verificar el comportamiento resultante.
+**Generate Service Test** es una guía práctica para probar las capacidades de [**Generate Service**](https://generate-service.com/) a partir de esquemas reales de base de datos. El proyecto reúne motores, scripts SQL, archivos de esquema, colecciones de prueba, configuraciones de gateway y una interfaz de validación para que el cliente pueda generar microservicios, consumir sus endpoints y verificar el comportamiento resultante.
 
 Generate Service permite crear microservicios de distintos tipos, como REST, GraphQL, gRPC, SOAP, WebSocket y otros modelos de integración, usando como entrada la estructura y la lógica disponible en una base de datos. En este repositorio el contrato visible para la UI se mantiene como REST, pero el backend generado puede ser REST, GraphQL, gRPC o SOAP. Cuando el backend no es REST, **KrakenD** actúa como una fachada que transforma esas APIs generadas en endpoints REST consumibles por la interfaz de prueba.
+
+## Plataforma y soporte
+
+- [**Generate Service**](https://generate-service.com/) es una plataforma SaaS autogestionada para generar microservicios e integraciones.
+- [**Lince Technology**](https://lincetechnology.net/) desarrolla Generate Service y ofrece soporte especializado para adopción, integración y necesidades técnicas complementarias.
+
+La plataforma permite enlazarse con proveedores de CI/CD, mientras que la implementación y configuración de los pipelines corresponde al equipo del cliente. Cuando se requiera acompañamiento adicional, Lince Technology puede apoyar con plantillas, integración de pipelines y recomendaciones para completar el ciclo de entrega.
 
 ## Propósito
 
